@@ -1,0 +1,46 @@
+created: 20211014032307468
+modified: 20211015005901733
+tags: MyTiddlyWiki/css
+title: MyStyle/BacklinksBox
+tmap.id: 6b119eca-fab6-4daa-96d5-78b4cfa1ecc5
+type: text/vnd.tiddlywiki
+
+div.backlinks-title {
+	transition: all {{$:/config/AnimationDuration}}ms;
+	filter: contrast(70%);
+	opacity: 0.7;
+	cursor: auto;
+}
+
+div.backlinks-box {
+	display: none;
+	position: relative;
+	height: 0px;
+}
+
+div.backlinks-box > div {
+	position: absolute;
+	max-height: 300px;
+	max-width: 400px;
+	background: <<colour background>>;
+	filter: contrast(90%);
+	top: 0px;
+	padding: 10px 30px;
+	border-radius: 3px;
+	box-shadow: black 0 2px 6px;
+}
+
+div.backlinks-title svg {
+    width: 1.6em;
+    height: 1em;
+}
+
+div.backlinks-title:hover,
+div.backlinks-title:active {
+	filter: contrast(100%);
+	opacity: 1;
+}
+
+div.backlinks-title:hover div.backlinks-box {
+	display: block;
+}

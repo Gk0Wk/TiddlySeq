@@ -1,0 +1,6 @@
+created: 20210823025345764
+modified: 20211015005125341
+title: $:/plugins/tiddlywiki/codemirror-mode-vnd-tiddlywiki/readme
+type: text/vnd.tiddlywiki
+
+This plugin adds Syntax Highlighting for ~TiddlyWiki 5 tiddlers (text/vnd.tiddlywiki) to the [[CodeMirror|http://codemirror.net]] text editor. It needs the latest [[CodeMirror plugin|$:/plugins/tiddlywiki/codemirror]] to be installed

@@ -1,0 +1,132 @@
+created: 20211013042028673
+modified: 20211015005901834
+tags: MyTiddlyWiki/css
+title: MyStyle/Others
+tmap.id: 0d6e400e-a490-421b-90ed-502c40f242a6
+type: text/vnd.tiddlywiki
+
+.tc-sidebar-tabs-main > .tc-tab-divider {
+	display: none;
+}
+
+body.tc-dirty span.tc-dirty-indicator, body.tc-dirty span.tc-dirty-indicator svg {
+	color: #FF453A !important;
+	fill: #FF453A !important;
+}
+
+.tc-drop-down,
+.tc-block-dropdown {
+	background: <<colour background>>;
+    filter: contrast(115%);
+	opacity: 0.98;
+	border: none !important;
+	border-radius: 5px;
+	margin: 0 !important;
+	padding: 0 !important;
+	box-shadow: #00000070 0 2px 6px;
+	max-height: 70vh;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.tc-drop-down a,
+.tc-drop-down button {
+	padding: 10px 14px !important;
+	color: <<colour foreground>> !important;
+}
+
+.tc-drop-down button:hover,
+.tc-drop-down button:active {
+	color: <<colour background>> !important;
+	background: <<colour foreground>> !important;
+}
+
+.tc-drop-down button svg {
+	fill: <<colour foreground>> !important;
+}
+
+.tc-drop-down button:hover svg,
+.tc-drop-down button:active svg {
+	fill: <<colour background>> !important;
+}
+
+div.tc-sidebar-tabs-main {
+	border: none !important;
+}
+
+.tc-tiddler-controls > .tc-popup > .tc-drop-down {
+	font-size: 0.5em !important;
+}
+
+select {
+ 	border: none !important;
+}
+
+select option,
+select optgroup {
+	background: <<colour background>>;
+	color: <<colour foreground>>;
+	fill: <<colour foreground>>;
+}
+
+input {
+	border: none;
+}
+
+input:focus {
+	outline: none;
+}
+
+.tc-tab-buttons {
+	border-bottom: <<colour table-border>> 1px solid;
+}
+
+a.tc-tiddlylink {
+	opacity: 0.9;
+	font-weight: 700;
+	transition: all {{$:/config/AnimationDuration}}ms;
+	text-decoration: none;
+	filter: contrast(70%);
+}
+
+a.tc-tiddlylink:hover,
+a.tc-tiddlylink:active {
+	opacity: 1;
+	filter: contrast(100%);
+	text-decoration: none;
+}
+
+a.tc-tiddlylink-external {
+	opacity: 0.9;
+	transition: all {{$:/config/AnimationDuration}}ms;
+	text-decoration: none;
+	filter: contrast(50%);
+}
+
+a.tc-tiddlylink-external:hover, 
+a.tc-tiddlylink-external:active {
+	opacity: 1;
+	filter: contrast(100%);
+	text-decoration: none;
+}
+
+details {
+	background: <<colour dropdown-tab-background>>;
+	opacity: 0.95;
+}
+
+hr {
+	height: 3px;
+	color: inherit;
+	border: none;
+	background: <<colour foreground>>;
+	opacity: 0.4;
+}
+
+:not(pre) > code {
+	font-weight: 700;
+}
+
+.tc-vertical {
+	border-bottom: none !important;
+}

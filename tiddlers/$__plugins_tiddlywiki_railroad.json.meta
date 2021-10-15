@@ -1,0 +1,11 @@
+author: Astrid Elocson
+created: 20211015005125525
+dependents: 
+description: Railroad diagram generator
+list: readme usage syntax example
+modified: 20211015005125525
+name: Railroad
+plugin-type: plugin
+title: $:/plugins/tiddlywiki/railroad
+type: application/json
+version: 5.2.0

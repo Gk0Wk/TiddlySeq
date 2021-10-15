@@ -1,0 +1,23 @@
+caption: Comments
+created: 20190304034056087
+creator: O.K.T. Academy&Education GROUP
+modified: 20211015005125348
+modifier: O.K.T. Academy&Education GROUP
+title: $:/plugins/tiddlywiki/comments/sidebar
+type: text/vnd.tiddlywiki
+
+<div class="tc-timeline">
+<$list filter="[all[tiddlers+shadows]role[comment]has[modified]!sort[modified]eachday[modified]]">
+<div class="tc-menu-list-item">
+<$view field="modified" format="date" template="DDth MMM YYYY"/>
+<$list filter="[all[tiddlers+shadows]role[comment]sameday:modified{!!modified}!sort[modified]]">
+<div class="tc-menu-list-subitem">
+<$link>Comment by '<$view field="modifier">(anonymous)</$view>'</$link> on
+<$list filter="[list<currentTiddler>sort[title]]">
+<$link to=<<currentTiddler>>><$text text=<<currentTiddler>>/></$link>
+</$list>
+</div>
+</$list>
+</div>
+</$list>
+</div>

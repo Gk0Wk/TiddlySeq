@@ -1,0 +1,7 @@
+created: 20210511104409149
+description: A tag that refers to a tiddler of the same name.
+label: 子类
+modified: 20211015005124593
+style: {"color":"darkslategray","dashes":true}
+title: $:/plugins/felixhayashi/tiddlymap/graph/edgeTypes/tw-list:tags
+type: text/vnd.tiddlywiki

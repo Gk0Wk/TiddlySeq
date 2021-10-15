@@ -1,0 +1,8 @@
+created: 20211012175450621
+modified: 20211015005857282
+tags: $:/tags/SideBarSegment MyTiddlyWiki
+title: SidebarResizer
+tmap.id: a0689e40-1a0e-4419-834f-328deebda288
+type: text/vnd.tiddlywiki
+
+<div style="height: 100vh; width: 20px; position: absolute; top: 0; left: -10px; cursor: ew-resize;" id="gk0wk-sidebar-resize-area"></div>

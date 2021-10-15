@@ -1,0 +1,6 @@
+created: 20211015005124567
+modified: 20211015005124567
+title: $:/plugins/felixhayashi/tiddlymap/config/vis/user
+type: text/vnd.tiddlywiki
+
+{"nodes":{"color":{"border":"rgba(36,120,233,1)","background":"rgba(39,114,252,1)"},"font":{"color":"rgba(255,255,255,1)"},"borderWidth":0,"borderWidthSelected":0},"edges":{"color":{"highlight":"rgba(38,187,226,1)","hover":"rgba(61,160,219,1)"},"dashes":true,"font":{"color":"rgba(255,255,255,1)","strokeWidth":2,"strokeColor":"rgba(51,51,51,1)"},"smooth":{"type":"continuous"}},"layout":{"hierarchical":{"direction":"LR"}}}

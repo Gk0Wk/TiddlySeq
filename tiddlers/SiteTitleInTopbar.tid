@@ -1,0 +1,16 @@
+caption: {{SiteTitleInTopbar}}
+created: 20211012173328999
+creator: O.K.T. Academy&Education GROUP
+description: Site Title In Topbar
+modified: 20211015005857302
+modifier: O.K.T. Academy&Education GROUP
+show-when: narrow
+tags: $:/tags/MenuBar MyTiddlyWiki
+title: SiteTitleInTopbar
+tmap.id: 05240866-b07d-4fa8-b202-510970075974
+type: text/vnd.tiddlywiki
+
+<span style="font-style: normal;">
+<$text text={{$:/SiteTitle}}/>
+<$reveal type="nomatch" state="$:/SiteSubtitle" text=""># <$text text={{$:/SiteSubtitle}}/></$reveal>
+</span>

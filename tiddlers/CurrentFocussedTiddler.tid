@@ -1,0 +1,15 @@
+caption: {{CurrentFocussedTiddler}}
+created: 20211012165847225
+creator: O.K.T. Academy&Education GROUP
+custom-menu-styles-wide: opacity: 1;
+description: Current Focussed Tiddler
+modified: 20211015005857247
+modifier: O.K.T. Academy&Education GROUP
+tags: $:/tags/MenuBar MyTiddlyWiki
+title: CurrentFocussedTiddler
+tmap.id: ac802395-6f01-4c3e-b69e-3d3332c699e3
+type: text/vnd.tiddlywiki
+
+<span style="font-style: normal;">
+<$text text={{$:/temp/focussedTiddler}}/>
+</span>

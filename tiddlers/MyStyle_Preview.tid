@@ -1,0 +1,15 @@
+created: 20211014070653878
+modified: 20211015005901841
+tags: MyTiddlyWiki/css
+title: MyStyle/Preview
+tmap.id: f1eb8dcf-0dab-45d1-ab46-cf43d981e36a
+type: text/vnd.tiddlywiki
+
+.tc-popup.tc-preview-tiddler {
+	background: <<colour background>>;
+    border: none;
+    max-height:25%;
+    overflow:auto;
+	border-radius: 6px;
+	box-shadow: black 0 0 20px;
+}

@@ -1,0 +1,10 @@
+created: 20211015005125379
+dependents: 
+description: D3 data visualisation demo
+list: readme
+modified: 20211015005125379
+name: D3
+plugin-type: plugin
+title: $:/plugins/tiddlywiki/d3
+type: application/json
+version: 5.2.0

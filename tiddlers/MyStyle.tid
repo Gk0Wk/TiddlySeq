@@ -1,0 +1,10 @@
+created: 20211014031624351
+modified: 20211015010020697
+tags: $:/tags/Stylesheet MyTiddlyWiki
+title: MyStyle
+tmap.id: 7799b063-9f1e-4bbd-b59e-056a386f7038
+type: text/vnd.tiddlywiki
+
+<$list filter="[all[shadows+tiddlers]tag[MyTiddlyWiki/css]!has[draft.of]]">
+<$transclude mode="block"/>
+</$list>

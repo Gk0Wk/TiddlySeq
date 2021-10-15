@@ -1,0 +1,11 @@
+author: Souk21
+core-version: >=5.0.8
+created: 20211015005121621
+dependents: 
+description: Command palette
+modified: 20211015005121621
+plugin-type: plugin
+source: https://github.com/souk21/TW-commandpalette
+title: $:/plugins/souk21/commandpalette
+type: application/json
+version: 0.0.6

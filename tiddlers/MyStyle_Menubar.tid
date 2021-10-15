@@ -1,0 +1,86 @@
+created: 20211014032420103
+creator: Sttot
+modified: 20211015012408612
+modifier: Sttot
+tags: MyTiddlyWiki/css
+title: MyStyle/Menubar
+tmap.id: 08a3c1d8-d86f-4c2c-977d-eceb890325d2
+type: text/vnd.tiddlywiki
+
+.gk0wk-menubar-background-box {
+	width: calc(100vw<$reveal state="$:/state/sidebar" type="nomatch" text="no"> - {{$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth}}</$reveal>);
+	background: <<colour page-background>>;
+	height: {{MyStyle/StoryTopMargin}};
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index:849;
+	display: none;
+}
+
+@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+	div.gk0wk-menubar-background-box {
+		display: block;
+	}
+}
+
+nav.tc-menubar {
+	pointer-events: none;
+}
+
+nav.tc-menubar .tc-menubar-item {
+	pointer-events: auto;
+	display: inline-block !important;
+}
+
+nav.tc-menubar > div.tc-menubar-wide > ul.tc-menubar-list {
+	padding: 4px 10px !important;
+	background: transparent !important;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+nav.tc-menubar > div.tc-menubar-narrow > ul.tc-menubar-list {
+	padding: 4px 10px !important;
+	background: <<colour page-background>> !important;
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.tc-menubar-item > a,
+.tc-menubar-item > button {
+	opacity: 0.4;
+	transition: all 250ms;
+	border-radius: 0px !important;
+	color: <<colour foreground>> !important;
+	fill: <<colour foreground>> !important;
+}
+
+.tc-menubar-item > button svg {
+	color: <<colour foreground>> !important;
+	fill: <<colour foreground>> !important;
+}
+
+.tc-menubar-item > a:active,
+.tc-menubar-item > a:hover,
+.tc-menubar-item > button:active,
+.tc-menubar-item > button:hover,
+.tc-menubar-item > button.tc-selected {
+	background: <<colour page-background>> !important;
+	filter: contrast(70%);
+	border-radius: 5px !important;
+	opacity: 1;
+}
+
+.tc-menubar-item > button:active svg,
+.tc-menubar-item > button:hover svg,
+.tc-menubar-item > button.tc-selected svg {
+	background: transparent !important;
+	filter: contrast(143%);
+}

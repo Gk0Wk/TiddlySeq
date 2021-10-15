@@ -1,0 +1,14 @@
+created: 20211013034951563
+modified: 20211015005857272
+tags: $:/tags/Stylesheet MyTiddlyWiki
+title: ResizerStyle
+tmap.id: d1e39cfa-f8b3-412e-b234-8ee4c4df090c
+type: text/vnd.tiddlywiki
+
+<$reveal state="$:/state/sidebar" type="match" text="no">
+
+.tc-sidebar-scrollable {
+	display: none;
+}
+
+</$reveal>

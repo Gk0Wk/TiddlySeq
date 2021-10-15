@@ -1,0 +1,14 @@
+author: Tony Grosinger
+core-version: >=5.0.9
+created: 20190412065559089
+creator: O.K.T. Academy&Education GROUP
+dependents: 
+description: Checklist Plugin
+list: readme Usage Configuration
+modified: 20211015005125309
+modifier: O.K.T. Academy&Education GROUP
+plugin-type: plugin
+source: https://github.com/tgrosinger/tw5-checklist
+title: $:/plugins/tgrosinger/tw5-checklist
+type: application/json
+version: 0.0.15

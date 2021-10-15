@@ -1,0 +1,31 @@
+created: 20200327081227209
+modified: 20211015005125192
+tags: 
+title: $:/plugins/kookma/trashbin/viewtemplate/trash-item
+type: text/vnd.tiddlywiki
+
+<$list filter="[all[current]tag[$:/tags/trashbin]prefix[$:/trashbin/]]">
+<div class="tc-tiddler-frame kk-trashbin-viewtrashitem">
+{{||$:/plugins/kookma/trashbin/templates/title}}
+{{||$:/plugins/kookma/trashbin/templates/subtitle}}
+{{||$:/plugins/kookma/trashbin/templates/tags}}
+{{||$:/plugins/kookma/trashbin/templates/body}}
+</div>
+<div class="kk-trashbin-viewtrashitem" style="margin-left:40px;">
+<h2>Tiddler fields</h2>
+<$list filter="[<currentTiddler>indexes[]] -title -tags -text -created -modified" variable=idx>
+<label style="display:inline-block;width:15ch;font-weight:bold;"><<idx>>:</label> <$transclude index=<<idx>>/><br/>
+</$list>
+</div>
+
+<style>
+.kk-trashbin-viewtrashitem {
+  margin-top:15px;
+ }
+.kk-trashbin-viewtrashitem .tc-tags-wrapper {
+  display:inline;
+}
+.kk-trashbin-viewtrashitem .tc-tiddler-body{
+  display:block;
+}
+</style>

@@ -1,0 +1,58 @@
+caption: Trashbin
+created: 20200330082034854
+modified: 20211015005125178
+title: $:/plugins/kookma/trashbin/ui/sidebar
+type: text/vnd.tiddlywiki
+
+\import $:/plugins/kookma/trashbin/macros/sort
+\import $:/plugins/kookma/trashbin/macros/restore
+\import $:/plugins/kookma/trashbin/macros/confirm-empty
+\import $:/plugins/kookma/trashbin/macros/bulk-operation
+\import $:/plugins/kookma/trashbin/macros/preview-option
+
+\define show-link()
+<$link to=<<currentTiddler>> ><$text text={{{ [<currentTiddler>removeprefix[$:/trashbin/]] }}} /> </$link>&nbsp;<span style="float:right;padding-right:10px;font-size:smaller;" title="Date Deleted"><$view field="modified" format="date" template="0MM/0DD/YYYY 0hh:0mm AM"/></span>
+\end
+
+\define recycle-button()
+{{||$:/plugins/kookma/trashbin/ui/toolbar-button}}
+\end
+
+\define delete-button()
+<$button class="tc-btn-invisible" tooltip="永久删除">
+{{$:/plugins/kookma/trashbin/images/times.svg}}
+<$list filter="[list[$:/StoryList]] +[field:title<currentTiddler>>]" variable=ignore>
+<$action-sendmessage $message="tm-close-tiddler" $param=<<<currentTiddler>> />
+</$list>
+<$action-deletetiddler $tiddler=<<currentTiddler>> />
+</$button>
+\end
+
+\define trashbin-siderbar-ui()
+<div class="kk-trahbin-ui">
+
+<span class="kk-trahbin-ui-controls kk-trashbin-ui-btn">
+<<trashbin-empty-bin>> <<restore-all>> <<sort-by>> <<preview-option>>
+
+</span>&nbsp;
+<span style="font-size:smaller">
+<$list filter='[tag[$:/tags/trashbin]prefix[$:/trashbin/]limit[1]]'  variable=null emptyMessage="没有已删除项">
+<$count filter='[tag[$:/tags/trashbin]]'/> items in Trashbin
+</$list>
+</span>
+
+<!-- create the trash items list -->
+<$list filter="[tag[$:/tags/trashbin]prefix[$:/trashbin/]$(sortType)$]">
+<div class="kk-trashbin-row">
+	<div class="kk-trashbin-link"><<show-link>></div>
+	<div class="kk-trashbin-recycle kk-trashbin-ui-btn"><<recycle-button>></div>
+	<div class="kk-trashbin-delete kk-trashbin-ui-btn"><<delete-button>></div>
+</div>
+</$list>
+
+</div>
+\end
+
+<$vars sortType={{{[<tempSortTid>get[text]] ~[[]] }}}>
+<<trashbin-siderbar-ui>>
+</$vars>

@@ -15,8 +15,6 @@
     "tiddlywiki/codemirror-mode-markdown",
     "tiddlywiki/codemirror-mode-xml",
     "tiddlywiki/codemirror-search-replace",
-    "tiddlywiki/dynannotate",
-    "tiddlywiki/dynaview",
     "tiddlywiki/googleanalytics",
     "tiddlywiki/highlight",
     "tiddlywiki/katex",
@@ -51,18 +49,12 @@
     "sobjornstad/TiddlyRemember",
     "linonetwo/service-worker",
     "linonetwo/github-external-image",
-    "linonetwo/sub-wiki",
     "linonetwo/opened-tiddlers-bar",
-    "linonetwo/inverse-link-and-folder",
-    "linonetwo/copy-on-select",
-    "linonetwo/preview-glass",
     "linonetwo/prevent-edit",
-    "linonetwo/source-control-management",
-    "linonetwo/itonnote"
+    "linonetwo/source-control-management"
   ],
   "themes": [
-    "tiddlywiki/vanilla",
-    "linonetwo/itonnote"
+    "tiddlywiki/vanilla"
   ],
   "languages": [
     "zh-Hans"

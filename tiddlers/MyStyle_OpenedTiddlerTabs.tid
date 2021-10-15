@@ -1,0 +1,17 @@
+created: 20211014055432498
+modified: 20211015005901822
+tags: MyTiddlyWiki/css
+title: MyStyle/OpenedTiddlerTabs
+tmap.id: 2b2b5ff2-9e16-4cb0-979f-f617c7aac18a
+type: text/vnd.tiddlywiki
+
+section.story-backdrop button {
+	transition: all {{$:/config/AnimationDuration}}ms;
+	border: 0 !important;
+}
+
+section.story-backdrop button.tc-tab:not(.tc-tab-selected):hover {
+    background-color: <<colour dropdown-tab-background-selected>>;
+	filter: contrast(120%);
+	border-bottom: 0 !important;
+}

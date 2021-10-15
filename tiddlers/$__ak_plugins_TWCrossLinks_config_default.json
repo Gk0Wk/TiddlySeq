@@ -1,0 +1,7 @@
+{
+    "DefaultFoldData": "hide",
+    "DefaultTab": "$:/ak/plugins/TWCrossLinks/core/backlinks",
+    "TranscludeInboundLinks": "true",
+    "HideInboundTitle": "false",
+    "UseFullMatch4Freelinks": "false"
+}
