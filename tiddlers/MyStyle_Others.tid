@@ -1,5 +1,7 @@
 created: 20211013042028673
-modified: 20211015005901834
+creator: Sttot
+modified: 20211019005729483
+modifier: Sttot
 tags: MyTiddlyWiki/css
 title: MyStyle/Others
 tmap.id: 0d6e400e-a490-421b-90ed-502c40f242a6
@@ -35,10 +37,12 @@ body.tc-dirty span.tc-dirty-indicator, body.tc-dirty span.tc-dirty-indicator svg
 	color: <<colour foreground>> !important;
 }
 
+.tc-drop-down a:hover,
 .tc-drop-down button:hover,
-.tc-drop-down button:active {
+.tc-drop-down button:active,
+.tc-drop-down .tc-file-input-wrapper:hover button {
 	color: <<colour background>> !important;
-	background: <<colour foreground>> !important;
+	background: <<colour primary>> !important;
 }
 
 .tc-drop-down button svg {
@@ -46,7 +50,8 @@ body.tc-dirty span.tc-dirty-indicator, body.tc-dirty span.tc-dirty-indicator svg
 }
 
 .tc-drop-down button:hover svg,
-.tc-drop-down button:active svg {
+.tc-drop-down button:active svg,
+.tc-drop-down .tc-file-input-wrapper:hover button svg {
 	fill: <<colour background>> !important;
 }
 
