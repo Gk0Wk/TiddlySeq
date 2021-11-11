@@ -109,7 +109,7 @@ function buildOfflineHTML(distDir, htmlName, minify) {
  * @param {boolean} minify 是否最小化HTML，默认为true
  */
 function buildLibrary(pluginFilter, distDir, minify) {
-    if (typeof pluginFilter !== 'string' || htmlName.length === 0) pluginFilter = '';
+    if (typeof pluginFilter !== 'string' || pluginFilter.length === 0) pluginFilter = '';
     if (typeof distDir !== 'string' || distDir.length === 0) distDir = 'dist/library';
     if (typeof minify !== 'boolean') minify = true;
 
