@@ -16,11 +16,16 @@ jobs:
 
       - name: Install Dependency
         run: npm install
-      - name: Build
-        run: npm run build
+
+      - name: Build Online HTML
+        run: npm run buildonline
+      - name: Build Offline HTML
+        run: npm run buildoffline
+      - name: Build Library
+        run: npm run buildlibrary
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public-dist
+          publish_dir: ./dist

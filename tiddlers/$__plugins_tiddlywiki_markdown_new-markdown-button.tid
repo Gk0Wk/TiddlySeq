@@ -1,9 +1,9 @@
 caption: {{$:/plugins/tiddlywiki/markdown/images/new-markdown-button}} {{$:/language/Buttons/NewMarkdown/Caption}}
 created: 20190405083759608
-creator: O.K.T. Academy&Education GROUP
+creator: 
 description: {{$:/language/Buttons/NewMarkdown/Hint}}
-modified: 20211015005125424
-modifier: O.K.T. Academy&Education GROUP
+modified: 20211111140122783
+modifier: 
 tags: $:/tags/PageControls
 title: $:/plugins/tiddlywiki/markdown/new-markdown-button
 type: text/vnd.tiddlywiki

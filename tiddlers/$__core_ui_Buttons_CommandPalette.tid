@@ -1,9 +1,0 @@
-caption: {{$:/core/images/advanced-search-button}} Command Palette
-created: 20210821195156485
-description: Open Command Palette
-modified: 20211015005857222
-tags: $:/tags/PageControls MyTiddlyWiki
-title: $:/core/ui/Buttons/CommandPalette
-type: text/vnd.tiddlywiki
-
-<$button class=<<tv-config-toolbar-class>> message="open-command-palette" tooltip="Open Command Palette" aria-label="Command Palette"><$list filter="[<tv-config-toolbar-icons>match[yes]]">{{$:/core/images/advanced-search-button}}</$list><$list filter="[<tv-config-toolbar-text>match[yes]]"><span class="tc-btn-text"><$text text="Command Palette"/></span></$list></$button>
