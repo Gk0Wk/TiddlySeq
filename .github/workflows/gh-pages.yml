@@ -14,15 +14,18 @@ jobs:
         with:
           node-version: '16'
 
+      - name: Cache dependencies
+        uses: actions/cache@v2
+        with:
+          path: |
+            **/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/package.json') }}
+
       - name: Install Dependency
         run: npm install
 
       - name: Build Online HTML
-        run: npm run buildonline
-      - name: Build Offline HTML
-        run: npm run buildoffline
-      - name: Build Library
-        run: npm run buildlibrary
+        run: npm run buildonline && npm run buildoffline && npm run buildlibrary
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
