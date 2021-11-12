@@ -5,11 +5,14 @@ const {
 
 /** 项目路径 */
 const repoFolder = path.join(path.dirname(__filename), '..');
-// cross-env TIDDLYWIKI_PLUGIN_PATH='node_modules/tiddlywiki/plugins/published' TIDDLYWIKI_THEME_PATH='${wikiFolderName}/themes'
-/** 插件路径 */
+
+/** 设置环境变量，TW会同时在自己的源码路径以及环境变量定义的路径中寻找插件、主题和语言
+ *  如果不这样写，plugins、themes和languages里的插件就无法被加载
+ */
 process.env.TIDDLYWIKI_PLUGIN_PATH = `${repoFolder}/plugins`;
-/** 主题路径 */
 process.env.TIDDLYWIKI_THEME_PATH = `${repoFolder}/themes`;
+process.env.TIDDLYWIKI_LANGUAGE_PATH = `${repoFolder}/languages`;
+
 /**
  * 执行命令行指令，并打印该指令
  * @param {string} command 要执行的命令
@@ -104,12 +107,15 @@ function buildOfflineHTML(distDir, htmlName, minify) {
 
 /**
  * 构建插件源
- * @param {string} pluginFilter 要发布插件的过滤器，默认为空
+ * @param {
+     string
+ }
+ pluginFilter 要发布插件的过滤器， 默认为 '[prefix[$:/plugins]] -[prefix[$:/plugins/tiddlywiki/]]'
  * @param {string} distDir 目标路径，空或者不填则默认为'dist/library'
  * @param {boolean} minify 是否最小化HTML，默认为true
  */
 function buildLibrary(pluginFilter, distDir, minify) {
-    if (typeof pluginFilter !== 'string' || pluginFilter.length === 0) pluginFilter = '';
+    if (typeof pluginFilter !== 'string' || pluginFilter.length === 0) pluginFilter = '[prefix[$:/plugins]] -[prefix[$:/plugins/tiddlywiki/]]';
     if (typeof distDir !== 'string' || distDir.length === 0) distDir = 'dist/library';
     if (typeof minify !== 'boolean') minify = true;
 
