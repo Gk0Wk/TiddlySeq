@@ -7,11 +7,12 @@ const {
 const repoFolder = path.join(path.dirname(__filename), '..');
 
 /** 设置环境变量，TW会同时在自己的源码路径以及环境变量定义的路径中寻找插件、主题和语言
- *  如果不这样写，plugins、themes和languages里的插件就无法被加载
+ *  如果不这样写，plugins、themes、languages和editions里的内容就无法被加载
  */
 process.env.TIDDLYWIKI_PLUGIN_PATH = `${repoFolder}/plugins`;
 process.env.TIDDLYWIKI_THEME_PATH = `${repoFolder}/themes`;
 process.env.TIDDLYWIKI_LANGUAGE_PATH = `${repoFolder}/languages`;
+process.env.TIDDLYWIKI_EDITION_PATH = `${repoFolder}/editions`;
 
 /**
  * 执行命令行指令，并打印该指令
@@ -58,7 +59,7 @@ function buildOnlineHTML(distDir, htmlName, minify) {
 
     // 构建HTML
     shell('cp -r tiddlers/ tmp_tiddlers_backup &> /dev/null'); // 备份 因为下面有改变tiddler的field的操作(媒体文件全部转为canonical)
-    shell(`tiddlywiki . --output ${distDir}` +
+    shell(`npx tiddlywiki . --output ${distDir}` +
         ' --setfield \'[is[image]] [is[binary]] [type[application/msword]] [type[image/svg+xml]]\' _canonical_uri $:/core/templates/canonical-uri-external-image text/plain' +
         ' --setfield \'[is[image]] [is[binary]] [type[application/msword]] [type[image/svg+xml]]\' text "" text/plain' + /* 注意这一步也会把所有媒体文件的内容变成空的 */
         ' --rendertiddler $:/core/save/offline-external-js index-raw.html text/plain "" publishFilter "-[is[draft]]"' +
@@ -73,10 +74,10 @@ function buildOnlineHTML(distDir, htmlName, minify) {
 
     // 最小化：核心JS和HTML
     if (minify) {
-        shellI(`uglifyjs ${distDir}/tiddlywikicore.js -c -m --v8 --webkit --ie --output '${distDir}/tiddlywikicore-'${'$(echo $(tiddlywiki . --version) | awk \'{print $1}\')'}'.js' && rm ${distDir}/tiddlywikicore.js`);
-        shellI(`html-minifier-terser -c scripts/html-minifier-terser.config.json -o ${distDir}/${htmlName} ${distDir}/index-raw.html && rm ${distDir}/index-raw.html`);
+        shellI(`npx uglifyjs ${distDir}/tiddlywikicore.js -c -m --v8 --webkit --ie --output '${distDir}/tiddlywikicore-'${'$(echo $(npx tiddlywiki . --version) | awk \'{print $1}\')'}'.js' && rm ${distDir}/tiddlywikicore.js`);
+        shellI(`npx html-minifier-terser -c scripts/html-minifier-terser.config.json -o ${distDir}/${htmlName} ${distDir}/index-raw.html && rm ${distDir}/index-raw.html`);
     } else {
-        shellI(`mv ${distDir}/tiddlywikicore.js '${distDir}/tiddlywikicore-'${'$(echo $(tiddlywiki . --version) | awk \'{print $1}\')'}'.js'`);
+        shellI(`mv ${distDir}/tiddlywikicore.js '${distDir}/tiddlywikicore-'${'$(echo $(npx tiddlywiki . --version) | awk \'{print $1}\')'}'.js'`);
         shellI(`mv ${distDir}/index-raw.html ${distDir}/${htmlName}`);
     }
 }
@@ -93,13 +94,13 @@ function buildOfflineHTML(distDir, htmlName, minify) {
     if (typeof minify !== 'boolean') minify = true;
 
     // 构建HTML
-    shell(`tiddlywiki . --output ${distDir}` +
+    shell(`npx tiddlywiki . --output ${distDir}` +
         ' --rendertiddler $:/plugins/tiddlywiki/tiddlyweb/save/offline index-raw.html text/plain "" publishFilter "-[is[draft]]"'
     );
 
     // 最小化：HTML
     if (minify) {
-        shellI(`html-minifier-terser -c scripts/html-minifier-terser.config.json -o ${distDir}/${htmlName} ${distDir}/index-raw.html && rm ${distDir}/index-raw.html`);
+        shellI(`npx html-minifier-terser -c scripts/html-minifier-terser.config.json -o ${distDir}/${htmlName} ${distDir}/index-raw.html && rm ${distDir}/index-raw.html`);
     } else {
         shellI(`mv ${distDir}/index-raw.html ${distDir}/${htmlName}`);
     }
@@ -110,16 +111,16 @@ function buildOfflineHTML(distDir, htmlName, minify) {
  * @param {
      string
  }
- pluginFilter 要发布插件的过滤器， 默认为 '[prefix[$:/plugins/]!prefix[$:/plugins/tiddlywiki/]]'
+ pluginFilter 要发布插件的过滤器， 默认为 '[prefix[$:/plugins/]!prefix[$:/plugins/tiddlywiki/]!prefix[$:/languages/]!prefix[$:/themes/tiddlywiki/]!tag[$:/tags/PluginLibrary]]'
  * @param {string} distDir 目标路径，空或者不填则默认为'dist/library'
  * @param {boolean} minify 是否最小化HTML，默认为true
  */
 function buildLibrary(pluginFilter, distDir, minify) {
-    if (typeof pluginFilter !== 'string' || pluginFilter.length === 0) pluginFilter = '[prefix[$:/plugins/]!prefix[$:/plugins/tiddlywiki/]]';
+    if (typeof pluginFilter !== 'string' || pluginFilter.length === 0) pluginFilter = '[prefix[$:/plugins/]!prefix[$:/plugins/tiddlywiki/]!prefix[$:/languages/]!prefix[$:/themes/tiddlywiki/]!tag[$:/tags/PluginLibrary]]';
     if (typeof distDir !== 'string' || distDir.length === 0) distDir = 'dist/library';
     if (typeof minify !== 'boolean') minify = true;
 
-    shell(`tiddlywiki . --output ${distDir}` +
+    shell(`npx tiddlywiki . --output ${distDir}` +
         ' --makelibrary $:/UpgradeLibrary' +
         ` --savelibrarytiddlers $:/UpgradeLibrary ${pluginFilter} recipes/library/tiddlers/ $:/UpgradeLibrary/List` +
         ' --savetiddler $:/UpgradeLibrary/List recipes/library/tiddlers.json' +
@@ -128,7 +129,7 @@ function buildLibrary(pluginFilter, distDir, minify) {
 
     // 最小化：HTML
     if (minify) {
-        shellI(`html-minifier-terser -c scripts/html-minifier-terser.config.json -o ${distDir}/index.html ${distDir}/index-raw.html && rm ${distDir}/index-raw.html`);
+        shellI(`npx html-minifier-terser -c scripts/html-minifier-terser.config.json -o ${distDir}/index.html ${distDir}/index-raw.html && rm ${distDir}/index-raw.html`);
     } else {
         shellI(`mv ${distDir}/index-raw.html ${distDir}/${htmlName}`);
     }
