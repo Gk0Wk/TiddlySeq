@@ -27,6 +27,9 @@ jobs:
       - name: Build Online HTML
         run: npm run buildonline && npm run buildoffline && npm run buildlibrary
 
+      - name: Make offline cache
+        run: npx workbox injectManifest workbox-config.js
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:

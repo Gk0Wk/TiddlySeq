@@ -7,6 +7,7 @@
   "devDependencies": {
     "html-minifier-terser": "6.0.2",
     "tiddlywiki": "^5.2.0",
-    "uglify-js": "^3.14.3"
+    "uglify-js": "^3.14.3",
+    "workbox-cli": "^6.3.0"
   }
 }
