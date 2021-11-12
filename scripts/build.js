@@ -91,7 +91,7 @@ function buildOfflineHTML(distDir, htmlName, minify) {
 
     // 构建HTML
     shell(`tiddlywiki . --output ${distDir}` +
-        ' --rendertiddler $:/core/save/all index-raw.html text/plain "" publishFilter "-[is[draft]]"'
+        ' --rendertiddler $:/plugins/tiddlywiki/tiddlyweb/save/offline index-raw.html text/plain "" publishFilter "-[is[draft]]"'
     );
 
     // 最小化：HTML
