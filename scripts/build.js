@@ -110,7 +110,7 @@ function buildOfflineHTML(distDir, htmlName, minify) {
  * @param {
      string
  }
- pluginFilter 要发布插件的过滤器， 默认为 '[prefix[$:/plugins]] -[prefix[$:/plugins/tiddlywiki/]]'
+ pluginFilter 要发布插件的过滤器， 默认为 '[prefix[$:/plugins/]!prefix[$:/plugins/tiddlywiki/]]'
  * @param {string} distDir 目标路径，空或者不填则默认为'dist/library'
  * @param {boolean} minify 是否最小化HTML，默认为true
  */
