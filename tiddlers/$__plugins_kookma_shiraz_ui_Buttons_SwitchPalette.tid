@@ -3,7 +3,7 @@ created: 20201210171047824
 dark-palette: $:/palettes/CupertinoDark
 description: Toggle between light/dark colour palette
 light-palette: $:/palettes/Vanilla
-modified: 20211015005125106
+modified: 20211112020700018
 tags: 
 title: $:/plugins/kookma/shiraz/ui/Buttons/SwitchPalette
 type: text/vnd.tiddlywiki
