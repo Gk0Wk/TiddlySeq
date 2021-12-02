@@ -1,0 +1,33 @@
+{
+  "tiddlers": [{
+    "file": "LICENSE",
+    "isTiddlerFile": false,
+    "fields": {
+      "title": "$:/plugins/Gk0Wk/TiddlySeq/LICENSE"
+    }
+  }],
+  "directories": [{
+      "path": "style",
+      "filesRegExp": "\\.css$",
+      "isTiddlerFile": false,
+      "fields": {
+        "type": "text/vnd.tiddlywiki",
+        "tags": "$:/tags/Stylesheet",
+        "title": {
+          "source": "basename",
+          "prefix": "$:/plugins/Gk0Wk/TiddlySeq/style/"
+        },
+        "list-after": [
+          "$:/themes/tiddlywiki/vanilla/base",
+          "$:/plugins/felixhayashi/tiddlymap/layout",
+          "$:/plugins/felixhayashi/vis/vis.css",
+          "$:/plugins/tiddlywiki/menubar/styles",
+          "$:/plugins/tobibeer/preview/styles",
+          "$:/plugins/linonetwo/opened-tiddlers-bar/style.css"
+        ]
+      },
+      "isEditableFile": false
+    },
+    "gadgets"
+  ]
+}

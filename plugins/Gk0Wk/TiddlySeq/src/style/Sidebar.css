@@ -1,0 +1,67 @@
+.tc-sidebar-scrollable > div {
+  width: 100%;
+}
+
+.tc-sidebar-scrollable .tc-sidebar-header > .tc-reveal > .tc-reveal > .tc-sidebar-tabs > p > div > .tc-sidebar-tabs-main:first-of-type {
+  background: <<colour page-background>>;
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+  padding: 14px 10px;
+  margin: 0;
+}
+
+<$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarTitle" text="yes">.tc-sidebar-scrollable .tc-site-title {
+  display: none;
+}</$reveal>
+
+<$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSubtitle" text="yes">.tc-sidebar-scrollable .tc-site-subtitle {
+  display: none;
+}</$reveal>
+
+<$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarPageControl" text="yes">.tc-sidebar-scrollable .tc-page-controls {
+  display: none;
+}</$reveal>
+
+<$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSearch" text="yes">.tc-sidebar-scrollable .tc-sidebar-search {
+  display: none;
+}</$reveal>
+
+.tc-sidebar-scrollable .tc-sidebar-header > .tc-reveal > .tc-reveal > .tc-sidebar-tabs > p,
+.tc-sidebar-scrollable > div > .tc-sidebar-header > .tc-reveal > div > p {
+  margin: 0;
+}
+
+.tc-sidebar-scrollable > .tc-sidebar-header,
+.tc-sidebar-header > .tc-reveal,
+.tc-sidebar-header > .tc-reveal > .tc-reveal,
+.tc-sidebar-scrollable .tc-tab-set img {
+  width: 100%;
+}
+
+.tc-sidebar-scrollable .tc-tab-set a,
+.tc-sidebar-scrollable .tc-tab-set p {
+  white-space: normal;
+}
+
+@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .tc-sidebar-scrollable > div {
+    width: calc(100% - 20px);
+  }
+  .tc-sidebar-scrollable {
+    top: 0;
+    bottom: 0;
+    right: 0;
+    padding: 0 0 {{$:/plugins/Gk0Wk/TiddlySeq/StoryBottomMargin}} 10px;
+    background: <<colour page-background>>;
+    filter: contrast(90%);
+    height: 100vh;
+  }
+  .tc-sidebar-scrollable .tc-sidebar-header > .tc-reveal > .tc-reveal > .tc-sidebar-tabs > p > div > .tc-sidebar-tabs-main:first-of-type {
+    background: <<colour page-background>>;
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+    padding: 6px 0;
+  }
+}

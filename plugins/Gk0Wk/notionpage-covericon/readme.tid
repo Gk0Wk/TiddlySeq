@@ -1,0 +1,65 @@
+title: $:/plugins/Gk0Wk/notionpage-covericon/readme
+
+\define lingo-base() $:/language/ThemeTweaks/
+
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+<$list filter="[<lang>search[zh]]">
+
+安装插件后，在每个tiddler的标题上方会有两个按钮(鼠标悬浮在上面就会显示)，分别用于添加图标(默认是emoji📒)和添加页面封面(默认是`https://source.unsplash.com/random`)。点击图标就可以修改图标内容，点击修改封面就可以修改封面地址(可以是url或者tiddler标题)。
+
+使用如下字段来存储页面的图标和封面信息：
+
+* `icon` 存储图标，可以是emoji、WikiText或者tiddler的标题。
+* `page-cover` 存储封面的url或者tiddler的标题。
+
+!! 设置
+
+<div class="tc-control-panel">
+
+|[[默认图标|$:/plugins/Gk0Wk/notionpage-covericon/default-icon]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/default-icon" default="📒" placeholder="Emoji, WikiText 或者 Tiddler"/> |
+|[[默认封面|$:/plugins/Gk0Wk/notionpage-covericon/default-pagecover-url]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/default-pagecover-url" default="https://source.unsplash.com/random" placeholder="URL 或者 Tiddler"/> |
+|[[图标大小|$:/plugins/Gk0Wk/notionpage-covericon/style/icon-size]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/icon-size" placeholder="如：65px" tag="input"/> |
+|[[封面高度(紧凑模式)|$:/plugins/Gk0Wk/notionpage-covericon/style/cover-height/narrow]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/cover-height/narrow" placeholder="如：300px" tag="input"/> |
+|[[封面高度(宽屏模式)|$:/plugins/Gk0Wk/notionpage-covericon/style/cover-height/wide]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/cover-height/wide" placeholder="如：300px" tag="input"/> |
+|[[封面顶端位置(紧凑模式)|$:/plugins/Gk0Wk/notionpage-covericon/style/top-offset/narrow]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/top-offset/narrow" placeholder="如：-14px" tag="input"/> |
+|[[封面顶端位置(宽屏模式)|$:/plugins/Gk0Wk/notionpage-covericon/style/top-offset/wide]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/top-offset/wide" placeholder="如：-28px" tag="input"/> |
+|[[封面左侧位置(紧凑模式)|$:/plugins/Gk0Wk/notionpage-covericon/style/cover-left/narrow]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/cover-left/narrow" placeholder="如：-14px" tag="input"/> |
+|[[封面左侧位置(宽屏模式)|$:/plugins/Gk0Wk/notionpage-covericon/style/cover-left/wide]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/cover-left/wide" placeholder="如：-42px" tag="input"/> |
+|[[封面右侧位置(紧凑模式)|$:/plugins/Gk0Wk/notionpage-covericon/style/cover-right/narrow]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/cover-right/narrow" placeholder="如：-14px" tag="input"/> |
+|[[封面右侧位置(宽屏模式)|$:/plugins/Gk0Wk/notionpage-covericon/style/cover-right/wide]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/cover-right/wide" placeholder="如：-42px" tag="input"/> |
+
+</div>
+
+* 注：【宽屏模式】和【紧凑模式】是由 <$link to="$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint"><<lingo Metrics/SidebarBreakpoint>></$link> 决定的，当前<<lingo Metrics/SidebarBreakpoint>>为{{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}。
+</$list>
+
+<$list filter="[<lang>!search[zh]]">
+
+After installing the plugin, there will be two buttons above the title of each tiddler (which will be displayed when the mouse hovers over it) for adding icons (default is emoji📒) and adding page covers (default is `https://source.unsplash.com/random`). Click on the icon to modify the icon content, and click on the modify cover to modify the cover address (can be url or tiddler title).
+
+Use the following fields to store the page's icon and cover information.
+
+* `icon` stores the icon, which can be an emoji, WikiText or tiddler title.
+* `page-cover` stores the url of the cover or the title of the tiddler.
+
+!! Settings
+
+<div class="tc-control-panel">
+
+|[[Default icon|$:/plugins/Gk0Wk/notionpage-covericon/default-icon]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/default-icon" default="📒" placeholder="Emoji, WikiText or Tiddler"/> |
+|[[Default page cover|$:/plugins/Gk0Wk/notionpage-covericon/default-pagecover-url]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/default-pagecover-url" default="https://source.unsplash.com/random" placeholder="URL or Tiddler"/> |
+|[[Icon size|$:/plugins/Gk0Wk/notionpage-covericon/style/icon-size]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/icon-size" placeholder="e.g. 65px" tag="input"/> |
+|[[Height of page cover(Compact mode)|$:/plugins/Gk0Wk/notionpage-covericon/style/cover-height/narrow]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/cover-height/narrow" placeholder="e.g. 300px" tag="input"/> |
+|[[Height of page cover(Widescreen mode)|$:/plugins/Gk0Wk/notionpage-covericon/style/cover-height/wide]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/cover-height/wide" placeholder="e.g. 300px" tag="input"/> |
+|[[Top position of page cover(Compact mode)|$:/plugins/Gk0Wk/notionpage-covericon/style/top-offset/narrow]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/top-offset/narrow" placeholder="e.g. -14px" tag="input"/> |
+|[[Top position of page cover(Widescreen mode)|$:/plugins/Gk0Wk/notionpage-covericon/style/top-offset/wide]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/top-offset/wide" placeholder="e.g. -28px" tag="input"/> |
+|[[Left position of page cover(Compact mode)|$:/plugins/Gk0Wk/notionpage-covericon/style/cover-left/narrow]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/cover-left/narrow" placeholder="e.g. -14px" tag="input"/> |
+|[[Left position of page cover(Widescreen mode)|$:/plugins/Gk0Wk/notionpage-covericon/style/cover-left/wide]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/cover-left/wide" placeholder="e.g. -42px" tag="input"/> |
+|[[Right position of page cover(Compact mode)|$:/plugins/Gk0Wk/notionpage-covericon/style/cover-right/narrow]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/cover-right/narrow" placeholder="e.g. -14px" tag="input"/> |
+|[[Right position of page cover(Widescreen mode)|$:/plugins/Gk0Wk/notionpage-covericon/style/cover-right/wide]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/cover-right/wide" placeholder="e.g. -42px" tag="input"/> |
+
+</div>
+
+* Note: [Widescreen mode] and [Compact mode] are determined by <$link to="$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint"><<lingo Metrics/SidebarBreakpoint>></$link>. Now the <<lingo Metrics/SidebarBreakpoint>> is {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}.
+</$list>
+</$list>

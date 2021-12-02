@@ -1,0 +1,40 @@
+{
+  "version": "0.0.1",
+  "type": "application/json",
+  "title": "$:/plugins/Gk0Wk/TiddlySeq",
+  "plugin-type": "plugin",
+  "name": "TiddlySeq",
+  "list": "readme LICENSE",
+  "description": "Logseq-like TiddlyWiki theme plugin.",
+  "author": "Gk0Wk",
+  "source": "https://github.com/Gk0Wk/TiddlySeq",
+  "tiddlers": {
+    "$:/plugins/Gk0Wk/TiddlySeq/StoryBottomMargin": {
+      "text": "28px"
+    },
+    "$:/plugins/Gk0Wk/TiddlySeq/StorySpacing": {
+      "text": "3px"
+    },
+    "$:/plugins/Gk0Wk/TiddlySeq/BlurTitleBackground": {
+      "text": "yes"
+    },
+    "$:/plugins/Gk0Wk/TiddlySeq/BlurMenubarBackground": {
+      "text": "yes"
+    },
+    "$:/plugins/Gk0Wk/TiddlySeq/HideSidebarTitle": {
+      "text": "yes"
+    },
+    "$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSubtitle": {
+      "text": "yes"
+    },
+    "$:/plugins/Gk0Wk/TiddlySeq/HideSidebarPageControl": {
+      "text": "yes"
+    },
+    "$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSearch": {
+      "text": "yes"
+    },
+    "$:/config/plugins/menubar/MenuItems/Visibility/$:/plugins/Gk0Wk/TiddlySeq/gadgets/CurrentFocussedTiddler": {
+      "text": "hide"
+    }
+  }
+}

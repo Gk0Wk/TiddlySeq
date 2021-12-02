@@ -1,0 +1,10 @@
+caption: {{$:/plugins/Gk0Wk/TiddlySeq/gadgets/CurrentFocussedTiddler}}
+custom-menu-styles-wide: opacity: 1;
+description: Current Focussed Tiddler
+tags: $:/tags/MenuBar
+title: $:/plugins/Gk0Wk/TiddlySeq/gadgets/CurrentFocussedTiddler
+list-after: $:/plugins/Gk0Wk/TiddlySeq/gadgets/SiteTitleInTopbar
+
+<span style="font-style: normal;">
+<$text text={{$:/temp/focussedTiddler}}/>
+</span>

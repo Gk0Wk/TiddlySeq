@@ -1,0 +1,40 @@
+.tc-story-river {
+  padding: 0px;
+}
+
+.tc-tiddler-edit-title {
+  line-height: 44px;
+}
+
+.tc-tiddler-frame {
+  margin-bottom: 0;
+}
+
+<$list filter="[[$:/plugins/tiddlywiki/menubar]is[tiddler][$:/config/Plugins/Disabled/$:/plugins/tiddlywiki/menubar]get[text]else[no]!match[yes]]">
+.tc-story-river>.tc-tiddler-frame {
+  margin-top: {{$:/plugins/Gk0Wk/TiddlySeq/StorySpacing}};
+}
+.tc-story-river > .tc-tiddler-frame:first-of-type {
+  margin-top: 37.5px;
+}
+<$list filter="[[$:/themes/tiddlywiki/vanilla/options/stickytitles]get[text]match[yes]]">
+.tc-tiddler-title {
+  top: 37.5px !important;
+  background: <<colour background>><$reveal state="$:/plugins/Gk0Wk/TiddlySeq/BlurTitleBackground" type="match" text="yes">DD</$reveal>;;
+<$reveal state="$:/plugins/Gk0Wk/TiddlySeq/BlurTitleBackground" type="match" text="yes">
+  backdrop-filter: blur(5px);
+</$reveal>;
+}
+</$list>
+</$list>
+
+@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth}}) {
+  .tc-story-river {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .tc-tiddler-frame {
+    max-width: {{$:/themes/tiddlywiki/vanilla/metrics/tiddlerwidth}};
+  }
+}

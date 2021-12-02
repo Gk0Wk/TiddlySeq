@@ -1,0 +1,51 @@
+title: $:/plugins/Gk0Wk/TiddlySeq/readme
+
+\define lingo-base() $:/language/ThemeTweaks/
+
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+<$list filter="[<lang>search[zh]]">
+
+本插件实现了TiddlySeq主题的主体部分，包括样式，以及一些小组件。@@color:red;请搭配[[Vanilla主题|$:/themes/tiddlywiki/vanilla]]使用！@@
+
+!! 设置
+
+本主题尽可能地沿用了Vanilla主题的设置，所以大部分主题设置位于[[Vanilla主题设置|$:/themes/tiddlywiki/vanilla/themetweaks]]中。其余的设置列在下面：
+
+<div class="tc-control-panel">
+
+|[[StoryRiver下边界|$:/plugins/Gk0Wk/TiddlySeq/StoryBottomMargin]] |<$edit-text tiddler="$:/plugins/Gk0Wk/TiddlySeq/StoryBottomMargin" placeholder="比如：28px" tag="input"/> |
+|[[条目间隔|$:/plugins/Gk0Wk/TiddlySeq/StorySpacing]] |<$edit-text tiddler="$:/plugins/Gk0Wk/TiddlySeq/StorySpacing" default="https://source.unsplash.com/random" placeholder="如：3px" tag="input"/> |
+|[[标题栏毛玻璃效果|$:/plugins/Gk0Wk/TiddlySeq/BlurTitleBackground]] | <$checkbox tiddler="$:/plugins/Gk0Wk/TiddlySeq/BlurTitleBackground" field="text" checked="yes" unchecked="no" default="yes"/> |
+|[[菜单栏毛玻璃效果|$:/plugins/Gk0Wk/TiddlySeq/BlurMenubarBackground]] | <$checkbox tiddler="$:/plugins/Gk0Wk/TiddlySeq/BlurMenubarBackground" field="text" checked="yes" unchecked="no" default="yes"/> |
+|[[隐藏侧边栏标题|$:/plugins/Gk0Wk/TiddlySeq/HideSidebarTitle]] | <$checkbox tiddler="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarTitle" field="text" checked="yes" unchecked="no" default="yes"/> |
+|[[隐藏侧边栏副标题|$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSubtitle]] | <$checkbox tiddler="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSubtitle" field="text" checked="yes" unchecked="no" default="yes"/> |
+|[[隐藏侧边栏页面控制图标组|$:/plugins/Gk0Wk/TiddlySeq/HideSidebarPageControl]] | <$checkbox tiddler="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarPageControl" field="text" checked="yes" unchecked="no" default="yes"/> |
+|[[隐藏侧边栏搜索框|$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSearch]] | <$checkbox tiddler="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSearch" field="text" checked="yes" unchecked="no" default="yes"/> |
+
+</div>
+
+</$list>
+
+<$list filter="[<lang>!search[zh]]">
+
+This plugin implements the main part of the TiddlySeq theme, including styles, and some widgets. @@color:red;Please use it with [[Vanilla theme|$:/themes/tiddlywiki/vanilla]]!@@
+
+!!! Settings
+
+This theme follows the settings of the Vanilla theme as closely as possible, so most of the theme settings are located in [[Vanilla theme settings|$:/themes/tiddlywiki/vanilla/themetweaks]]. The rest of the settings are listed below.
+
+<div class="tc-control-panel">
+
+|[[Bottom margin of story river|$:/plugins/Gk0Wk/TiddlySeq/StoryBottomMargin]] |<$edit-text tiddler="$:/plugins/Gk0Wk/TiddlySeq/StoryBottomMargin" placeholder="e.g. 28px" tag="input"/> |
+|[[Spacing of tiddlers|$:/plugins/Gk0Wk/TiddlySeq/StorySpacing]] |<$edit-text tiddler="$:/plugins/Gk0Wk/TiddlySeq/StorySpacing" placeholder="e.g. 3px" tag="input"/> |
+|[[Title bar hairy glass effect|$:/plugins/Gk0Wk/TiddlySeq/BlurTitleBackground]] | <$checkbox tiddler="$:/plugins/Gk0Wk/TiddlySeq/BlurTitleBackground" field="text" checked="yes" unchecked="no" default="yes"/> |
+|[[Menu bar hairy glass effect|$:/plugins/Gk0Wk/TiddlySeq/BlurMenubarBackground]] | <$checkbox tiddler="$:/plugins/Gk0Wk/TiddlySeq/BlurMenubarBackground" field="text" checked="yes" unchecked="no" default="yes"/> |
+|[[Hide sidebar title|$:/plugins/Gk0Wk/TiddlySeq/HideSidebarTitle]] | <$checkbox tiddler="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarTitle" field="text" checked="yes" unchecked="no" default="yes"/> |
+|[[Hide sidebar subtitle|$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSubtitle]] | <$checkbox tiddler="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSubtitle" field="text" checked="yes" unchecked="no" default="yes"/> |
+|[[Hide sidebar page control icon group|$:/plugins/Gk0Wk/TiddlySeq/HideSidebarPageControl]] | <$checkbox tiddler="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarPageControl" field="text" checked="yes" unchecked="no" default="yes"/> |
+|[[Hide sidebar search input|$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSearch]] | <$checkbox tiddler="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSearch" field="text" checked="yes" unchecked="no" default="yes"/> |
+
+</div>
+
+</$list>
+</$list>

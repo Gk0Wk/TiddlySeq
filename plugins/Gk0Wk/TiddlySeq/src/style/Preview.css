@@ -1,0 +1,8 @@
+.tc-popup.tc-preview-tiddler {
+  background: <<colour background>>;
+  border: none;
+  max-height:25%;
+  overflow:auto;
+  border-radius: 6px;
+  <<box-shadow "black 0 0 20px">>
+}

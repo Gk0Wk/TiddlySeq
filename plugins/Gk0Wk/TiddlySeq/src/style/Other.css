@@ -1,0 +1,139 @@
+.tc-sidebar-tabs-main > .tc-tab-divider {
+  display: none;
+}
+
+body.tc-dirty span.tc-dirty-indicator, body.tc-dirty span.tc-dirty-indicator svg {
+  color: #FF453A !important;
+  fill: #FF453A !important;
+}
+
+.tc-drop-down,
+.tc-block-dropdown {
+  background: <<colour background>>EE;
+  filter: contrast(115%);
+  opacity: 0.98;
+  border: none !important;
+  border-radius: 5px;
+  margin: 0 !important;
+  padding: 0 !important;
+  <<box-shadow "#00000070 0 2px 6px">>
+  max-height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  backdrop-filter: blur(5px);
+}
+
+.tc-drop-down a,
+.tc-drop-down button {
+  padding: 10px 14px !important;
+  color: <<colour foreground>> !important;
+}
+
+.tc-drop-down a:hover,
+.tc-drop-down button:hover,
+.tc-drop-down button:active,
+.tc-drop-down .tc-file-input-wrapper:hover button {
+  color: <<colour background>> !important;
+  background: <<colour primary>> !important;
+}
+
+.tc-drop-down button svg {
+  fill: <<colour foreground>> !important;
+}
+
+.tc-drop-down button:hover svg,
+.tc-drop-down button:active svg,
+.tc-drop-down .tc-file-input-wrapper:hover button svg {
+  fill: <<colour background>> !important;
+}
+
+.tc-sidebar-tabs-main {
+  border: none !important;
+}
+
+.tc-tiddler-controls > .tc-popup > .tc-drop-down {
+  font-size: 0.5em !important;
+}
+
+.tc-tiddler-body select {
+   border: none !important;
+  background-color: transparent !important;
+  width: auto !important;
+  height: auto !important;
+  padding: 0 !important;
+  font-size: inherit !important;
+}
+
+.tc-tiddler-body select:hover {
+  background-color: transparent !important;
+  color: inherit !important;
+  padding: 0 !important;
+}
+
+.tc-tiddler-body select option,
+.tc-tiddler-body select optgroup {
+  background: <<colour background>>;
+  color: <<colour foreground>>;
+  fill: <<colour foreground>>;
+}
+
+.tc-tiddler-body input {
+  border: none;
+}
+
+.tc-tiddler-body input:focus {
+  outline: none;
+}
+
+.tc-tab-buttons {
+  border-bottom: <<colour table-border>> 1px solid;
+}
+
+.tc-tiddler-body a.tc-tiddlylink:not(.tc-plugin-info) {
+  opacity: 0.9;
+  transition: all {{$:/config/AnimationDuration}}ms;
+  text-decoration: none;
+  filter: contrast(70%);
+}
+
+.tc-tiddler-body a.tc-tiddlylink:hover,
+.tc-tiddler-body a.tc-tiddlylink:active {
+  opacity: 1;
+  filter: contrast(100%);
+  text-decoration: none;
+}
+
+.tc-tiddler-body a.tc-tiddlylink-external {
+  opacity: 0.9;
+  transition: all {{$:/config/AnimationDuration}}ms;
+  text-decoration: none;
+  filter: contrast(50%);
+}
+
+.tc-tiddler-body a.tc-tiddlylink-external:hover,
+.tc-tiddler-body a.tc-tiddlylink-external:active {
+  opacity: 1;
+  filter: contrast(100%);
+  text-decoration: none;
+}
+
+.tc-tiddler-body details {
+  background: <<colour dropdown-tab-background>>;
+  opacity: 0.95;
+}
+
+.tc-tiddler-body hr {
+  height: 3px;
+  color: inherit;
+  border: none;
+  background: <<colour foreground>>;
+  opacity: 0.4;
+}
+
+.tc-tiddler-body :not(pre)>code {
+  font-weight: 700;
+}
+
+.tc-vertical {
+  border-bottom: none !important;
+}

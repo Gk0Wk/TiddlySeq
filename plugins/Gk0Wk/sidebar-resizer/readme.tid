@@ -1,0 +1,25 @@
+title: $:/plugins/Gk0Wk/sidebar-resizer/readme
+
+\define lingo-base() $:/language/ThemeTweaks/
+
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+<$list filter="[<lang>search[zh]]">
+
+原理是更改[[$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth]]的值。
+
+注意：首先请将 <$link to="$:/themes/tiddlywiki/vanilla/options/sidebarlayout"><<lingo Options/SidebarLayout>></$link> 调整为`fluid-fixed`，本插件才可生效。
+
+<$button set="$:/themes/tiddlywiki/vanilla/options/sidebarlayout" setTo="fluid-fixed">点击设置<<lingo Options/SidebarLayout>></$button>
+
+</$list>
+
+<$list filter="[<lang>!search[zh]]">
+
+The principle is to change the value of [[$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth]].
+
+Note: First, please adjust <$link to="$:/themes/tiddlywiki/vanilla/options/sidebarlayout"><<lingo Options/SidebarLayout>></$link> to `fluid-fixed` for this plugin to take effect.
+
+<$button set="$:/themes/tiddlywiki/vanilla/options/sidebarlayout" setTo="fluid-fixed">Click to adjust<<lingo Options/SidebarLayout>></$button>
+
+</$list>
+</$list>

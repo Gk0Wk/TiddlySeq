@@ -1,88 +1,96 @@
 {
-    "description": "Basic client-server edition",
-    "plugins": [
-        "tiddlywiki/highlight",
-        "tiddlywiki/pluginlibrary",
-        "tiddlywiki/codemirror",
-        "tiddlywiki/codemirror-autocomplete",
-        "tiddlywiki/codemirror-closebrackets",
-        "tiddlywiki/codemirror-closetag",
-        "tiddlywiki/codemirror-fullscreen-editing",
-        "tiddlywiki/codemirror-keymap-sublime-text",
-        "tiddlywiki/codemirror-mode-css",
-        "tiddlywiki/codemirror-mode-htmlmixed",
-        "tiddlywiki/codemirror-mode-javascript",
-        "tiddlywiki/codemirror-mode-markdown",
-        "tiddlywiki/codemirror-mode-xml",
-        "tiddlywiki/codemirror-search-replace",
-        "tiddlywiki/highlight",
-        "tiddlywiki/katex",
-        "tiddlywiki/markdown",
-        "tiddlywiki/sax",
-        "tiddlywiki/qrcode",
-        "tiddlywiki/filesystem",
-        "tiddlywiki/tiddlyweb"
+  "description": "Basic client-server edition",
+  "plugins": [
+    "tiddlywiki/filesystem",
+    "tiddlywiki/tiddlyweb",
+    "tiddlywiki/highlight",
+    "tiddlywiki/pluginlibrary",
+    "tiddlywiki/codemirror",
+    "tiddlywiki/codemirror-autocomplete",
+    "tiddlywiki/codemirror-closebrackets",
+    "tiddlywiki/codemirror-closetag",
+    "tiddlywiki/codemirror-fullscreen-editing",
+    "tiddlywiki/codemirror-keymap-sublime-text",
+    "tiddlywiki/codemirror-mode-css",
+    "tiddlywiki/codemirror-mode-htmlmixed",
+    "tiddlywiki/codemirror-mode-javascript",
+    "tiddlywiki/codemirror-mode-markdown",
+    "tiddlywiki/codemirror-mode-xml",
+    "tiddlywiki/codemirror-search-replace",
+    "tiddlywiki/dynannotate",
+    "tiddlywiki/dynaview",
+    "tiddlywiki/katex",
+    "tiddlywiki/markdown",
+    "tiddlywiki/sax",
+    "tiddlywiki/bibtex",
+    "tiddlywiki/menubar",
+    "tiddlywiki/mobiledragdrop",
+    "tiddlywiki/railroad",
+    "Gk0Wk/sidebar-resizer",
+    "Gk0Wk/notionpage-covericon",
+    "Gk0Wk/notionpage-backlink",
+    "Gk0Wk/TiddlySeq"
+  ],
+  "themes": [
+    "tiddlywiki/vanilla"
+  ],
+  "languages": [
+    "zh-Hans"
+  ],
+  "build": {
+    "index": [
+      "--rendertiddler",
+      "$:/core/save/all",
+      "index.html",
+      "text/plain"
     ],
-    "themes": [
-        "tiddlywiki/vanilla"
+    "empty": [
+      "--rendertiddler",
+      "$:/core/save/all",
+      "empty.html",
+      "text/plain",
+      "--rendertiddler",
+      "$:/core/save/all",
+      "empty.hta",
+      "text/plain"
     ],
-    "languages": [
-        "zh-Hans"
+    "externalimages": [
+      "--savetiddlers",
+      "[is[image]]",
+      "images",
+      "--setfield",
+      "[is[image]]",
+      "_canonical_uri",
+      "$:/core/templates/canonical-uri-external-image",
+      "text/plain",
+      "--setfield",
+      "[is[image]]",
+      "text",
+      "",
+      "text/plain",
+      "--rendertiddler",
+      "$:/core/save/all",
+      "externalimages.html",
+      "text/plain"
     ],
-    "build": {
-        "index": [
-            "--rendertiddler",
-            "$:/core/save/all",
-            "index.html",
-            "text/plain"
-        ],
-        "empty": [
-            "--rendertiddler",
-            "$:/core/save/all",
-            "empty.html",
-            "text/plain",
-            "--rendertiddler",
-            "$:/core/save/all",
-            "empty.hta",
-            "text/plain"
-        ],
-        "externalimages": [
-            "--savetiddlers",
-            "[is[image]]",
-            "images",
-            "--setfield",
-            "[is[image]]",
-            "_canonical_uri",
-            "$:/core/templates/canonical-uri-external-image",
-            "text/plain",
-            "--setfield",
-            "[is[image]]",
-            "text",
-            "",
-            "text/plain",
-            "--rendertiddler",
-            "$:/core/save/all",
-            "externalimages.html",
-            "text/plain"
-        ],
-        "static": [
-            "--rendertiddler",
-            "$:/core/templates/static.template.html",
-            "static.html",
-            "text/plain",
-            "--rendertiddler",
-            "$:/core/templates/alltiddlers.template.html",
-            "alltiddlers.html",
-            "text/plain",
-            "--rendertiddlers",
-            "[!is[system]]",
-            "$:/core/templates/static.tiddler.html",
-            "static",
-            "text/plain",
-            "--rendertiddler",
-            "$:/core/templates/static.template.css",
-            "static/static.css",
-            "text/plain"
-        ]
-    }
+    "static": [
+      "--rendertiddler",
+      "$:/core/templates/static.template.html",
+      "static.html",
+      "text/plain",
+      "--rendertiddler",
+      "$:/core/templates/alltiddlers.template.html",
+      "alltiddlers.html",
+      "text/plain",
+      "--rendertiddlers",
+      "[!is[system]]",
+      "$:/core/templates/static.tiddler.html",
+      "static",
+      "text/plain",
+      "--rendertiddler",
+      "$:/core/templates/static.template.css",
+      "static/static.css",
+      "text/plain"
+    ]
+  }
 }

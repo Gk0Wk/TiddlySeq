@@ -1,0 +1,90 @@
+<$list filter="[[$:/plugins/tiddlywiki/menubar]is[tiddler][$:/config/Plugins/Disabled/$:/plugins/tiddlywiki/menubar]get[text]else[no]!match[yes]]">
+.gk0wk-menubar-background-box {
+  background: <<colour page-background>><$reveal state="$:/plugins/Gk0Wk/TiddlySeq/BlurMenubarBackground" type="match" text="yes">DD</$reveal>;
+  height: 237.5px;
+  position: fixed;
+  top: -200px;
+  left: 0;
+  right: 0;
+  z-index:849;
+  display: none;
+  border-bottom: 1px solid <<colour tiddler-border>>;
+<$reveal state="$:/plugins/Gk0Wk/TiddlySeq/BlurMenubarBackground" type="match" text="yes">
+  backdrop-filter: blur(5px);
+</$reveal>;
+<$reveal state="$:/themes/tiddlywiki/vanilla/options/sidebarlayout" type="match" text="fluid-fixed">
+  width: calc(100vw<$reveal state="$:/state/sidebar" type="nomatch" text="no"> - {{$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth}}</$reveal>);
+</$reveal>
+<$reveal state="$:/themes/tiddlywiki/vanilla/options/sidebarlayout" type="nomatch" text="fluid-fixed">
+<$reveal state="$:/state/sidebar" type="match" text="no">
+  width: 100vw;
+</$reveal>
+<$reveal state="$:/state/sidebar" type="nomatch" text="no">
+  width: {{$:/themes/tiddlywiki/vanilla/metrics/storyright}};
+</$reveal>
+</$reveal>
+}
+
+@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  div.gk0wk-menubar-background-box {
+    display: block;
+  }
+}
+
+nav.tc-menubar {
+  pointer-events: none;
+}
+
+nav.tc-menubar .tc-menubar-item {
+  pointer-events: auto;
+  display: inline-block !important;
+}
+
+nav.tc-menubar > .tc-menubar-wide .tc-menubar-item {
+  height: 37.5px;
+}
+
+nav.tc-menubar > .tc-menubar-wide > ul.tc-menubar-list {
+  padding: 4px 10px;
+  background: transparent;
+  <<box-shadow "none">>
+}
+
+nav.tc-menubar > .tc-menubar-narrow > ul.tc-menubar-list {
+  padding: 4px 10px;
+  background: <<colour page-background>>DD;
+  <<box-shadow "none">>
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tc-menubar-item > a,
+.tc-menubar-item > button {
+  opacity: 0.4;
+  transition: all {{$:/config/AnimationDuration}}ms;
+  border-radius: 0px;
+  color: <<colour foreground>> !important;
+  fill: <<colour foreground>> !important;
+}
+
+.tc-menubar-item > button svg {
+  color: <<colour foreground>> !important;
+  fill: <<colour foreground>> !important;
+}
+
+.tc-menubar-item > a:hover,
+.tc-menubar-item > button:hover,
+.tc-menubar-item > button.tc-selected {
+  background: <<colour page-background>> !important;
+  filter: contrast(70%);
+  border-radius: 5px !important;
+  opacity: 1;
+}
+
+.tc-menubar-item > button:hover svg,
+.tc-menubar-item > button.tc-selected svg {
+  background: transparent !important;
+  filter: contrast(143%);
+}
+</$list>
