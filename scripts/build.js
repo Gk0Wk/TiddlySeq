@@ -64,6 +64,7 @@ function buildOnlineHTML(distDir, htmlName, minify) {
     // 构建HTML
     shell('cp -r tiddlers/ tmp_tiddlers_backup &> /dev/null'); // 备份 因为下面有改变tiddler的field的操作(媒体文件全部转为canonical)
     shell(`npx tiddlywiki . --output ${distDir}` +
+        ' --deletetiddlers \'[[$:/UpgradeLibrary]] [[$:/UpgradeLibrary/List]]\'' +
         ' --setfield \'[is[image]] [is[binary]] [type[application/msword]] [type[image/svg+xml]]\' _canonical_uri $:/core/templates/canonical-uri-external-image text/plain' +
         ' --setfield \'[is[image]] [is[binary]] [type[application/msword]] [type[image/svg+xml]]\' text "" text/plain' + /* 注意这一步也会把所有媒体文件的内容变成空的 */
         ' --rendertiddler $:/core/save/offline-external-js index-raw.html text/plain "" publishFilter "-[is[draft]]"' +
@@ -99,6 +100,7 @@ function buildOfflineHTML(distDir, htmlName, minify) {
 
     // 构建HTML
     shell(`npx tiddlywiki . --output ${distDir}` +
+        ' --deletetiddlers \'[[$:/UpgradeLibrary]] [[$:/UpgradeLibrary/List]]\'' +
         ' --rendertiddler $:/plugins/tiddlywiki/tiddlyweb/save/offline index-raw.html text/plain "" publishFilter "-[is[draft]]"'
     );
 
@@ -128,7 +130,8 @@ function buildLibrary(pluginFilter, distDir, minify) {
         ' --makelibrary $:/UpgradeLibrary' +
         ` --savelibrarytiddlers $:/UpgradeLibrary ${pluginFilter} recipes/library/tiddlers/ $:/UpgradeLibrary/List` +
         ' --savetiddler $:/UpgradeLibrary/List recipes/library/tiddlers.json' +
-        ' --rendertiddler $:/plugins/tiddlywiki/pluginlibrary/library.template.html index-raw.html text/plain'
+        ' --rendertiddler $:/plugins/tiddlywiki/pluginlibrary/library.template.html index-raw.html text/plain' +
+        ' --deletetiddlers \'[[$:/UpgradeLibrary]] [[$:/UpgradeLibrary/List]]\''
     );
 
     // 最小化：HTML
