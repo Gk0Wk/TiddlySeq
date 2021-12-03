@@ -1,8 +1,0 @@
-caption: 已删除
-created: 20190613131234955
-modified: 20211015005125162
-tags: $:/tags/SideBar
-title: $:/plugins/kookma/trashbin/sidebar-tab
-type: text/vnd.tiddlywiki
-
-{{$:/plugins/kookma/trashbin/ui/sidebar}}

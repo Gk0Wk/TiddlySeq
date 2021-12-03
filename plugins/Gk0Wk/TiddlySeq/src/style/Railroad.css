@@ -1,0 +1,16 @@
+svg.railroad-diagram:hover {
+    background-color: <<colour page-background>> !important;
+}
+
+svg.railroad-diagram path,
+svg.railroad-diagram rect {
+    stroke: <<colour selection-background>> !important;
+}
+
+svg.railroad-diagram path {
+    fill: transparent !important;
+}
+
+svg.railroad-diagram text {
+    fill: <<colour primary>> !important;
+}

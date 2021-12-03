@@ -7,7 +7,7 @@
     "scripts": {
         "server": "npx cross-env TIDDLYWIKI_PLUGIN_PATH='./plugins' TIDDLYWIKI_THEME_PATH='./themes' TIDDLYWIKI_LANGUAGE_PATH='./languages' npx tiddlywiki . --listen port=8080",
         "buildonline": "node -e \"require('./scripts/build').buildOnlineHTML('dist', 'index.html');\"",
-        "buildoffline": "node -e \"require('./scripts/build').buildOfflineHTML('dist', 'offline.html');\"",
+        "buildoffline": "node -e \"require('./scripts/build').buildOfflineHTML('dist', 'offline.html', true, '-[is[draft]] -[tag[ExcludeFromEmpty]]');\"",
         "buildlibrary": "node -e \"require('./scripts/build').buildLibrary('[prefix[$:/plugins/Gk0Wk/]]', 'dist/library');\""
     },
     "repository": {

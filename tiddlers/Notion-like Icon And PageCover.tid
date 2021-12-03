@@ -1,0 +1,38 @@
+created: 20211203145723538
+icon: ✨
+modified: 20211203150821872
+page-cover: https://unsplash.dogedoge.com/photos/T1OBtJN9Ztk/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjM4NTQzNTgz&force=true&w=1920
+tags: MyPlugins ExcludeFromEmpty
+title: Notion-like Icon And PageCover
+tmap.id: a9b84175-3dcc-4aa5-b3b1-1f0cfa77d120
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/ThemeTweaks/
+
+{{$:/plugins/Gk0Wk/notionpage-covericon||DragToInstall}}
+
+---
+
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+<$list filter="[<lang>search[zh]]">
+
+安装插件后，在每个tiddler的标题上方会有两个按钮(鼠标悬浮在上面就会显示)，分别用于添加图标(默认是emoji📒)和添加页面封面(默认是`https://source.unsplash.com/random`)。点击图标就可以修改图标内容，点击修改封面就可以修改封面地址(可以是url或者tiddler标题)。
+
+使用如下字段来存储页面的图标和封面信息：
+
+* `icon` 存储图标，可以是emoji、WikiText或者tiddler的标题。
+* `page-cover` 存储封面的url或者tiddler的标题。
+
+</$list>
+
+<$list filter="[<lang>!search[zh]]">
+
+After installing the plugin, there will be two buttons above the title of each tiddler (which will be displayed when the mouse hovers over it) for adding icons (default is emoji📒) and adding page covers (default is `https://source.unsplash.com/random`). Click on the icon to modify the icon content, and click on the modify cover to modify the cover address (can be url or tiddler title).
+
+Use the following fields to store the page's icon and cover information.
+
+* `icon` stores the icon, which can be an emoji, WikiText or tiddler title.
+* `page-cover` stores the url of the cover or the title of the tiddler.
+
+</$list>
+</$list>

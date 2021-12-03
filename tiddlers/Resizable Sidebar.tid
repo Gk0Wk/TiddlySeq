@@ -1,0 +1,34 @@
+created: 20211203045319421
+icon: ↔️
+modified: 20211203150401851
+page-cover: https://unsplash.dogedoge.com/photos/zF_pTLx_Dkg/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjM4NTQzODI4&force=true&w=1920
+tags: MyPlugins ExcludeFromEmpty
+title: Resizable Sidebar
+tmap.id: 687ae6c6-d406-41f7-87f0-59089560ec85
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/ThemeTweaks/
+
+{{$:/plugins/Gk0Wk/sidebar-resizer||DragToInstall}}
+
+---
+
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+<$list filter="[<lang>search[zh]]">
+
+---
+
+会在侧边栏的左侧边缘添加一个可拖动的边框，当鼠标移动到左侧边缘时会看到这个边框。拖动这个边框可以改变侧边栏的宽度，拖动到靠近窗口右侧边缘时就会自动收起侧边栏。
+
+</$list>
+
+<$list filter="[<lang>!search[zh]]">
+
+A draggable border is added to the left edge of the sidebar, which will be visible when the mouse is moved to the left edge. Dragging this border will change the width of the sidebar, and it will automatically close the sidebar when dragged near the right edge of the window.
+
+</$list>
+</$list>
+
+<center>
+{{SidebarResizerDemo.gif}}
+</center>

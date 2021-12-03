@@ -60,6 +60,8 @@
   margin-right: 4px;
   padding: 4px 18px 4px 20px;
   border-bottom: none;
+  color: <<colour foreground>> !important;
+  fill: <<colour foreground>> !important;
   transition: all {{$:/config/AnimationDuration}}ms;
 }
 

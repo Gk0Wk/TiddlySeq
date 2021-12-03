@@ -1,0 +1,33 @@
+created: 20211203140851215
+modified: 20211203151501207
+tags: ExcludeFromEmpty
+title: DragToInstall
+tmap.id: 1f8f69ab-59a2-4373-8577-c117d53db74a
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/ThemeTweaks/
+
+<center>
+<$list filter="[<currentTiddler>!match[DragToInstall]]">
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+<$draggable tiddler=<<currentTiddler>>>
+<div style="display:flex;color:white;background:#0A84FF;border-radius:3px;width:320px;justify-content:space-around;align-items:center;height:60px;padding:0 20px;margin:5px 0;">
+{{$:/core/images/plugin-generic-plugin}}
+<div style="display:flex;flex-direction:column;align-items:center;">
+<p style="font-size:12px;font-weight:400;margin:0;">
+<$list filter="[<lang>search[zh]]">
+将我拖动至你的Wiki以安装插件。
+</$list>
+<$list filter="[<lang>!search[zh]]">
+Drag me to your wiki to install the plugin.
+</$list>
+</p>
+<p style="font-size:13px;font-weight:800;margin:0;">
+<$text text={{{[<currentTiddler>get[name]]}}}/> ({{!!version}})
+</p>
+</div>
+</div>
+</$draggable>
+</$list>
+</$list>
+</center>

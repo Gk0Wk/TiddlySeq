@@ -77,10 +77,12 @@ body.tc-dirty span.tc-dirty-indicator, body.tc-dirty span.tc-dirty-indicator svg
   fill: <<colour foreground>>;
 }
 
+.tc-edit-fields input,
 .tc-tiddler-body input {
   border: none;
 }
 
+.tc-edit-fields input:focus,
 .tc-tiddler-body input:focus {
   outline: none;
 }
