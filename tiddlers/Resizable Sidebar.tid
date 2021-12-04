@@ -1,6 +1,6 @@
 created: 20211203045319421
 icon: ↔️
-modified: 20211204040609931
+modified: 20211204065336013
 page-cover: https://unsplash.dogedoge.com/photos/zF_pTLx_Dkg/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjM4NTQzODI4&force=true&w=1920
 tags: MyPlugins ExcludeFromEmpty
 title: Resizable Sidebar
@@ -41,6 +41,9 @@ A draggable border is added to the left edge of the sidebar, which will be visib
 : 修复拖动时可能会选中其他文本或元素的问题；
 : 增加对触控屏和触控笔的支持；
 
+; v0.0.3
+: 修复Firefox浏览器下，拖动依然会选中文字的问题；
+
 </$list>
 
 <$list filter="[<lang>!search[zh]]">
@@ -51,6 +54,9 @@ A draggable border is added to the left edge of the sidebar, which will be visib
 : The sidebar can now be retracted by double-clicking on the border.
 : Fix the problem that other text or elements may be selected when dragging.
 : Add support for touch screen and stylus.
+
+; v0.0.3
+: Fix the problem that dragging still selects text under Firefox browser.
 
 </$list>
 </$list>
