@@ -25,10 +25,10 @@
     },
     "homepage": "https://gk0wk.github.io/TiddlySeq",
     "devDependencies": {
-        "html-minifier-terser": "6.0.2",
-        "tiddlywiki": "^5.2.0",
-        "uglify-js": "^3.14.3",
-        "workbox-cli": "^6.3.0",
-        "cross-env": "^7.0.3"
+        "cross-env": "7.0.3",
+        "html-minifier-terser": "6.1.0",
+        "tiddlywiki": "5.2.0",
+        "uglify-js": "3.14.4",
+        "workbox-cli": "6.4.1"
     }
 }

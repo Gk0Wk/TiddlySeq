@@ -7,7 +7,7 @@
   "list": "readme LICENSE",
   "description": "Logseq-like TiddlyWiki theme plugin.",
   "author": "Gk0Wk",
-  "source": "https://github.com/Gk0Wk/TiddlySeq",
+  "source": "https://github.com/Gk0Wk/TiddlySeq/tree/master/plugins/Gk0Wk/TiddlySeq",
   "tiddlers": {
     "$:/plugins/Gk0Wk/TiddlySeq/StoryBottomMargin": {
       "text": "28px"
