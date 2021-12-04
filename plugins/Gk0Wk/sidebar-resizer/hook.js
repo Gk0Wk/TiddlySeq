@@ -11,11 +11,13 @@
             if (!sidebarResizerNode) return;
             canResize = false;
 
+            // Hide Sidebar
             function hideSideBar() {
                 $tw.wiki.setText('$:/state/sidebar', null, null, 'no');
                 canResize = false;
             }
 
+            // Drag to resize
             function drag(event) {
                 if (!canResize) return;
                 var widthPercent = 100 - (event.clientX / window.innerWidth) * 100;
@@ -29,8 +31,12 @@
                 event.preventDefault();
                 event.stopPropagation();
             }
-            body.addEventListener('dblclick', hideSideBar);
+
+            // Double click to hide sidebar
+            sidebarResizerNode.addEventListener('dblclick', hideSideBar);
+            // Detect whter PointerEvent is supported
             if (window.PointerEvent) {
+                // PointerEvent = Mouse + Touch
                 function dragBegin(event) {
                     canResize = true;
                     body.setPointerCapture(event.pointerId);
@@ -45,6 +51,7 @@
                 body.addEventListener('blur', dragEnd);
                 body.addEventListener('pointermove', drag, true);
             } else {
+                // If not
                 function dragBegin() {
                     canResize = true;
                 }
