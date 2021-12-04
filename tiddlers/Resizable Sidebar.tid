@@ -1,6 +1,6 @@
 created: 20211203045319421
 icon: ↔️
-modified: 20211203150401851
+modified: 20211204040609931
 page-cover: https://unsplash.dogedoge.com/photos/zF_pTLx_Dkg/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjM4NTQzODI4&force=true&w=1920
 tags: MyPlugins ExcludeFromEmpty
 title: Resizable Sidebar
@@ -16,8 +16,6 @@ type: text/vnd.tiddlywiki
 <$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
 <$list filter="[<lang>search[zh]]">
 
----
-
 会在侧边栏的左侧边缘添加一个可拖动的边框，当鼠标移动到左侧边缘时会看到这个边框。拖动这个边框可以改变侧边栏的宽度，拖动到靠近窗口右侧边缘时就会自动收起侧边栏。
 
 </$list>
@@ -32,3 +30,27 @@ A draggable border is added to the left edge of the sidebar, which will be visib
 <center>
 {{SidebarResizerDemo.gif}}
 </center>
+
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+<$list filter="[<lang>search[zh]]">
+
+!! 更新说明
+
+; v0.0.2
+: 现在双击边框可以收起侧边栏；
+: 修复拖动时可能会选中其他文本或元素的问题；
+: 增加对触控屏和触控笔的支持；
+
+</$list>
+
+<$list filter="[<lang>!search[zh]]">
+
+!! Update Description
+
+; v0.0.2
+: The sidebar can now be retracted by double-clicking on the border.
+: Fix the problem that other text or elements may be selected when dragging.
+: Add support for touch screen and stylus.
+
+</$list>
+</$list>
