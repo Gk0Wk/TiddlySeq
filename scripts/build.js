@@ -118,10 +118,7 @@ function buildOfflineHTML(distDir, htmlName, minify, excludeFilter) {
 
 /**
  * 构建插件源
- * @param {
-     string
- }
- pluginFilter 要发布插件的过滤器， 默认为 '[prefix[$:/plugins/]!prefix[$:/plugins/tiddlywiki/]!prefix[$:/languages/]!prefix[$:/themes/tiddlywiki/]!tag[$:/tags/PluginLibrary]]'
+ * @param {string} pluginFilter 要发布插件的过滤器，默认为 '[prefix[$:/plugins/]!prefix[$:/plugins/tiddlywiki/]!prefix[$:/languages/]!prefix[$:/themes/tiddlywiki/]!tag[$:/tags/PluginLibrary]]'
  * @param {string} distDir 目标路径，空或者不填则默认为'dist/library'
  * @param {boolean} minify 是否最小化HTML，默认为true
  */
