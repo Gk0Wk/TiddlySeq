@@ -18,6 +18,7 @@
 
 .gk0wk-notionpagebg-ci {
   height: calc({{$:/plugins/Gk0Wk/notionpage-covericon/style/cover-height/wide}} + {{$:/plugins/Gk0Wk/notionpage-covericon/style/icon-size}} / 2 + {{$:/plugins/Gk0Wk/notionpage-covericon/style/top-offset/wide}} + 10px);
+  pointer-events: none;
 }
 
 .gk0wk-notionpagebg-c {
@@ -68,6 +69,7 @@
   font-size: {{$:/plugins/Gk0Wk/notionpage-covericon/style/icon-size}};
   font-family: "Apple Color Emoji", "Segoe UI Emoji", NotoColorEmoji, "Noto Color Emoji", "Segoe UI Symbol", "Android Emoji", EmojiSymbols;
   padding: 4px !important;
+  pointer-events: auto;
 }
 
 .gk0wk-notionpagebg-icon2 {
@@ -107,6 +109,7 @@
   padding: 4px 6px !important;
   filter: contrast(90%);
   opacity: 0;
+  pointer-events: auto;
   transition: all {{$:/config/AnimationDuration}}ms;
 }
 
@@ -130,6 +133,7 @@
   background: <<colour background>>;
   padding: 10px 6px 20px 6px;
   width: 318px;
+  pointer-events: auto;
 }
 
 /* Icon Selector */
@@ -142,6 +146,7 @@
   background: <<colour background>>;
   max-height: min(60vh, 390px);
   max-width: 480px;
+  pointer-events: auto;
 }
 
 .gk0wk-notionbg-icon-selection-type {
