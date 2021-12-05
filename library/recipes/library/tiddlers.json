@@ -26,7 +26,7 @@
         "requires-reload": "no"
     },
     {
-        "version": "0.0.5",
+        "version": "0.0.6",
         "type": "application/json",
         "title": "$:/plugins/Gk0Wk/notionpage-covericon",
         "plugin-type": "plugin",
