@@ -14,6 +14,20 @@
         "requires-reload": "no"
     },
     {
+        "version": "11.3.1",
+        "type": "application/json",
+        "title": "$:/plugins/Gk0Wk/highlight-generator",
+        "plugin-type": "plugin",
+        "name": "Highlight.js Generator",
+        "description": "Generate custom highlight.js tiddler",
+        "author": "Gk0Wk",
+        "list": "panel",
+        "source": "https://github.com/Gk0Wk/TiddlySeq/tree/master/plugins/Gk0Wk/highlightjs-generator",
+        "tags": "ExcludeFromEmpty",
+        "dependents": "",
+        "requires-reload": "no"
+    },
+    {
         "version": "0.0.2",
         "type": "application/json",
         "title": "$:/plugins/Gk0Wk/notionpage-backlink",
