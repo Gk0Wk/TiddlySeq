@@ -1,0 +1,43 @@
+tags: ExcludeFromEmpty
+title: $:/plugins/Gk0Wk/highlight-generator/panel
+type: text/vnd.tiddlywiki
+
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+<$list filter="[<lang>search[zh]]">
+
+在这里你可以下载定制版的`$:/plugins/tiddlywiki/highlight/highlight.js`条目。
+
+选择下面你希望包含的语言高亮，然后点击【生成 highlight.js】按钮，会自动生成并下载 `.tid` 文件，再将该文件导入你的 wiki 并保存、刷新 wiki 即可。
+
+<center>
+<$button style="display:flex;color:white;font-weight:700;font-size:15px;background:#0A84FF;border-radius:3px;width:200px;justify-content:space-around;align-items:center;height:50px;padding:0 10px; cursor: pointer;" tag="div">
+<$action-sendmessage $message="tm-download-file" $param="$:/plugins/Gk0Wk/highlight-generator/template" filename="$__plugins_tiddlywiki_highlight_highlight.js.tid"/>
+生成 highlight.js {{$:/core/images/save-button}}
+</$button>
+</center>
+
+</$list>
+
+<$list filter="[<lang>!search[zh]]">
+
+Here you can download a customized version of the `$:/plugins/tiddlywiki/highlight/highlight.js` tiddler.
+
+Select the language highlight you wish to include below, then click the [Generate highlight.js] button, it will automatically generate and download the `.tid` file, then import the file into your wiki then save and refresh the wiki.
+
+<center>
+<$button style="display:flex;color:white;font-weight:700;font-size:15px;background:#0A84FF;border-radius:3px;width:250px;justify-content:space-around;align-items:center;height:50px;padding:0 10px; cursor: pointer;" tag="div">
+<$action-sendmessage $message="tm-download-file" $param="$:/plugins/Gk0Wk/highlight-generator/template" filename="$__plugins_tiddlywiki_highlight_highlight.js.tid"/>
+Generate highlight.js {{$:/core/images/save-button}}
+</$button>
+</center>
+
+</$list>
+</$list>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fill, 150px); grid-row-gap: 10px; row-gap: 10px;">
+<$list filter="[all[shadows]prefix[$:/plugins/Gk0Wk/highlight-generator/languages/]]" variable="languageTiddler">
+<$list filter="[<languageTiddler>removeprefix[$:/plugins/Gk0Wk/highlight-generator/languages/]removesuffix[.min.js]]" variable="language">
+<$checkbox tiddler=<<languageTiddler>> field="selected" default="no" checked="yes" unchecked="no"><$link to=<<languageTiddler>>>&emsp;<$text text=<<language>>/></$link></$checkbox>
+</$list>
+</$list>
+</div>

@@ -1,0 +1,61 @@
+{
+    "tiddlers": [{
+            "file": "generator.tid",
+            "isTiddlerFile": true
+        },
+        {
+            "file": "highlightjs_template.tid",
+            "isTiddlerFile": true
+        },
+        {
+            "file": "highlight.min.js",
+            "isTiddlerFile": false,
+            "fields": {
+                "type": "application/javascript",
+                "tags": "ExcludeFromEmpty",
+                "title": "$:/plugins/Gk0Wk/highlight-generator/main.js"
+            }
+        }
+    ],
+    "directories": [{
+            "path": "languages",
+            "filesRegExp": "\\.min\\.js$",
+            "isTiddlerFile": false,
+            "fields": {
+                "type": "application/javascript",
+                "tags": "$:/tags/highlight.js/languages ExcludeFromEmpty",
+                "title": {
+                    "source": "filename",
+                    "prefix": "$:/plugins/Gk0Wk/highlight-generator/languages/"
+                },
+                "selected": "no"
+            }
+        },
+        {
+            "path": "styles",
+            "filesRegExp": "\\.min\\.css$",
+            "isTiddlerFile": false,
+            "fields": {
+                "type": "text/css",
+                "tags": "$:/tags/highlight.js/styles ExcludeFromEmpty",
+                "title": {
+                    "source": "filename",
+                    "prefix": "$:/plugins/Gk0Wk/highlight-generator/styles/"
+                }
+            }
+        },
+        {
+            "path": "styles/base16",
+            "filesRegExp": "\\.min\\.css$",
+            "isTiddlerFile": false,
+            "fields": {
+                "type": "text/css",
+                "tags": "$:/tags/highlight.js/styles ExcludeFromEmpty",
+                "title": {
+                    "source": "filename",
+                    "prefix": "$:/plugins/Gk0Wk/highlight-generator/styles/"
+                }
+            }
+        }
+    ]
+}

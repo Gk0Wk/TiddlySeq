@@ -29,7 +29,8 @@
     "Gk0Wk/sidebar-resizer",
     "Gk0Wk/notionpage-covericon",
     "Gk0Wk/notionpage-backlink",
-    "Gk0Wk/TiddlySeq"
+    "Gk0Wk/TiddlySeq",
+    "Gk0Wk/highlightjs-generator"
   ],
   "themes": [
     "tiddlywiki/vanilla"

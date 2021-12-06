@@ -1,0 +1,8 @@
+tags: ExcludeFromEmpty
+title: $:/plugins/Gk0Wk/highlight-generator/template
+type: text/vnd.tiddlywiki
+
+<$fields tiddler="$:/plugins/tiddlywiki/highlight/highlight.js" exclude="text bag revision created creator modified modifier tmap.id" template="$name$: $value$
+"></$fields>`
+`<$text text={{{ [[$:/plugins/Gk0Wk/highlight-generator/main.js]get[text]] }}}/><$list filter="[all[shadows]prefix[$:/plugins/Gk0Wk/highlight-generator/languages/]]" variable="languageTiddler"><$list filter="[<languageTiddler>get[selected]match[yes]]">`
+`<$text text={{{ [<languageTiddler>get[text]] }}}/></$list></$list>

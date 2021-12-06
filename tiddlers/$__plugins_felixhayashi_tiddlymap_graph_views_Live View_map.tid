@@ -1,5 +1,5 @@
 created: 20211015005855876
-modified: 20211205063148022
+modified: 20211206134147220
 title: $:/plugins/felixhayashi/tiddlymap/graph/views/Live View/map
 type: text/vnd.tiddlywiki
 
@@ -667,5 +667,45 @@ type: text/vnd.tiddlywiki
  "371cd119-881a-45d4-bd68-16d190ee7aff": {
   "x": -14,
   "y": -13
+ },
+ "78b08b41-b9fb-47f8-a399-eefc878d5fb2": {
+  "x": -12,
+  "y": -14
+ },
+ "0c4033f4-f507-4f4a-9980-b36e979ec5e6": {
+  "x": -19,
+  "y": -10
+ },
+ "1b7996ce-5cb5-4a04-840d-9fc889859f6d": {
+  "x": -44,
+  "y": -33
+ },
+ "332aab61-6ff8-438a-8eeb-62dbe095505a": {
+  "x": -35,
+  "y": -44
+ },
+ "17dae146-0d82-4360-9ebb-17d8676f0f3b": {
+  "x": -24,
+  "y": -39
+ },
+ "9913581e-e308-4275-be36-bcf5ead03a9c": {
+  "x": -56,
+  "y": -12
+ },
+ "0299d473-6407-4fe7-9c80-45c4eb7bf3a5": {
+  "x": -18,
+  "y": -15
+ },
+ "2b98b43d-22f0-4601-bd26-dfc01020a11d": {
+  "x": -11,
+  "y": 19
+ },
+ "6c96ad1b-b897-420f-8da8-4762bb8da3ef": {
+  "x": -15,
+  "y": -43
+ },
+ "a1695126-4fea-4b76-9706-e97df791d603": {
+  "x": -20,
+  "y": 8
  }
 }
