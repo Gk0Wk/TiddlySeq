@@ -55,21 +55,28 @@ body.tc-dirty span.tc-dirty-indicator, body.tc-dirty span.tc-dirty-indicator svg
   font-size: 0.5em !important;
 }
 
+.tc-tab-content select,
 .tc-tiddler-body select {
-   border: none !important;
+  border: none;
   background-color: transparent !important;
   width: auto !important;
   height: auto !important;
   padding: 0 !important;
+  color: inherit !important;
   font-size: inherit !important;
+  border-bottom: 1px solid <<colour very-muted-foreground>>;
+  transition: all {{$:/config/AnimationDuration}}ms;
 }
 
+.tc-tab-content select:hover,
 .tc-tiddler-body select:hover {
   background-color: transparent !important;
-  color: inherit !important;
   padding: 0 !important;
+  border-bottom: 1px solid <<colour muted-foreground>>;
 }
 
+.tc-tab-content select option,
+.tc-tab-content select optgroup,
 .tc-tiddler-body select option,
 .tc-tiddler-body select optgroup {
   background: <<colour background>>;
@@ -77,20 +84,33 @@ body.tc-dirty span.tc-dirty-indicator, body.tc-dirty span.tc-dirty-indicator svg
   fill: <<colour foreground>>;
 }
 
+.tc-tab-content input,
 .tc-edit-fields input,
 .tc-tiddler-body input {
   border: none;
+  background-color: transparent;
+  border-bottom: 1px solid <<colour very-muted-foreground>>;
+  transition: all {{$:/config/AnimationDuration}}ms;
 }
 
+.tc-tab-content input:hover,
+.tc-edit-fields input:hover,
+.tc-tiddler-body input:hover {
+  border-bottom: 1px solid <<colour muted-foreground>>;
+}
+
+.tc-tab-content input:focus,
 .tc-edit-fields input:focus,
 .tc-tiddler-body input:focus {
   outline: none;
+  border-bottom: 1px solid <<colour foreground>>;
 }
 
 .tc-tab-buttons {
   border-bottom: <<colour table-border>> 1px solid;
 }
 
+.tc-tab-content a.tc-tiddlylink:not(.tc-plugin-info),
 .tc-tiddler-body a.tc-tiddlylink:not(.tc-plugin-info) {
   opacity: 0.9;
   transition: all {{$:/config/AnimationDuration}}ms;
@@ -98,6 +118,8 @@ body.tc-dirty span.tc-dirty-indicator, body.tc-dirty span.tc-dirty-indicator svg
   filter: contrast(70%);
 }
 
+.tc-tab-content a.tc-tiddlylink:hover,
+.tc-tab-content a.tc-tiddlylink:active,
 .tc-tiddler-body a.tc-tiddlylink:hover,
 .tc-tiddler-body a.tc-tiddlylink:active {
   opacity: 1;
@@ -105,6 +127,7 @@ body.tc-dirty span.tc-dirty-indicator, body.tc-dirty span.tc-dirty-indicator svg
   text-decoration: none;
 }
 
+.tc-tab-content a.tc-tiddlylink-external,
 .tc-tiddler-body a.tc-tiddlylink-external {
   opacity: 0.9;
   transition: all {{$:/config/AnimationDuration}}ms;
@@ -112,6 +135,8 @@ body.tc-dirty span.tc-dirty-indicator, body.tc-dirty span.tc-dirty-indicator svg
   filter: contrast(50%);
 }
 
+.tc-tab-content a.tc-tiddlylink-external:hover,
+.tc-tab-content a.tc-tiddlylink-external:active,
 .tc-tiddler-body a.tc-tiddlylink-external:hover,
 .tc-tiddler-body a.tc-tiddlylink-external:active {
   opacity: 1;
@@ -119,11 +144,13 @@ body.tc-dirty span.tc-dirty-indicator, body.tc-dirty span.tc-dirty-indicator svg
   text-decoration: none;
 }
 
+.tc-tab-content details,
 .tc-tiddler-body details {
   background: <<colour dropdown-tab-background>>;
   opacity: 0.95;
 }
 
+.tc-tab-content hr,
 .tc-tiddler-body hr {
   height: 3px;
   color: inherit;
@@ -132,6 +159,7 @@ body.tc-dirty span.tc-dirty-indicator, body.tc-dirty span.tc-dirty-indicator svg
   opacity: 0.4;
 }
 
+.tc-tab-content :not(pre)>code,
 .tc-tiddler-body :not(pre)>code {
   font-weight: 700;
 }

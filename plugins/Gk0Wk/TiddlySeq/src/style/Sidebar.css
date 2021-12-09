@@ -65,3 +65,30 @@
     padding: 6px 0;
   }
 }
+
+.tc-tab-buttons.tc-sidebar-tabs-main > button {
+  background: transparent;
+  border: none;
+  font-size: 1.3em;
+  opacity: 0.5;
+  color: <<colour muted-foreground>>;
+  fill: <<colour muted-foreground>>;
+  transition: all {{$:/config/AnimationDuration}}ms;
+}
+
+.tc-tab-buttons.tc-sidebar-tabs-main > button:hover,
+.tc-tab-buttons.tc-sidebar-tabs-main > button.tc-tab-selected {
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: <<colour foreground>>;
+  fill: <<colour foreground>>;
+}
+
+.tc-tab-buttons.tc-sidebar-tabs-main > button:hover {
+  opacity: 1;
+}
+
+.tc-tab-buttons.tc-sidebar-tabs-main > button.tc-tab-selected {
+  opacity: 0.8;
+}

@@ -251,6 +251,13 @@
   width: 100%;
 }
 
+.gk0wk-notionbg-selection-box-emojifilter > textarea:focus,
+.gk0wk-notionbg-selection-box-tiddlerurlinput > textarea:focus,
+.gk0wk-notionpageb-changecover-box > div > input:focus,
+.gk0wk-notionbg-selection-box-tiddlerurlinput > input:focus {
+  outline: none;
+}
+
 .gk0wk-notionbg-selection-box-header {
   position: sticky;
   top: 0;

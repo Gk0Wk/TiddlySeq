@@ -1,6 +1,6 @@
 {
     "name": "TiddlySeq",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Logseq-like TiddlyWiki Template",
     "main": "scripts/build.js",
 
@@ -27,8 +27,8 @@
     "devDependencies": {
         "cross-env": "7.0.3",
         "html-minifier-terser": "6.1.0",
-        "tiddlywiki": "5.2.0",
+        "tiddlywiki": "5.2.1",
         "uglify-js": "3.14.4",
-        "workbox-cli": "6.4.1"
+        "workbox-cli": "6.4.2"
     }
 }

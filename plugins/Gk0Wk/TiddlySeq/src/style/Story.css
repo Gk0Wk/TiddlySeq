@@ -11,6 +11,10 @@
   margin-bottom: 0;
 }
 
+div.tc-page-container {
+  margin-top: 0 !important;
+}
+
 <$list filter="[[$:/plugins/tiddlywiki/menubar]is[tiddler][$:/config/Plugins/Disabled/$:/plugins/tiddlywiki/menubar]get[text]else[no]!match[yes]]">
 .tc-story-river>.tc-tiddler-frame {
   margin-top: {{$:/plugins/Gk0Wk/TiddlySeq/StorySpacing}};

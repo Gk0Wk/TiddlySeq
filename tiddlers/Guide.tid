@@ -1,6 +1,6 @@
 created: 20211111190000250
 icon: 🎉
-modified: 20211206135410871
+modified: 20211209041838008
 page-cover: https://unsplash.com/photos/MwRqMHKvq2E/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjM4MzY3NTE0&force=true&w=1920
 tags: ExcludeFromEmpty
 title: Guide
@@ -10,8 +10,6 @@ type: text/vnd.tiddlywiki
 
 <$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
 <$list filter="[<lang>search[zh]]">
-
-<$button set="$:/language" setTo="$:/languages/en-GB">🇬🇧 Switch to English</$button>
 
 你可以在这里下载 ~TiddlySeq 模板:
 
@@ -26,8 +24,6 @@ type: text/vnd.tiddlywiki
 </$list>
 
 <$list filter="[<lang>!search[zh]]">
-
-<$button set="$:/language" setTo="$:/languages/zh-Hans">🇨🇳 切换至中文</$button>
 
 You can download the ~TiddlySeq template here:
 

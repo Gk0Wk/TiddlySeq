@@ -1,21 +1,14 @@
 .tc-tiddler-body button,
-.tc-editor-toolbar button {
-  background: transparent;
-  border: none;
-  border-radius: 3px;
-  color: <<colour foreground>>;
-  fill: <<colour foreground>>;
-  transition: all {{$:/config/AnimationDuration}}ms;
-}
-
-.tc-sidebar-tabs-main button,
-.tc-edit-field-add button,
+.tc-tab-content button,
 .tc-edit-tags button,
-.tc-tiddler-body button {
+.tc-editor-toolbar button,
+.tc-edit-field-add button {
   background: transparent;
   border: none;
   border-radius: 3px;
   padding: 4px 8px;
+  color: <<colour foreground>>;
+  fill: <<colour foreground>>;
   transition: all {{$:/config/AnimationDuration}}ms;
 }
 
@@ -29,12 +22,12 @@
 
 .tc-tiddler-body button:hover,
 .tc-editor-toolbar button:hover,
-.tc-sidebar-tabs-main button:hover,
+.tc-tab-content button:hover,
 .tc-edit-field-add button:hover,
 .tc-edit-tags button:hover,
 .tc-tiddler-body button:hover,
 .tc-tiddler-frame .tc-tab-buttons:not(.tc-sidebar-tabs-main) button:hover {
-  background: <<colour background>>;
+  background: <<colour page-background>>;
   color: <<colour foreground>>;
   fill: <<colour foreground>>;
   filter: contrast(85%);
@@ -44,40 +37,10 @@
 .tc-edit-tags button.tc-tab-selected,
 .tc-tiddler-body button.tc-tab-selected,
 .tc-tiddler-frame .tc-tab-buttons:not(.tc-sidebar-tabs-main) button.tc-tab-selected {
-  background: <<colour background>>;
+  background: <<colour page-background>>;
   color: <<colour foreground>>;
   fill: <<colour foreground>>;
   filter: contrast(70%);
-}
-
-.tc-sidebar-tabs-main button {
-  color: <<colour foreground>>;
-  fill: <<colour foreground>>;
-  filter: contrast(80%);
-}
-
-.tc-sidebar-tabs-main button:hover,
-.tc-sidebar-tabs-main button.tc-tab-selected {
-  background: <<colour background>>;
-  color: <<colour foreground>>;
-  fill: <<colour foreground>>;
-  filter: contrast(60%);
-}
-
-.tc-tab-buttons.tc-sidebar-tabs-main > button {
-  background: transparent;
-  border: none;
-  font-size: 1.3em;
-  opacity: 0.5;
-  transition: all {{$:/config/AnimationDuration}}ms;
-}
-
-.tc-tab-buttons.tc-sidebar-tabs-main > button:hover,
-.tc-tab-buttons.tc-sidebar-tabs-main > button.tc-tab-selected {
-  opacity: 1;
-  font-weight: 600;
-  background: transparent;
-  border: none;
 }
 
 .tc-vertical > button {
