@@ -6,24 +6,23 @@
   background: <<colour page-background>>;
   position: sticky;
   top: 0px;
-  z-index: 1000;
   padding: 14px 10px;
   margin: 0;
 }
 
-<$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarTitle" text="yes">.tc-sidebar-scrollable .tc-site-title {
+<$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarTitle" text="yes">.tc-sidebar-lists .tc-site-title {
   display: none;
 }</$reveal>
 
-<$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSubtitle" text="yes">.tc-sidebar-scrollable .tc-site-subtitle {
+<$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSubtitle" text="yes">.tc-sidebar-lists .tc-site-subtitle {
   display: none;
 }</$reveal>
 
-<$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarPageControl" text="yes">.tc-sidebar-scrollable .tc-page-controls {
+<$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarPageControl" text="yes">.tc-sidebar-lists .tc-page-controls {
   display: none;
 }</$reveal>
 
-<$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSearch" text="yes">.tc-sidebar-scrollable .tc-sidebar-search {
+<$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSearch" text="yes">.tc-sidebar-lists .tc-sidebar-search {
   display: none;
 }</$reveal>
 
@@ -58,10 +57,6 @@
     height: 100vh;
   }
   .tc-sidebar-scrollable .tc-sidebar-header > .tc-reveal > .tc-reveal > .tc-sidebar-tabs > p > div > .tc-sidebar-tabs-main:first-of-type {
-    background: <<colour page-background>>;
-    position: sticky;
-    top: 0px;
-    z-index: 1000;
     padding: 6px 0;
   }
 }
