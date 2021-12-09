@@ -10,19 +10,19 @@
   margin: 0;
 }
 
-<$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarTitle" text="yes">.tc-sidebar-lists .tc-site-title {
+<$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarTitle" text="yes">.tc-sidebar-scrollable .tc-sidebar-header .tc-site-title {
   display: none;
 }</$reveal>
 
-<$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSubtitle" text="yes">.tc-sidebar-lists .tc-site-subtitle {
+<$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSubtitle" text="yes">.tc-sidebar-scrollable .tc-sidebar-header .tc-site-subtitle {
   display: none;
 }</$reveal>
 
-<$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarPageControl" text="yes">.tc-sidebar-lists .tc-page-controls {
+<$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarPageControl" text="yes">.tc-sidebar-scrollable .tc-sidebar-header .tc-page-controls {
   display: none;
 }</$reveal>
 
-<$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSearch" text="yes">.tc-sidebar-lists .tc-sidebar-search {
+<$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSearch" text="yes">.tc-sidebar-scrollable .tc-sidebar-header .tc-sidebar-search {
   display: none;
 }</$reveal>
 
