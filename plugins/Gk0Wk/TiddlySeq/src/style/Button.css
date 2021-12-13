@@ -1,5 +1,5 @@
 .tc-tiddler-body button,
-.tc-tab-content button,
+.tc-tab-content button:not(.tc-install-plugin),
 .tc-edit-tags button,
 .tc-editor-toolbar button,
 .tc-edit-field-add button {
@@ -22,7 +22,7 @@
 
 .tc-tiddler-body button:hover,
 .tc-editor-toolbar button:hover,
-.tc-tab-content button:hover,
+.tc-tab-content button:not(.tc-install-plugin):hover,
 .tc-edit-field-add button:hover,
 .tc-edit-tags button:hover,
 .tc-tiddler-body button:hover,

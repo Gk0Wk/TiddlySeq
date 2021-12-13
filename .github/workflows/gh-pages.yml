@@ -30,6 +30,9 @@ jobs:
       - name: Make offline cache
         run: npx workbox injectManifest workbox-config.js
 
+      - name: Make Library
+        run: npm run buildlibrary
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
