@@ -1,0 +1,29 @@
+title: $:/plugins/Gk0Wk/sidebar-resizer/readme
+
+\define lingo-base() $:/language/ThemeTweaks/
+
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+<$list filter="[<lang>search[zh]]">
+
+会在侧边栏的左侧边缘添加一个可拖动的边框，当鼠标移动到左侧边缘时会看到这个边框。拖动这个边框可以改变侧边栏的宽度，拖动到靠近窗口右侧边缘时就会自动收起侧边栏。
+
+原理是更改[[$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth]]的值。
+
+注意：首先请将 <$link to="$:/themes/tiddlywiki/vanilla/options/sidebarlayout"><<lingo Options/SidebarLayout>></$link> 调整为`fluid-fixed`，本插件才可生效。
+
+<$button set="$:/themes/tiddlywiki/vanilla/options/sidebarlayout" setTo="fluid-fixed">点击设置<<lingo Options/SidebarLayout>></$button>
+
+</$list>
+
+<$list filter="[<lang>!search[zh]]">
+
+A draggable border is added to the left edge of the sidebar, which will be visible when the mouse is moved to the left edge. Dragging this border will change the width of the sidebar, and it will automatically close the sidebar when dragged near the right edge of the window.
+
+The principle is to change the value of [[$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth]].
+
+Note: First, please adjust <$link to="$:/themes/tiddlywiki/vanilla/options/sidebarlayout"><<lingo Options/SidebarLayout>></$link> to `fluid-fixed` for this plugin to take effect.
+
+<$button set="$:/themes/tiddlywiki/vanilla/options/sidebarlayout" setTo="fluid-fixed">Click to adjust<<lingo Options/SidebarLayout>></$button>
+
+</$list>
+</$list>

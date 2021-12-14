@@ -1,0 +1,43 @@
+.gk0wk-tiddlertoc-h1 {
+	padding-left: 0;
+}
+.gk0wk-tiddlertoc-h2 {
+	padding-left: 1em;
+}
+.gk0wk-tiddlertoc-h3 {
+	padding-left: 2em;
+}
+.gk0wk-tiddlertoc-h4 {
+	padding-left: 3em;
+}
+.gk0wk-tiddlertoc-h5 {
+	padding-left: 4em;
+}
+.gk0wk-tiddlertoc-h6 {
+	padding-left: 5em;
+}
+
+.gk0wk-tiddlertoc-empty {
+	color: <<colour very-muted-foreground>>;
+	user-select: none;
+}
+
+.gk0wk-tiddlertoc-h1,
+.gk0wk-tiddlertoc-h2,
+.gk0wk-tiddlertoc-h3,
+.gk0wk-tiddlertoc-h4,
+.gk0wk-tiddlertoc-h5,
+.gk0wk-tiddlertoc-h6 {
+	user-select: none;
+	cursor: pointer;
+	<<transition """all {{$:/config/AnimationDuration}}ms""">>
+}
+
+.gk0wk-tiddlertoc-h1:hover,
+.gk0wk-tiddlertoc-h2:hover,
+.gk0wk-tiddlertoc-h3:hover,
+.gk0wk-tiddlertoc-h4:hover,
+.gk0wk-tiddlertoc-h5:hover,
+.gk0wk-tiddlertoc-h6:hover {
+	color: <<colour foreground>>;
+}
