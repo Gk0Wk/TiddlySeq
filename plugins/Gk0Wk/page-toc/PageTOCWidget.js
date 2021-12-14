@@ -99,6 +99,7 @@
         tocNode.className = this.tocNodeClass;
         try {
             var toc = getTOCInfo(this.tocTitle);
+            console.log(toc);
             var headerNode;
             if (toc === undefined || toc.headers.length === 0) {
                 headerNode = document.createElement(this.tocHeaderNodeTag);
@@ -122,8 +123,8 @@
                                 var _headerNode = tiddlerFrameNode.querySelectorAll('.tc-tiddler-body > ' + headerInfo.tag)[headerInfo.count];
                                 if (_headerNode === undefined) return;
                                 _headerNode.scrollIntoView({
-                                  behavior: 'smooth',
-                                  block: 'center',
+                                    behavior: 'smooth',
+                                    block: 'center',
                                 });
                             } catch (e) {
                                 console.error(e);
