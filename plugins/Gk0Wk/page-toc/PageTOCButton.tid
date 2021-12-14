@@ -1,4 +1,5 @@
 title: $:/plugins/Gk0Wk/page-toc/PageTOCButton
+list-after: $:/core/ui/Buttons/info
 tags: $:/tags/ViewToolbar
 caption: {{$:/core/images/list-bullet}} {{$:/plugins/Gk0Wk/page-toc/PageTOCButton!!hint}}
 description: Show TOC of this tiddler

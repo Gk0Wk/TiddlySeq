@@ -34,11 +34,11 @@ title: $:/plugins/Gk0Wk/page-toc/readme
 
 <$list filter="[<lang>!search[zh]]">
 
-Generate navigable table of contents for tiddlers using the H1~H6 headings of the tiddlers. That's right, it's a headline table of contents generated for a single tiddler. And the table of contents is navigable by clicking on it, meaning it will scroll to where the title is!
+Generate a navigable table of contents for tiddlers using the H1~H6 headings of the tiddlers. That's right, it's a headline table of contents generated for a single tiddler. And the table of contents is navigable by clicking on it, meaning it will scroll to where the title is!
 
 Although TiddlyWiki's organizational logic does not recommend writing excessively long tiddlers, there will always be times when you read long tiddlers. I'm sure all users who have had similar experiences have wondered if it would be nice to have a table of contents for individual long tiddlers, after all, it's a pain to get lost in long articles. I am also one of them.
 
-This plugin provides a widget `<$page-toc>` that can generate a table of contents for an tiddler with the following parameters.
+This plugin provides a widget `<$page-toc>` that can generate a table of contents for a tiddler with the following parameters.
 
 |!Attribute |!Description |
 |tiddler |Title of the tiddler to generate the TOC, default is the current tiddler (`currentTiddler`) |
