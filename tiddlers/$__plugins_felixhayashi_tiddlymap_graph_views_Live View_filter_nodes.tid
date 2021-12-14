@@ -1,5 +1,5 @@
 created: 20211015005124670
-filter: [field:title{$:/temp/tmap/currentTiddler}!has[draft.of]!is[system]] [field:tmap.id[d418f037-861a-40c6-97a4-8cb73319a270]] [field:tmap.id[a9b84175-3dcc-4aa5-b3b1-1f0cfa77d120]] [field:tmap.id[687ae6c6-d406-41f7-87f0-59089560ec85]] [field:tmap.id[ab15c8df-6a3e-4fec-a6b2-d08313255b10]]
+filter: [field:title{$:/temp/tmap/currentTiddler}!has[draft.of]!is[system]]
 modified: 20211203152312144
 title: $:/plugins/felixhayashi/tiddlymap/graph/views/Live View/filter/nodes
 type: text/vnd.tiddlywiki

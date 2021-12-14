@@ -1,5 +1,5 @@
 title: $:/plugins/Gk0Wk/page-toc/PageTOCButton
-tags: $:/tags/PageControls
+tags: $:/tags/ViewToolbar
 caption: {{$:/core/images/list-bullet}} {{$:/plugins/Gk0Wk/page-toc/PageTOCButton!!hint}}
 description: Show TOC of this tiddler
 hint: Page TOC
@@ -16,8 +16,7 @@ hint: Page TOC
 </span>
 </$list>
 </$button>
-</$set>
-
-<$reveal type="popup" state=<<stateTiddler2>> position="belowleft" tag="div" class="tc-popup-keep">
-<$page-toc tiddler=<<currentTiddler>> emptyMessage="empty TOC"/>
+<$reveal type="popup" state=<<stateTiddler>> position="belowleft" tag="div" class="tc-popup-keep">
+<$page-toc tiddler=<<currentTiddler>> emptyMessage="Empty TOC" class="gk0wk-tiddlertoc-viewbuttonpopup" headerClassPrefix="gk0wk-tiddlertoc-viewbuttonpopup-" />
 </$reveal>
+</$set>

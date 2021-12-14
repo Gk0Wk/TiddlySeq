@@ -1,13 +1,13 @@
 created: 20211203144847980
+creator: Sttot
 icon: 🔗
-modified: 20211205063211474
+modified: 20211214153826627
+modifier: Sttot
 page-cover: https://unsplash.com/photos/r3pIy-3Xgmg/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTR8fGxpbmt8fDB8fHx8MTYzODU0Mzk5Ng&force=true&w=640
 tags: MyPlugins ExcludeFromEmpty
 title: Notion-like backlinks box
 tmap.id: d418f037-861a-40c6-97a4-8cb73319a270
 type: text/vnd.tiddlywiki
-
-\define lingo-base() $:/language/ThemeTweaks/
 
 {{$:/plugins/Gk0Wk/notionpage-backlink||DragToInstall}}
 
@@ -18,11 +18,15 @@ type: text/vnd.tiddlywiki
 
 在Tiddler的副标题下添加类似Notion的反向链接按钮。样例可见本tiddler的标题下方。
 
+如有任何使用问题，欢迎向我提[[Issue|https://github.com/Gk0Wk/TiddlySeq/issues]]！
+
 </$list>
 
 <$list filter="[<lang>!search[zh]]">
 
 Add notion-like backlink button under tiddler's subtitle. A sample can be found below the title of this tiddler.
+
+Feel free to make me an [[Issue|https://github.com/Gk0Wk/TiddlySeq/issues]] if you have any usage problems!
 
 </$list>
 </$list>

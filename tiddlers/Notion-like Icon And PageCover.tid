@@ -1,6 +1,8 @@
 created: 20211203145723538
+creator: Sttot
 icon: ✨
-modified: 20211205063223901
+modified: 20211214151648169
+modifier: Sttot
 page-cover: https://unsplash.com/photos/T1OBtJN9Ztk/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjM4NTQzNTgz&force=true&w=1920
 tags: MyPlugins ExcludeFromEmpty
 title: Notion-like Icon And PageCover
@@ -23,6 +25,8 @@ type: text/vnd.tiddlywiki
 * `icon` 存储图标，可以是emoji、WikiText或者tiddler的标题。
 * `page-cover` 存储封面的url或者tiddler的标题。
 
+如有任何使用问题，欢迎向我提[[Issue|https://github.com/Gk0Wk/TiddlySeq/issues]]！
+
 </$list>
 
 <$list filter="[<lang>!search[zh]]">
@@ -33,6 +37,8 @@ Use the following fields to store the page's icon and cover information.
 
 * `icon` stores the icon, which can be an emoji, WikiText or tiddler title.
 * `page-cover` stores the url of the cover or the title of the tiddler.
+
+Feel free to make me an [[Issue|https://github.com/Gk0Wk/TiddlySeq/issues]] if you have any usage problems!
 
 </$list>
 </$list>

@@ -12,9 +12,9 @@
   padding-left: 6px;
   padding-right: 8px;
   background: transparent;
-	border: none;
-	color: <<colour foreground>>;
-	fill: <<colour foreground>>;
+  border: none;
+  color: <<colour foreground>>;
+  fill: <<colour foreground>>;
   transition: all {{$:/config/AnimationDuration}}ms;
 }
 

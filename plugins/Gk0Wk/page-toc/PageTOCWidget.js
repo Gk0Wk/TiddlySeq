@@ -21,7 +21,9 @@
             'h5': 0,
             'h6': 0,
         };
-        $tw.utils.each($tw.wiki.parseTiddler(tiddler).tree, function(node) {
+        var root = $tw.wiki.parseTiddler(tiddler).tree;
+        while (['set', 'importvariables'].indexOf(root[0]) > -1) root = root[0].children;
+        $tw.utils.each(root, function(node) {
             if (node.type !== "element") return;
             if (!/^h[1-6]$/.test(node.tag)) return;
             var children = node.children;
@@ -36,6 +38,13 @@
                             break;
                         case 'link':
                             text.push(child.children.length > 0 ? child.children[0].text : child.to.value);
+                            break;
+                        case 'element':
+                            switch (child.tag) {
+                                case 'code':
+                                    text.push(child.children.length > 0 ? child.children[0].text : '');
+                                    break;
+                            }
                             break;
                     }
                 } catch (e) {
@@ -99,7 +108,6 @@
         tocNode.className = this.tocNodeClass;
         try {
             var toc = getTOCInfo(this.tocTitle);
-            console.log(toc);
             var headerNode;
             if (toc === undefined || toc.headers.length === 0) {
                 headerNode = document.createElement(this.tocHeaderNodeTag);

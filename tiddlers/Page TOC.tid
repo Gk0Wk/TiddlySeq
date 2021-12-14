@@ -1,0 +1,16 @@
+created: 20211214153552380
+creator: Sttot
+icon: 🧾
+modified: 20211214155330525
+modifier: Sttot
+page-cover: https://unsplash.com/photos/xG8IQMqMITM/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MXx8dGFibGUlMjBvZiUyMGNvbnRlbnRzfHwwfHx8fDE2Mzk0OTcxNzk&force=true&w=1920
+tags: MyPlugins ExcludeFromEmpty
+title: Page TOC
+tmap.id: 78c21ba0-5dc5-46cd-bfc7-392558e178c7
+type: text/vnd.tiddlywiki
+
+{{$:/plugins/Gk0Wk/page-toc||DragToInstall}}
+
+---
+
+{{$:/plugins/Gk0Wk/page-toc/readme}}

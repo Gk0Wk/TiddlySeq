@@ -1,15 +1,13 @@
 created: 20211203045319421
 creator: Sttot
 icon: ↔️
-modified: 20211214133328688
+modified: 20211214151353259
 modifier: Sttot
 page-cover: https://unsplash.com/photos/zF_pTLx_Dkg/download?ixid=MnwxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNjM4NTQzODI4&force=true&w=1920
 tags: MyPlugins ExcludeFromEmpty
 title: Resizable Sidebar
 tmap.id: 687ae6c6-d406-41f7-87f0-59089560ec85
 type: text/vnd.tiddlywiki
-
-\define lingo-base() $:/language/ThemeTweaks/
 
 {{$:/plugins/Gk0Wk/sidebar-resizer||DragToInstall}}
 
@@ -35,6 +33,8 @@ A draggable border is added to the left edge of the sidebar, which will be visib
 
 <$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
 <$list filter="[<lang>search[zh]]">
+
+如有任何使用问题，欢迎向我提[[Issue|https://github.com/Gk0Wk/TiddlySeq/issues]]！
 
 !! 更新说明
 

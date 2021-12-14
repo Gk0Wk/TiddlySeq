@@ -3,6 +3,6 @@ title: $:/plugins/Gk0Wk/page-toc/CurrentTiddlerTOC
 <$list filter="[[$:/temp/focussedTiddler]is[tiddler]get[text]]" variable="tiddler">
 
 TOC of <$text text=<<tiddler>>/>:
-<$page-toc tiddler=<<tiddler>> emptyMessage="empty TOC"/>
+<$page-toc tiddler=<<tiddler>> emptyMessage="Empty TOC"/>
 
 </$list>
