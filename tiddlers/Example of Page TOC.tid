@@ -1,27 +1,29 @@
 created: 20211214164948902
 creator: Sttot
-modified: 20211214165817322
+modified: 20211215040012655
 modifier: Sttot
 tags: ExcludeFromEmpty
 title: Example of Page TOC
 tmap.id: 1976e9e0-aff8-42e5-8a17-88c11b997ed1
 type: text/vnd.tiddlywiki
 
+\define test() a macro title
+
 External images in TiddlyWiki are tiddlers that point to the URI of an image, rather than embedding the full image data. They can perform better than embedded images, particularly with large numbers or sizes of images. However, using them breaks the single file pattern of TiddlyWiki.
 
 External images are used in the browser. They can be created by the Node.js configuration when it builds a TiddlyWiki, or they can be created manually within the browser.
 
-! What is an External Image
+! What is an ''External Image''
 
 An external image is an ordinary image tiddler that has a ''_canonical_uri'' field containing the URI of the image. The URI can be absolute or relative to the HTML document. If the canonical URI is provided then the ''text'' field of the tiddler is ignored and so should be omitted.
 
-! Manually Creating External Images
+! Manually Creating //External Images//
 
 To manually create an external image just create the tiddler with the appropriate image content type, and add a ''_canonical_uri'' field with a URI pointing to the actual image location.
 
 ''IMPORTANT:'' Double-check your spelling. ``_canonical_uri`` is spelled [[URI|https://en.wikipedia.org/wiki/URI#The_relationship_between_URIs.2C_URLs.2C_and_URNs]], not URL.
 
-! Creating external images under Node.js
+! Creating external images under `Node.js`
 
 The following steps are used to create a static HTML file version of a wiki accompanied by an ''images'' folder containing the referenced external images:
 
@@ -41,7 +43,7 @@ For an example see the ''externalimages'' build target of the demo ''tw5.com'' w
 --rendertiddler $:/core/save/all externalimages.html text/plain
 ```
 
-!! Saving Separate Image Files
+!! Saving Separate Image __Files__
 
 The following `--savetiddlers` command can be used to save the images of a wiki into an ''images'' subfolder:
 
@@ -49,7 +51,9 @@ The following `--savetiddlers` command can be used to save the images of a wiki 
 --savetiddlers [is[image]] images
 ```
 
-!!! A H3 header
+!!! A ~~H3~~ <$text text="(Test for widget render)"/>
+
+!!! <<test>>
 
 !! Externalising Image Tiddlers
 

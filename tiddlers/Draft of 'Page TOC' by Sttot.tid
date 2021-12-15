@@ -1,0 +1,40 @@
+created: 20211214153552380
+creator: Sttot
+draft.of: Page TOC
+draft.title: Page TOC
+icon: 🧾
+modified: 20211215042817053
+modifier: Sttot
+page-cover: https://unsplash.com/photos/xG8IQMqMITM/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MXx8dGFibGUlMjBvZiUyMGNvbnRlbnRzfHwwfHx8fDE2Mzk0OTcxNzk&force=true&w=1920
+tags: MyPlugins ExcludeFromEmpty
+title: Draft of 'Page TOC' by Sttot
+tmap.id: 78c21ba0-5dc5-46cd-bfc7-392558e178c7
+type: text/vnd.tiddlywiki
+
+{{$:/plugins/Gk0Wk/page-toc||DragToInstall}}
+
+---
+
+{{$:/plugins/Gk0Wk/page-toc/readme}}
+
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+<$list filter="[<lang>search[zh]]">
+
+这里有一个[[长篇幅条目|Example of Page TOC]](选自https://tiddlywiki.com/#ExternalImages)，可以用来演示本插件如何工作。
+
+!!! 更新说明
+
+; v0.0.2
+:* 为控件添加`scrollMode`参数，可以自定义标题滚动的目标位置；
+:* 为控件添加`h1`，`h2`，`h3`，`h4`，`h5`和`h6`参数，ke'y
+
+</$list>
+
+<$list filter="[<lang>!search[zh]]">
+
+Here is a [[Long Form Tiddler|Example of Page TOC]] (selected from https://tiddlywiki.com/#ExternalImages) that can be used to demonstrate how this plugin works.
+
+!!! Update description
+
+</$list>
+</$list>

@@ -8,14 +8,8 @@ hint: Page TOC
 \whitespace trim
 <$set value={{{ [<currentTiddler>addprefix[$:/temp/Gk0Wk/page-toc/PageTOCButton/]] }}} name="stateTiddler">
 <$button popup=<<stateTiddler>> tooltip={{$:/plugins/Gk0Wk/page-toc/PageTOCButton!!description}} aria-label={{$:/plugins/Gk0Wk/page-toc/PageTOCButton!!hint}} class=<<tv-config-toolbar-class>>>
-<$list filter="[<tv-config-toolbar-icons>match[yes]]">
-{{$:/core/images/list-bullet}}
-</$list>
-<$list filter="[<tv-config-toolbar-text>match[yes]]">
-<span class="tc-btn-text">
-{{$:/plugins/Gk0Wk/page-toc/PageTOCButton!!hint}}
-</span>
-</$list>
+<$list filter="[<tv-config-toolbar-icons>match[yes]]">{{$:/core/images/list-bullet}}</$list>
+<$list filter="[<tv-config-toolbar-text>match[yes]]"><span class="tc-btn-text">{{$:/plugins/Gk0Wk/page-toc/PageTOCButton!!hint}}</span></$list>
 </$button>
 <$reveal type="popup" state=<<stateTiddler>> position="belowleft" tag="div" class="tc-popup-keep">
 <$page-toc tiddler=<<currentTiddler>> emptyMessage="Empty TOC" class="gk0wk-tiddlertoc-viewbuttonpopup" headerClassPrefix="gk0wk-tiddlertoc-viewbuttonpopup-" />

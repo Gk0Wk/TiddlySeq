@@ -5,7 +5,7 @@
         this.initialise(parseTreeNode, options);
     };
 
-    function getTOCInfo(tiddler) {
+    function getTOCInfo(tiddler, includeHeaderMap) {
         // Check empty
         if (tiddler === "") return undefined;
         var currentTiddler = $tw.wiki.getTiddler(tiddler);
@@ -24,6 +24,7 @@
         var root = $tw.wiki.parseTiddler(tiddler).tree;
         var renderRoot = [],
             renderLeaf = renderRoot;
+        // Parse params
         while (['set', 'importvariables'].indexOf(root[0].type) > -1) {
             renderRoot = [Object.assign({}, root[0], {
                 children: renderRoot
@@ -32,20 +33,15 @@
         }
         $tw.utils.each(root, function(node) {
             if (node.type !== "element") return;
-            if (!/^h[1-6]$/.test(node.tag)) return;
+            if (includeHeaderMap[node.tag] !== true) return;
             // Clear and re-fill
             renderLeaf.splice(0, renderLeaf.length);
             renderLeaf.push.apply(renderLeaf, node.children);
-            var widgetNode = $tw.wiki.makeWidget({
-                tree: renderRoot
-            }, {});
+            // Render contents of header
             var container = $tw.fakeDocument.createElement("div");
-            widgetNode.render(container, null);
-            console.log({
-                renderRoot,
-                widgetNode,
-                container,
-            });
+            $tw.wiki.makeWidget({
+                tree: renderRoot
+            }, {}).render(container, null);
             headers.push({
                 tag: node.tag,
                 count: headersCount[node.tag]++,
@@ -80,6 +76,16 @@
         this.tocNodeClass = this.getAttribute("class", "gk0wk-tiddlertoc-container");
         this.tocHeaderNodeClassPrefix = this.getAttribute("headerClassPrefix", "gk0wk-tiddlertoc-");
         this.emptyMessage = this.getAttribute("emptyMessage", "");
+        this.includeHeaderMap = {
+            h1: this.getAttribute("h1", "yes") === "yes",
+            h2: this.getAttribute("h2", "yes") === "yes",
+            h3: this.getAttribute("h3", "yes") === "yes",
+            h4: this.getAttribute("h4", "yes") === "yes",
+            h5: this.getAttribute("h5", "yes") === "yes",
+            h6: this.getAttribute("h6", "yes") === "yes",
+        };
+        this.scrollMode = this.getAttribute("scrollMode", "center");
+        if (["start", "center", "end", "nearest"].indexOf(this.scrollMode) === -1) this.scrollMode = "center";
         var info = this.wiki.getTextReferenceParserInfo(this.tocTitle, 'text', '', {});
         this.sourceText = info.sourceText;
         this.parserType = info.parserType;
@@ -107,7 +113,7 @@
         this.domNode = tocNode;
         tocNode.className = this.tocNodeClass;
         try {
-            var toc = getTOCInfo(this.tocTitle);
+            var toc = getTOCInfo(this.tocTitle, this.includeHeaderMap);
             var headerNode;
             if (toc === undefined || toc.headers.length === 0) {
                 headerNode = document.createElement(this.tocHeaderNodeTag);
@@ -130,10 +136,25 @@
                                 if (headerInfo === undefined) return;
                                 var _headerNode = tiddlerFrameNode.querySelectorAll('.tc-tiddler-body > ' + headerInfo.tag)[headerInfo.count];
                                 if (_headerNode === undefined) return;
-                                _headerNode.scrollIntoView({
-                                    behavior: 'smooth',
-                                    block: 'center',
-                                });
+                                if (this.scrollMode === 'center' || this.scrollMode === 'nearest') {
+                                    _headerNode.scrollIntoView({
+                                        behavior: 'smooth',
+                                        block: this.scrollMode,
+                                    });
+                                } else {
+                                    // Position fix
+                                    _headerNode.scrollIntoView({
+                                        behavior: 'instant',
+                                        block: this.scrollMode,
+                                    });
+                                    if (this.scrollMode === 'end') {
+                                        document.body.scrollTop += 100;
+                                        document.scrollingElement.scrollTop += 100;
+                                    } else {
+                                        document.body.scrollTop -= 100;
+                                        document.scrollingElement.scrollTop -= 100;
+                                    }
+                                }
                             } catch (e) {
                                 console.error(e);
                             }
