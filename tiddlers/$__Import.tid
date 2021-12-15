@@ -1,9 +1,8 @@
-created: 20211203135855595
-modified: 20211203135855595
 status: complete
 title: $:/Import
 type: text/vnd.tiddlywiki
 
 The following tiddlers were imported:
 
-# [[SidebarResizerDemo.gif]]
+# [[$:/config/ChinesePluginLibrary/GitHub]]
+# [[$:/config/ChinesePluginLibrary/Netlify]]
