@@ -22,39 +22,34 @@
             'h6': 0,
         };
         var root = $tw.wiki.parseTiddler(tiddler).tree;
-        while (['set', 'importvariables'].indexOf(root[0]) > -1) root = root[0].children;
+        var renderRoot = [],
+            renderLeaf = renderRoot;
+        while (['set', 'importvariables'].indexOf(root[0].type) > -1) {
+            renderRoot = [Object.assign({}, root[0], {
+                children: renderRoot
+            })];
+            root = root[0].children;
+        }
         $tw.utils.each(root, function(node) {
             if (node.type !== "element") return;
             if (!/^h[1-6]$/.test(node.tag)) return;
-            var children = node.children;
-            if (!children || children.length == 0) return;
-            var text = [];
-            for (var i = 0, len = children.length; i < len; i++) {
-                try {
-                    var child = children[i];
-                    switch (child.type) {
-                        case 'text':
-                            text.push(child.text);
-                            break;
-                        case 'link':
-                            text.push(child.children.length > 0 ? child.children[0].text : child.to.value);
-                            break;
-                        case 'element':
-                            switch (child.tag) {
-                                case 'code':
-                                    text.push(child.children.length > 0 ? child.children[0].text : '');
-                                    break;
-                            }
-                            break;
-                    }
-                } catch (e) {
-                    console.error(e);
-                }
-            }
+            // Clear and re-fill
+            renderLeaf.splice(0, renderLeaf.length);
+            renderLeaf.push.apply(renderLeaf, node.children);
+            var widgetNode = $tw.wiki.makeWidget({
+                tree: renderRoot
+            }, {});
+            var container = $tw.fakeDocument.createElement("div");
+            widgetNode.render(container, null);
+            console.log({
+                renderRoot,
+                widgetNode,
+                container,
+            });
             headers.push({
                 tag: node.tag,
                 count: headersCount[node.tag]++,
-                text: text.join(''),
+                text: container.textContent,
             });
         });
         return {
@@ -65,6 +60,11 @@
     PageTOCWidget.prototype = new Widget();
     PageTOCWidget.prototype.render = function(parent, nextSibling) {
         this.parentDomNode = parent;
+        if (this.parentWidget && this.parentWidget.hasVariable("page-toc-recursion-detection", "yes")) {
+            parent.insertBefore(this.document.createTextNode('[Page TOC]'), nextSibling);
+            return;
+        }
+        this.setVariable("page-toc-recursion-detection", "yes");
         this.computeAttributes();
         this.execute();
         this.makeRender(parent, nextSibling);
