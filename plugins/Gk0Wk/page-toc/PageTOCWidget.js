@@ -93,7 +93,7 @@
 
     PageTOCWidget.prototype.parserNeedsRefresh = function() {
         var parserInfo = this.wiki.getTextReferenceParserInfo(this.tocTitle, 'text', '', {});
-        return (this.sourceText === undefined || parserInfo.sourceText !== this.sourceText || this.parserType === undefined || parserInfo.parserType !== this.parserType);
+        return (!this.sourceText || parserInfo.sourceText !== this.sourceText || !this.parserType || parserInfo.parserType !== this.parserType);
     };
     PageTOCWidget.prototype.refresh = function(changedTiddlers) {
         var changedAttributes = this.computeAttributes();
@@ -115,7 +115,7 @@
         try {
             var toc = getTOCInfo(this.tocTitle, this.includeHeaderMap);
             var headerNode;
-            if (toc === undefined || toc.headers.length === 0) {
+            if (!toc || toc.headers.length === 0) {
                 headerNode = document.createElement(this.tocHeaderNodeTag);
                 headerNode.className = this.tocHeaderNodeClassPrefix + 'empty';
                 headerNode.innerText = this.emptyMessage;
@@ -131,12 +131,12 @@
                         var scrollMode = this.scrollMode;
                         headerNode.addEventListener('click', function() {
                             try {
-                                var tiddlerFrameNode = document.querySelector('.tc-tiddler-frame[data-tiddler-title="' + toc.title + '"]');
-                                if (tiddlerFrameNode === undefined) return;
+                                var tiddlerFrameNode = document.querySelector('.tc-tiddler-frame[data-tiddler-title="' + toc.title.replace('"', '\\"') + '"]');
+                                if (!tiddlerFrameNode) return;
                                 var headerInfo = toc.headers[parseInt(this.getAttribute("index"))];
-                                if (headerInfo === undefined) return;
+                                if (!headerInfo) return;
                                 var _headerNode = tiddlerFrameNode.querySelectorAll('.tc-tiddler-body > ' + headerInfo.tag)[headerInfo.count];
-                                if (_headerNode === undefined) return;
+                                if (!_headerNode) return;
                                 if (scrollMode === 'center' || scrollMode === 'nearest') {
                                     _headerNode.scrollIntoView({
                                         behavior: 'smooth',
