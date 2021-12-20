@@ -2,12 +2,13 @@
   width: 100%;
 }
 
-.tc-sidebar-scrollable .tc-sidebar-header > .tc-reveal > .tc-reveal > .tc-sidebar-tabs > p > div > .tc-sidebar-tabs-main:first-of-type {
+.tc-sidebar-scrollable .tc-sidebar-header > .tc-reveal > .tc-reveal > .tc-sidebar-tabs > p > .tc-sidebar-tabs-main > .tc-tab-buttons {
   background: <<colour page-background>>;
   position: sticky;
   top: 0px;
   padding: 14px 10px;
   margin: 0;
+  z-index: 1;
 }
 
 <$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarTitle" text="yes">.tc-sidebar-scrollable .tc-sidebar-header .tc-site-title {
@@ -56,7 +57,7 @@
     filter: contrast(90%);
     height: 100vh;
   }
-  .tc-sidebar-scrollable .tc-sidebar-header > .tc-reveal > .tc-reveal > .tc-sidebar-tabs > p > div > .tc-sidebar-tabs-main:first-of-type {
+  .tc-sidebar-scrollable .tc-sidebar-header > .tc-reveal > .tc-reveal > .tc-sidebar-tabs > p > .tc-sidebar-tabs-main > .tc-tab-buttons {
     padding: 6px 0;
   }
 }

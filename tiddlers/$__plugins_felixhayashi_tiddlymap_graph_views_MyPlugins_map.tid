@@ -1,3 +1,6 @@
+created: 20211220155508839
+modified: 20211220155509806
+tags: ExcludeFromEmpty
 title: $:/plugins/felixhayashi/tiddlymap/graph/views/MyPlugins/map
 type: text/vnd.tiddlywiki
 
@@ -23,7 +26,7 @@ type: text/vnd.tiddlywiki
   "y": -150
  },
  "a411f9dc-b630-4f5b-9534-9b463e564b12": {
-  "x": -206,
-  "y": -147
+  "x": -193,
+  "y": -141
  }
 }

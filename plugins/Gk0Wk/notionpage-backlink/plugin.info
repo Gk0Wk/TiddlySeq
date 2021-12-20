@@ -6,5 +6,6 @@
     "name": "Notion Page(Backlink)",
     "description": "Add notion-like backlink button under tiddler's subtitle",
     "author": "Gk0Wk",
+    "list": "LICENSE",
     "source": "https://github.com/Gk0Wk/TiddlySeq/tree/master/plugins/Gk0Wk/notionpage-backlink"
 }

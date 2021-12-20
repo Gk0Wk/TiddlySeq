@@ -4,7 +4,7 @@
     "title": "$:/plugins/Gk0Wk/notionpage-covericon",
     "plugin-type": "plugin",
     "name": "Notion Page(Cover + Icon)",
-    "list": "readme",
+    "list": "readme LICENSE",
     "description": "Add notion-like page cover and icon display and control panel",
     "author": "Gk0Wk",
     "source": "https://github.com/Gk0Wk/TiddlySeq/tree/master/plugins/Gk0Wk/notionpage-covericon",

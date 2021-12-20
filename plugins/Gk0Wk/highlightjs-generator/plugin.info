@@ -6,7 +6,7 @@
     "name": "Highlight.js Generator",
     "description": "Generate custom highlight.js tiddler",
     "author": "Gk0Wk",
-    "list": "panel",
+    "list": "panel LICENSE",
     "source": "https://github.com/Gk0Wk/TiddlySeq/tree/master/plugins/Gk0Wk/highlightjs-generator",
     "tags": "ExcludeFromEmpty"
 }

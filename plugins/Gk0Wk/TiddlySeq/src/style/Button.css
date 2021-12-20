@@ -1,6 +1,6 @@
-.tc-tiddler-body button,
-.tc-tab-content button:not(.tc-install-plugin),
-.tc-edit-tags button,
+.tc-tiddler-body button:not(.tc-remove-tag-button),
+.tc-tab-content button:not(.tc-install-plugin):not(.tc-remove-tag-button),
+.tc-edit-tags button:not(.tc-remove-tag-button),
 .tc-editor-toolbar button,
 .tc-edit-field-add button {
   background: transparent;
@@ -20,12 +20,11 @@
   transition: all {{$:/config/AnimationDuration}}ms;
 }
 
-.tc-tiddler-body button:hover,
+.tc-tiddler-body button:not(.tc-remove-tag-button):hover,
 .tc-editor-toolbar button:hover,
-.tc-tab-content button:not(.tc-install-plugin):hover,
+.tc-tab-content button:not(.tc-install-plugin):not(.tc-remove-tag-button):hover,
 .tc-edit-field-add button:hover,
-.tc-edit-tags button:hover,
-.tc-tiddler-body button:hover,
+.tc-edit-tags button:not(.tc-remove-tag-button):hover,
 .tc-tiddler-frame .tc-tab-buttons:not(.tc-sidebar-tabs-main) button:hover {
   background: <<colour page-background>>;
   color: <<colour foreground>>;

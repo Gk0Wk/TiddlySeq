@@ -31,7 +31,8 @@
     "Gk0Wk/notionpage-backlink",
     "Gk0Wk/TiddlySeq",
     "Gk0Wk/highlightjs-generator",
-    "Gk0Wk/page-toc"
+    "Gk0Wk/page-toc",
+    "Gk0Wk/echarts"
   ],
   "themes": [
     "tiddlywiki/vanilla"
