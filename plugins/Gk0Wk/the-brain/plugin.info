@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "type": "application/json",
+  "title": "$:/plugins/Gk0Wk/the-brain",
+  "plugin-type": "plugin",
+  "name": "TheBrain",
+  "list": "readme LICENSE",
+  "description": "TheBrain-like live mind map for your wiki",
+  "author": "Gk0Wk",
+  "source": "https://github.com/Gk0Wk/TiddlySeq/tree/master/plugins/Gk0Wk/the-brain",
+  "dependents": "$:/plugins/Gk0Wk/echarts"
+}

@@ -1,0 +1,15 @@
+title: $:/plugins/Gk0Wk/the-brain/readme
+
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+<$list filter="[<lang>search[zh]]">
+
+还没写
+
+</$list>
+
+<$list filter="[<lang>!search[zh]]">
+
+Empty
+
+</$list>
+</$list>
