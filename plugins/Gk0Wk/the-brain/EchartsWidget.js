@@ -35,17 +35,23 @@
     this.execute();
     var container = document.createElement('div');
     container.setAttribute('class', "gk0wk-echarts-body");
-    container.style.width = '100%';
-    container.style.height = '90vh';
+    container.style.width = this.getAttribute('width', '100%');
+    container.style.height = this.getAttribute('height', '300px');
     parent.insertBefore(container, nextSibling);
     this.domNodes.push(container);
     if (this.chart) this.chart.dispose();
     var chart = this.chart = EchartsJS.init(container, 'dark');
     if (ResizeObserver) {
       var observer = new ResizeObserver(function (entries) {
+        var sidebar = document.querySelector('.tc-sidebar-scrollable');
+        var height = entries[0].contentRect.height;
+        if (sidebar && !parent.isTiddlyWikiFakeDom && sidebar.contains(container)) {
+          height = window.innerHeight - parent.getBoundingClientRect().top -
+            parseInt(getComputedStyle(sidebar).paddingBottom.replace('px', ''));
+        }
         chart.resize({
           width: entries[0].contentRect.width,
-          height: entries[0].contentRect.height,
+          height: height,
         });
       });
       observer.observe(container);
@@ -70,9 +76,10 @@
         // 历史路径
         var nextTiddler = focussedTiddler;
         var historyMap = {};
-        for (var i = historyTiddlers.length - 1; i >= 0; i--) {
-          if (historyMap[tiddlerTitle]) break;
+        for (var i = historyTiddlers.length - 2; i >= 0; i--) {
           var tiddlerTitle = historyTiddlers[i];
+          if (historyMap[tiddlerTitle]) continue;
+          if (tiddlerTitle === nextTiddler) continue;
           edges.push({
             source: tiddlerTitle,
             target: nextTiddler,
@@ -188,6 +195,7 @@
       }
       var option = {
         tooltip: {},
+        backgroundColor: 'transparent',
         legend: [
           {
             data: Categories.map(function (a) {
@@ -195,6 +203,12 @@
             })
           }
         ],
+        title: {
+          text: 'The Brain View',
+          show: true,
+          top: 'bottom',
+          left: 'right',
+        },
         series: [
           {
             name: 'The Brain View',
@@ -204,6 +218,7 @@
             edges: edges,
             categories: Categories,
             roam: true,
+            zoom: 4.0,
             label: {
               position: 'right',
               show: true

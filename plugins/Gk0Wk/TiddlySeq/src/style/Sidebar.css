@@ -44,6 +44,10 @@
   white-space: normal;
 }
 
+.tc-sidebar-scrollable .tc-sidebar-header > .tc-reveal > .tc-reveal > .tc-sidebar-tabs > p > .tc-sidebar-tabs-main > .tc-tab-content > .tc-reveal > p {
+  margin: 0;
+}
+
 @media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
   .tc-sidebar-scrollable > div {
     width: calc(100% - 20px);
@@ -59,6 +63,9 @@
   }
   .tc-sidebar-scrollable .tc-sidebar-header > .tc-reveal > .tc-reveal > .tc-sidebar-tabs > p > .tc-sidebar-tabs-main > .tc-tab-buttons {
     padding: 6px 0;
+  }
+  .tc-sidebar-scrollable .tc-sidebar-header > .tc-reveal > .tc-reveal > .tc-sidebar-tabs > p > .tc-sidebar-tabs-main > .tc-tab-content {
+    margin-top: 0;
   }
 }
 
