@@ -86,7 +86,8 @@ body.tc-dirty span.tc-dirty-indicator, body.tc-dirty span.tc-dirty-indicator svg
 
 .tc-tab-content input,
 .tc-edit-fields input,
-.tc-tiddler-body input {
+.tc-tiddler-body input,
+.tc-menubar-item input {
   border: none;
   background-color: transparent;
   border-bottom: 1px solid <<colour very-muted-foreground>>;
@@ -95,13 +96,15 @@ body.tc-dirty span.tc-dirty-indicator, body.tc-dirty span.tc-dirty-indicator svg
 
 .tc-tab-content input:hover,
 .tc-edit-fields input:hover,
-.tc-tiddler-body input:hover {
+.tc-tiddler-body input:hover,
+.tc-menubar-item input:hover {
   border-bottom: 1px solid <<colour muted-foreground>>;
 }
 
 .tc-tab-content input:focus,
 .tc-edit-fields input:focus,
-.tc-tiddler-body input:focus {
+.tc-tiddler-body input:focus,
+.tc-menubar-item input:focus {
   outline: none;
   border-bottom: 1px solid <<colour foreground>>;
 }

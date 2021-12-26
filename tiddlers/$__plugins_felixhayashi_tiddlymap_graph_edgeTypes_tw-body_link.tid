@@ -1,7 +1,0 @@
-created: 20210511104359179
-description: A link that is contained in the tiddler's body pointing to another resource.
-label: 提及
-modified: 20211015005124575
-style: {"color":"orange","dashes":true}
-title: $:/plugins/felixhayashi/tiddlymap/graph/edgeTypes/tw-body:link
-type: text/vnd.tiddlywiki

@@ -1,11 +1,4 @@
 {
-  "tiddlers": [{
-    "file": "LICENSE",
-    "isTiddlerFile": false,
-    "fields": {
-      "title": "$:/plugins/Gk0Wk/TiddlySeq/LICENSE"
-    }
-  }],
   "directories": [{
       "path": "style",
       "filesRegExp": "\\.css$",

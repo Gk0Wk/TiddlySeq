@@ -27,7 +27,7 @@ jobs:
       - name: Build Online/Offline HTML
         run: npm run buildonline && npm run buildoffline
 
-      - name: Make offline cache
+      - name: Make cache
         run: npx workbox injectManifest workbox-config.js
 
       - name: Make Library

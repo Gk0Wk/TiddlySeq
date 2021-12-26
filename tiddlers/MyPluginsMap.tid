@@ -1,0 +1,9 @@
+created: 20211226164730266
+creator: Sttot
+modified: 20211226164753931
+modifier: Sttot
+tags: $:/tags/SideBar
+title: MyPluginsMap
+type: text/vnd.tiddlywiki
+
+<$echarts $tiddler="MyPluginsMapData"/>

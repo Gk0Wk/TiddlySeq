@@ -1,0 +1,49 @@
+created: 20211226164136808
+creator: Sttot
+modified: 20211226170118018
+modifier: Sttot
+tags: ExcludeFromEmpty
+title: MyPluginsMapData
+type: text/vnd.tiddlywiki
+
+`{
+  "title": {
+    "text": "TiddlySeq",
+    "link": "https://github.com/Gk0Wk/TiddlySeq",
+    "target": "blank",
+    "subtext": "Gk0Wk",
+    "sublink": "https://github.com/Gk0Wk",
+    "subtarget": "blank",
+    "left": "10px",
+    "bottom": "10px"
+  },
+  "series": [
+    {
+      "type": "tree",
+      "data": [{
+        "name": "My Plugins",
+        "children": [
+`<$list filter="[all[]tag[MyPlugins]]" variable="pluginName" counter="counter">
+`         {"name": "`<$text text=<<pluginName>>/>`"}`<$list filter="[<counter-last>match[no]]">`,`</$list>`
+`
+</$list>
+`        ]
+      }],
+	  "roam": true,
+	  "zoom": 0.3,
+      "label": {
+        "position": "left",
+        "verticalAlign": "middle",
+        "align": "right",
+        "fontSize": 16
+      },
+      "leaves": {
+        "label": {
+          "position": "right",
+          "align": "left"
+        }
+      },
+      "expandAndCollapse": false
+    }
+  ]
+}
