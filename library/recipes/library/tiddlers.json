@@ -14,20 +14,6 @@
         "requires-reload": "no"
     },
     {
-        "version": "5.2.2",
-        "type": "application/json",
-        "title": "$:/plugins/Gk0Wk/echarts",
-        "plugin-type": "plugin",
-        "name": "ECharts",
-        "list": "readme LICENSE",
-        "description": "ECharts library for TiddlyWiki5",
-        "author": "Gk0Wk",
-        "source": "https://github.com/Gk0Wk/TiddlySeq/tree/master/plugins/Gk0Wk/echarts",
-        "dependents": "",
-        "readme": "<$list filter=\"[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]\" variable=\"lang\">\n<$list filter=\"[<lang>search[zh]]\">\n\n用于 TiddlyWiki5 的 EChart 库。[[EChart|https://echarts.apache.org/zh/index.html]] 是一个基于 JavaScript 的开源可视化图表库。\n\n本插件主要作为其他插件的基础库来使用。\n\n</$list>\n\n<$list filter=\"[<lang>!search[zh]]\">\n\nEChart library for TiddlyWiki5. [[EChart|https://echarts.apache.org/en/index.html]] is an open source javascript visualization library.\n\nThis plugin is mainly used as a base library for other plugins.\n\n</$list>\n</$list>\n",
-        "requires-reload": "yes"
-    },
-    {
         "version": "11.3.1",
         "type": "application/json",
         "title": "$:/plugins/Gk0Wk/highlight-generator",
@@ -94,20 +80,6 @@
         "source": "https://github.com/Gk0Wk/TiddlySeq/tree/master/plugins/Gk0Wk/sidebar-resizer",
         "dependents": "",
         "readme": "\\define lingo-base() $:/language/ThemeTweaks/\n\n<$list filter=\"[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]\" variable=\"lang\">\n<$list filter=\"[<lang>search[zh]]\">\n\n会在侧边栏的左侧边缘添加一个可拖动的边框，当鼠标移动到左侧边缘时会看到这个边框。拖动这个边框可以改变侧边栏的宽度，拖动到靠近窗口右侧边缘时就会自动收起侧边栏。\n\n原理是更改[[$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth]]的值。\n\n注意：首先请将 <$link to=\"$:/themes/tiddlywiki/vanilla/options/sidebarlayout\"><<lingo Options/SidebarLayout>></$link> 调整为`fluid-fixed`，本插件才可生效。\n\n<$button set=\"$:/themes/tiddlywiki/vanilla/options/sidebarlayout\" setTo=\"fluid-fixed\">点击设置<<lingo Options/SidebarLayout>></$button>\n\n</$list>\n\n<$list filter=\"[<lang>!search[zh]]\">\n\nA draggable border is added to the left edge of the sidebar, which will be visible when the mouse is moved to the left edge. Dragging this border will change the width of the sidebar, and it will automatically close the sidebar when dragged near the right edge of the window.\n\nThe principle is to change the value of [[$:/themes/tiddlywiki/vanilla/metrics/sidebarwidth]].\n\nNote: First, please adjust <$link to=\"$:/themes/tiddlywiki/vanilla/options/sidebarlayout\"><<lingo Options/SidebarLayout>></$link> to `fluid-fixed` for this plugin to take effect.\n\n<$button set=\"$:/themes/tiddlywiki/vanilla/options/sidebarlayout\" setTo=\"fluid-fixed\">Click to adjust<<lingo Options/SidebarLayout>></$button>\n\n</$list>\n</$list>\n",
-        "requires-reload": "yes"
-    },
-    {
-        "version": "0.0.1",
-        "type": "application/json",
-        "title": "$:/plugins/Gk0Wk/the-brain",
-        "plugin-type": "plugin",
-        "name": "TheBrain",
-        "list": "readme LICENSE",
-        "description": "TheBrain-like live mind map for your wiki",
-        "author": "Gk0Wk",
-        "source": "https://github.com/Gk0Wk/TiddlySeq/tree/master/plugins/Gk0Wk/the-brain",
-        "dependents": "$:/plugins/Gk0Wk/echarts",
-        "readme": "<$list filter=\"[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]\" variable=\"lang\">\n<$list filter=\"[<lang>search[zh]]\">\n\n还没写\n\n</$list>\n\n<$list filter=\"[<lang>!search[zh]]\">\n\nEmpty\n\n</$list>\n</$list>\n",
         "requires-reload": "yes"
     }
 ]
