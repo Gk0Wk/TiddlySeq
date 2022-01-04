@@ -1,3 +1,7 @@
+html::-webkit-scrollbar {
+  display: none;
+}
+
 .tc-story-river {
   padding: 0;
   padding-bottom: 0 !important;
