@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "type": "application/json",
+  "title": "$:/plugins/Gk0Wk/test",
+  "plugin-type": "plugin",
+  "name": "test",
+  "list": "readme",
+  "description": "",
+  "author": "Gk0Wk",
+  "source": "https://github.com/tiddly-gittly/tw-echarts/tree/master/plugins/Gk0Wk/test",
+  "dependents": "$:/plugins/Gk0Wk/jQuery"
+}

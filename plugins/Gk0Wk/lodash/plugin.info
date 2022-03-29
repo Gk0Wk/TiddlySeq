@@ -1,0 +1,11 @@
+{
+  "version": "4.17.21",
+  "type": "application/json",
+  "title": "$:/plugins/Gk0Wk/lodash",
+  "plugin-type": "plugin",
+  "name": "lodash.js",
+  "list": "readme",
+  "description": "lodash.js for TiddlyWiki5",
+  "author": "Gk0Wk",
+  "source": "https://github.com/Gk0Wk/TiddlySeq/tree/master/plugins/Gk0Wk/lodash"
+}

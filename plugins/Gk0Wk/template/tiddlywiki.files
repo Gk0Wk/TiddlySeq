@@ -1,0 +1,52 @@
+{
+    "tiddlers": [{
+            "file": "readme.tid",
+            "isTiddlerFile": true,
+            "fields": {
+                "title": {
+                    "source": "filename",
+                    "prefix": "$:/plugins/Gk0Wk/template/"
+                }
+            }
+        },
+        {
+            "file": "LICENSE",
+            "isTiddlerFile": false,
+            "fields": {
+                "title": {
+                    "source": "filename",
+                    "prefix": "$:/plugins/Gk0Wk/template/"
+                },
+                "type": "text/plain"
+            }
+        }
+    ],
+    "directories": [
+        "raw",
+        {
+            "path": "styles",
+            "filesRegExp": "\\.css$",
+            "isTiddlerFile": false,
+            "fields": {
+                "type": "text/css",
+                "tags": "$:/tags/Stylesheet",
+                "title": {
+                    "source": "filename",
+                    "prefix": "$:/plugins/Gk0Wk/template/styles/"
+                }
+            }
+        },
+        {
+            "path": "dist",
+            "filesRegExp": "\\.js$",
+            "isTiddlerFile": false,
+            "fields": {
+                "type": "application/javascript",
+                "title": {
+                    "source": "filename",
+                    "prefix": "$:/plugins/Gk0Wk/template/scripts/"
+                }
+            }
+        }
+    ]
+}
