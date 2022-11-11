@@ -40,9 +40,14 @@
       }
 
       // Drag to resize
+      var lastDrag = 0;
       function drag(event) {
         if (!canResize) return;
         if (!event) event = window.event;
+        // simple debounce
+        var now = new Date().getTime()
+        if (now - lastDrag < 33) return;
+        lastDrag = now;
         // Prevent event pass
         event.preventDefault(event);
         event.stopPropagation(event);
