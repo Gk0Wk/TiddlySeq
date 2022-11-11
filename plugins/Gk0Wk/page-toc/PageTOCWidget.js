@@ -24,6 +24,8 @@
       h6: 0,
     };
     var root = $tw.wiki.parseTiddler(tiddler).tree;
+    if (root.length == 0)
+      return undefined;
     var renderRoot = [],
       renderLeaf = renderRoot;
     // Parse params
