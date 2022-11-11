@@ -49,6 +49,8 @@
   <<box-shadow "#00000070 0 2px 6px">>
   filter: contrast(90%);
   padding: 0;
+  overflow-y: auto;
+  max-height: 80vh;
 }
 
 .gk0wk-tiddlertoc-viewbuttonpopup-h1 {
