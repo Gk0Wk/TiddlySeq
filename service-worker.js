@@ -11,7 +11,7 @@ const { CacheFirst, StaleWhileRevalidate } = workbox.strategies;
 const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute, matchPrecache } = workbox.precaching;
 
-precacheAndRoute([{"revision":"2202d1024158299c249bb2eeb50dc494","url":"favicon.ico"},{"revision":"08d6a36f63b6e1ce27428918002c864d","url":"images/SidebarResizerDemo.gif"},{"revision":"b1d5f126931d54554e198b9926a9f176","url":"index.html"},{"revision":"e632bca5d5e4ca0b5e352fffa8893c58","url":"offline.html"},{"revision":"ac3901d9bebebea83a5dad51cb81915a","url":"tiddlywikicore-5.2.3.js"}]);
+precacheAndRoute([{"revision":"2202d1024158299c249bb2eeb50dc494","url":"favicon.ico"},{"revision":"08d6a36f63b6e1ce27428918002c864d","url":"images/SidebarResizerDemo.gif"},{"revision":"320c872ec84e14a3cdfca4713fe94d3e","url":"index.html"},{"revision":"b6e9172545a7f8f35baf77684211d52f","url":"offline.html"},{"revision":"ac3901d9bebebea83a5dad51cb81915a","url":"tiddlywikicore-5.2.3.js"}]);
 
 registerRoute(
   /\.css$/,
