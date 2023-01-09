@@ -14,6 +14,7 @@
   height: {{$:/plugins/Gk0Wk/notionpage-covericon/style/cover-height/wide}};
   overflow: hidden;
   position: relative;
+  border-radius: 10px;
 }
 
 .gk0wk-notionpagebg-ci {
