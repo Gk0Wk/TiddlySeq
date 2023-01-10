@@ -2,6 +2,7 @@ title: $:/plugins/Gk0Wk/notionpage-covericon/body
 tags: $:/tags/ViewTemplate
 list-before: $:/core/ui/ViewTemplate/title
 
+<$list filter="[all[current]!is[system]]">
 <$set name="tiddler" value=<<currentTiddler>>>
 <$list filter="[<currentTiddler>addprefix[$:/temp/Gk0Wk/notionpage-covericon/Selector/]]" variable="stateTiddler1">
 <$list filter="[<currentTiddler>addprefix[$:/temp/Gk0Wk/notionpage-covericon/ChangeCover/]]" variable="stateTiddler2">
@@ -78,3 +79,4 @@ list-before: $:/core/ui/ViewTemplate/title
 </$list>
 </$list>
 </$set>
+</$list>
