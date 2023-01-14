@@ -41,9 +41,9 @@ list-before: $:/core/ui/ViewTemplate/title
   <!-- icon && !cover -->
   <div class="gk0wk-notionpagebg gk0wk-notionpagebg-i">
     <$button popup=<<stateTiddler1>> class="gk0wk-notionpagebg-icon1">
-      <$list filter="[title<icon>is[shadow]!is[tiddler]]">1<$transclude tiddler=<<icon>>/></$list>
-      <$list filter="[title<icon>is[tiddler]!is[shadow]]">2<$transclude tiddler=<<icon>>/></$list>
-      <$list filter="[title<icon>!is[shadow]!is[tiddler]]">3<$wikify name="rendered" text=<<icon>> output=html><<rendered>></$wikify></$list>
+      <$list filter="[title<icon>is[shadow]!is[tiddler]]"><$transclude tiddler=<<icon>>/></$list>
+      <$list filter="[title<icon>is[tiddler]!is[shadow]]"><$transclude tiddler=<<icon>>/></$list>
+      <$list filter="[title<icon>!is[shadow]!is[tiddler]]"><$wikify name="rendered" text=<<icon>> output=html><<rendered>></$wikify></$list>
     </$button>
     <$reveal type="popup" state=<<stateTiddler1>> position="below" tag="div" class="tc-popup-keep">
       {{$:/plugins/Gk0Wk/notionpage-covericon/icon-selector}}
