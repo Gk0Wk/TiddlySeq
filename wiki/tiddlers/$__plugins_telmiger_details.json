@@ -36,10 +36,10 @@
         },
         "$:/plugins/telmiger/details/readme": {
             "created": "20170205212323032",
-            "text": "! ~DetailsWidget\n\nA plugin for [[TiddlyWiki|http://tiddlywiki.com]] 5 containing a script and some styles to create an HTML 5 `<details>` section including a `<summary>`. Here’s an example:\n\n<$details summary=\"W3C definition\">\n\n<<<\nThe [[details|http://w3c.github.io/html/interactive-elements.html#elementdef-details]] element represents a disclosure widget from which the user can obtain additional information or controls.\n<<< W3C\n\n</$details>\n\nDocumentation can be found at http://tid.li/tw5/plugins.html#DetailsWidget\n",
+            "text": "! ~DetailsWidget\n\n{{$:/plugins/telmiger/details/about}}\n\nDocumentation can be found at http://tid.li/tw5/plugins.html#DetailsWidget\n",
             "title": "$:/plugins/telmiger/details/readme",
             "tags": "",
-            "modified": "20171219183752113"
+            "modified": "20200603211110057"
         },
         "$:/plugins/telmiger/details/colours.css": {
             "text": "/* details and summary colours */\n\ndetails {\n   background-color: <<colour tiddler-info-tab-background>>;\n   color: <<colour foreground>>;\n}\n\ndetails summary {\n   background-color: <<colour dropdown-tab-background>>;\n}\n\ndetails.notification summary {\n    background-color: <<colour notification-background>>;\n    /* TW leaves color undefined/uses foreground */\n}\n\ndetails.warning summary {\n    background-color: #ffbbaf;\n    color: #000;\n}\n\ndetails.success summary {\n    background-color: #88edc5;\n    color: #000;\n}\n",
@@ -50,14 +50,28 @@
             "creator": "Thomas Elmiger",
             "created": "20180925155320737"
         },
-        "$:/plugins/telmiger/details/accordion": {
-            "text": "\\define accordion(filter:\"_no_\",open:\"no\",class:\"\")\n<$vars accordion-filter=\"\"\"$filter$\"\"\" open=\"\"\"$open$\"\"\" class=\"\"\"$class$\"\"\">\n<$list filter=<<accordion-filter>>>\n<$details summary=<<currentTiddler>> open=<<open>> class=<<class>>>\n\n<$transclude tiddler=<<currentTiddler>>/>\n\n</$details>\n</$list>\n</$vars>\n\\end\n\n<!-- !!! Accordion Macro for Details\n\nList tiddlers and open them in a details-summary structure\n\n!!!! Attributes\n* filter: filter to select tiddlers\n* open: set to \"open\" to display details on load\n* class: set a class for the details tag\n\n-->",
-            "title": "$:/plugins/telmiger/details/accordion",
-            "tags": "$:/tags/Macro",
+        "$:/plugins/telmiger/support": {
+            "created": "20181103150753927",
+            "text": "!! Support the Author\n\n''Hi!'' I’m Thomas, the author of [[tid.li/tw5/plugins.html|https://tid.li/tw5/plugins.html]]. Feedback is always welcome, as well as funding for maintenance, support and new projects :)\n\n---\n\n!!! One Time Support\n\nIf using my plugins just makes you happy, consider a one time payment via ~PayPal to reward the effort:\n\nhttps://www.paypal.me/telmiger\n\n---\n\n!!! Permanent Support\n\nIf my tools make you more productive or save you time in your job or your everyday life, you can support me as a Patron: \n\nhttps://www.patreon.com/telmiger\n\n---\n\n!!! Thank You\n\nSubstantial parts of my availabe time go to the deveopment of useful plugins for [[TiddlyWiki|https://tiddlywiki.com/]]. – Many others do the same and I would like to thank them all, especially [[Jeremy Ruston|https://tiddlywiki.com/#JeremyRuston]] and all the active members of the community!\n\n//Hereby I promise to share future revenues (if any) with other developers who’s works I use or who inspired me.//\n\nIf you like my work, I would be very happy to hear from you.\n\n''Thank you very much for your support!''<br>\n//Thomas//\n\nhttps://thomas-elmiger.ch",
+            "title": "$:/plugins/telmiger/support",
+            "tags": "",
             "modifier": "Thomas Elmiger",
-            "modified": "20180929065014252",
-            "creator": "Thomas Elmiger",
-            "created": "20180928194557274"
+            "modified": "20181104091650389",
+            "creator": "Thomas Elmiger"
+        },
+        "$:/plugins/telmiger/details/about": {
+            "created": "20200603211101398",
+            "modified": "20200603211101398",
+            "title": "$:/plugins/telmiger/details/about",
+            "text": "Create HTML 5 `<details>` elements including a `<summary>` using this widget.\n\n<$details summary=\"The details element – W3C definition\">\n\n<<<\nThe [[details|http://w3c.github.io/html/interactive-elements.html#elementdef-details]] element represents a disclosure widget from which the user can obtain additional information or controls.\n<<< W3C\n\n</$details>\n\n<$details summary=\"Code example\" open=\"no\">\n\n```\n<$details summary=\"This should be open\" open=\"yes\">\n\nContent will be immediately visible if open is set to \"yes\".\n\n</$details>\n```\n\n</$details>",
+            "tags": ""
+        },
+        "$:/plugins/telmiger/details/support": {
+            "created": "20200603204816640",
+            "text": "{{$:/plugins/telmiger/support}}",
+            "title": "$:/plugins/telmiger/details/support",
+            "tags": "",
+            "modified": "20220425065858878"
         }
     }
 }

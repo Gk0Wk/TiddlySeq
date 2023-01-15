@@ -1,0 +1,20 @@
+title: $:/plugins/Gk0Wk/focused-tiddler/config
+type: text/vnd.tiddlywiki
+
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+<$list filter="[<lang>search[zh]]">
+
+; 顶部偏移
+: <$edit-text tiddler="$:/plugins/Gk0Wk/focused-tiddler/top-offset" tag="input" default="71" /> (px)
+: 条目顶部与窗口页面顶部的距离小于偏移量时，该条目会被聚焦。（单位：px）
+
+</$list>
+
+<$list filter="[<lang>!search[zh]]">
+
+; Top Offset
+: <$edit-text tiddler="$:/plugins/Gk0Wk/focused-tiddler/top-offset" tag="input" default="71" /> (px)
+: The entry is focused when the distance between the top of the entry and the top of the window page is less than the offset. (Unit: px)
+
+</$list>
+</$list>

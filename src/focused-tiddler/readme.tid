@@ -1,0 +1,28 @@
+title: $:/plugins/Gk0Wk/focused-tiddler/readme
+type: text/vnd.tiddlywiki
+
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+<$list filter="[<lang>search[zh]]">
+
+! 聚焦条目
+
+检测你现在正在看的条目，并将其标题存在 `$:/temp/focussedTiddler`。
+
+判定方法：当打开新条目、滚动条目至一定位置（可配置）或者点击条目内容时，及判定为聚焦条目。
+
+> 本插件使用灵活而强大的 <$text text="TiddlyWiki" /> 开发框架 [[Tiddly.ModernDev|https://github.com/tiddly-gittly/Modern.TiddlyDev]]
+
+</$list>
+
+<$list filter="[<lang>!search[zh]]">
+
+! focused-tiddler
+
+Detecting the tiddler you are viewing, and save its title to `$:/temp/focussedTiddler`.
+
+Judgment method: When opening a new tiddler, scrolling the tiddler to a certain position (configurable) or clicking on the content of the tiddler, and judged to be a focused tiddler.
+
+> This plugin uses the flexible and powerful <$text text="TiddlyWiki" /> development framework [[Tiddly.ModernDev|https://github.com/tiddly-gittly/Modern.TiddlyDev]]
+
+</$list>
+</$list>
