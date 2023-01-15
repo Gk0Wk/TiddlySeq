@@ -31,6 +31,9 @@ title: $:/plugins/Gk0Wk/notionpage-covericon/readme
 </div>
 
 * 注：【宽屏模式】和【紧凑模式】是由 <$link to="$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint"><<lingo Metrics/SidebarBreakpoint>></$link> 决定的，当前<<lingo Metrics/SidebarBreakpoint>>为{{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}。
+
+> 本插件使用灵活而强大的 <$text text="TiddlyWiki" /> 开发框架 [[Tiddly.ModernDev|https://github.com/tiddly-gittly/Modern.TiddlyDev]]
+
 </$list>
 
 <$list filter="[<lang>!search[zh]]">
@@ -61,5 +64,8 @@ Use the following fields to store the page's icon and cover information.
 </div>
 
 * Note: [Widescreen mode] and [Compact mode] are determined by <$link to="$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint"><<lingo Metrics/SidebarBreakpoint>></$link>. Now the <<lingo Metrics/SidebarBreakpoint>> is {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}.
+
+> This plugin uses the flexible and powerful <$text text="TiddlyWiki" /> development framework [[Tiddly.ModernDev|https://github.com/tiddly-gittly/Modern.TiddlyDev]]
+
 </$list>
 </$list>

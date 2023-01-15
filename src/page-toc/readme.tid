@@ -32,6 +32,8 @@ title: $:/plugins/Gk0Wk/page-toc/readme
 
 如有任何使用问题，欢迎向我提[[Issue|https://github.com/Gk0Wk/TiddlySeq/issues]]！
 
+> 本插件使用灵活而强大的 <$text text="TiddlyWiki" /> 开发框架 [[Tiddly.ModernDev|https://github.com/tiddly-gittly/Modern.TiddlyDev]]
+
 </$list>
 
 <$list filter="[<lang>!search[zh]]">
@@ -64,6 +66,8 @@ At the same time, I have written two small components using this widget, which c
 * [[PageTOCButton|$:/plugins/Gk0Wk/page-toc/PageTOCButton]] Add a {{$:/core/images/list-bullet}} button to the toolbar for each tiddler and click it to display the table of contents.
 
 Feel free to make me an [[Issue|https://github.com/Gk0Wk/TiddlySeq/issues]] if you have any usage problems!
+
+> This plugin uses the flexible and powerful <$text text="TiddlyWiki" /> development framework [[Tiddly.ModernDev|https://github.com/tiddly-gittly/Modern.TiddlyDev]]
 
 </$list>
 </$list>

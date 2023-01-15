@@ -1,3 +1,5 @@
 title: $:/plugins/Gk0Wk/lodash/readme
 
 [[lodash.js|https://lodash.com/]] is modern JavaScript utility library delivering modularity, performance & extras.
+
+> This plugin uses the flexible and powerful <$text text="TiddlyWiki" /> development framework [[Tiddly.ModernDev|https://github.com/tiddly-gittly/Modern.TiddlyDev]]

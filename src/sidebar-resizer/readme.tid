@@ -13,6 +13,8 @@ title: $:/plugins/Gk0Wk/sidebar-resizer/readme
 
 <$button set="$:/themes/tiddlywiki/vanilla/options/sidebarlayout" setTo="fluid-fixed">点击设置<<lingo Options/SidebarLayout>></$button>
 
+> 本插件使用灵活而强大的 <$text text="TiddlyWiki" /> 开发框架 [[Tiddly.ModernDev|https://github.com/tiddly-gittly/Modern.TiddlyDev]]
+
 </$list>
 
 <$list filter="[<lang>!search[zh]]">
@@ -24,6 +26,8 @@ The principle is to change the value of [[$:/themes/tiddlywiki/vanilla/metrics/s
 Note: First, please adjust <$link to="$:/themes/tiddlywiki/vanilla/options/sidebarlayout"><<lingo Options/SidebarLayout>></$link> to `fluid-fixed` for this plugin to take effect.
 
 <$button set="$:/themes/tiddlywiki/vanilla/options/sidebarlayout" setTo="fluid-fixed">Click to adjust<<lingo Options/SidebarLayout>></$button>
+
+> This plugin uses the flexible and powerful <$text text="TiddlyWiki" /> development framework [[Tiddly.ModernDev|https://github.com/tiddly-gittly/Modern.TiddlyDev]]
 
 </$list>
 </$list>
