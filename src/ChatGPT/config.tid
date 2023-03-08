@@ -1,0 +1,22 @@
+title: $:/plugins/Gk0Wk/chat-gpt/config
+tags: $:/tags/ControlPanel/SettingsTab
+type: text/vnd.tiddlywiki
+caption: ChatGPT
+
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+<$list filter="[<lang>search[zh]]">
+
+; <$text text="OpenAI" /> API Key
+: <$edit-text tiddler="$:/plugins/Gk0Wk/chat-gpt/openai-api-key" tag="input" default="" />
+: 你应当注册自己的 <$text text="OpenAI" /> 账号，并申请 [[API Key|https://platform.openai.com/account/api-keys]]。
+
+</$list>
+
+<$list filter="[<lang>!search[zh]]">
+
+; <$text text="OpenAI" /> API Key
+: <$edit-text tiddler="$:/plugins/Gk0Wk/chat-gpt/openai-api-key" tag="input" default="71" />
+: You should register your <$text text="OpenAI" /> account and request an [[API Key|https://platform.openai.com/account/api-keys]].
+
+</$list>
+</$list>

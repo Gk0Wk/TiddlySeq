@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@microsoft/fetch-event-source': ^2.0.1
   '@modern-js/eslint-config': ^2.1.0
   '@modern-js/tsconfig': ^2.1.0
   '@types/node': ^18.11.18
@@ -15,6 +16,7 @@ specifiers:
   typescript: ^4.9.4
 
 dependencies:
+  '@microsoft/fetch-event-source': 2.0.1
   npm-check-updates: 16.6.2
   tiddlywiki: 5.2.5
   tiddlywiki-plugin-dev: 0.0.34_tw5-typed@0.2.25
@@ -1446,6 +1448,10 @@ packages:
 
   /@kwsites/promise-deferred/1.1.1:
     resolution: {integrity: sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==}
+    dev: false
+
+  /@microsoft/fetch-event-source/2.0.1:
+    resolution: {integrity: sha512-W6CLUJ2eBMw3Rec70qrsEW0jOm/3twwJv21mrmj2yORiaVmVYGS4sSS5yUwvQc1ZlDLYGPnClVWmUUMagKNsfA==}
     dev: false
 
   /@modern-js-app/eslint-config/2.1.0:

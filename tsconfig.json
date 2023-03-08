@@ -7,6 +7,6 @@
     "types": ["node", "tw5-typed"],
     "lib": ["DOM", "ESNext"]
   },
-  "include": ["src"],
+  "include": ["src", "src-tmp/test", "src-tmp/pdf-printer"],
   "exclude": ["./**/*.js"]
 }

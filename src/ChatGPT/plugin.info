@@ -1,0 +1,10 @@
+{
+  "title": "$:/plugins/Gk0Wk/chat-gpt",
+  "name": "ChatGPT",
+  "author": "Gk0Wk",
+  "description": "ChatGPT in TiddlyWiki",
+  "plugin-type": "plugin",
+  "dependents": "$:/plugins/tiddlywiki/markdown",
+  "version": "0.0.1",
+  "list": "readme config"
+}

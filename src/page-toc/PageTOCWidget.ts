@@ -2,6 +2,7 @@ import {
   HTMLTags,
   IParseTreeNode,
   IChangedTiddlers,
+  IWidgetInitialiseOptions,
   IWikiASTNode,
 } from 'tiddlywiki';
 import { widget as Widget } from '$:/core/modules/widgets/widget.js';
@@ -32,7 +33,7 @@ class PageTOCWidget extends Widget {
     h6: true,
   };
 
-  initialise(parseTreeNode: IParseTreeNode, options: any) {
+  initialise(parseTreeNode: IParseTreeNode, options: IWidgetInitialiseOptions) {
     super.initialise(parseTreeNode, options);
     this.computeAttributes();
   }

@@ -1,6 +1,5 @@
 {
   "title": "$:/plugins/Gk0Wk/focused-tiddler",
-  "name": "focused-tiddler",
   "name": "Focused Tiddler",
   "author": "Gk0Wk",
   "description": "Detecting the tiddler you are viewing",

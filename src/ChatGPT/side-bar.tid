@@ -1,0 +1,8 @@
+title: $:/plugins/Gk0Wk/chat-gpt/side-bar
+type: text/vnd.tiddlywiki
+tags: $:/tags/SideBar
+caption: ChatGPT
+
+@@height:calc(100vh - 120px);
+<$chat-gpt history="$:/state/plugins/Gk0Wk/chat-gpt/side-bar-history" scroll="yes" model="gpt-3.5-turbo" temperature="1" max_tokens="512" system_message="You are expert on TiddlyWiki. Output in Markdown format" />
+@@
