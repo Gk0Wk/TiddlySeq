@@ -149,8 +149,6 @@ class ChatGPTWidget extends Widget {
           if (apiLock) {
             return;
           }
-          apiLock = true;
-          chatButton.disabled = true;
           const apiKey = $tw.wiki
             .getTiddlerText('$:/plugins/Gk0Wk/chat-gpt/openai-api-key', '')
             .trim();
@@ -163,6 +161,8 @@ class ChatGPTWidget extends Widget {
           }
           chatInput.value = '';
 
+          apiLock = true;
+          chatButton.disabled = true;
           const conversation = $tw.utils.domMaker('div', {
             class: 'chatgpt-conversation chatgpt-conversation-chating',
           });
@@ -336,7 +336,6 @@ class ChatGPTWidget extends Widget {
         history = JSON.parse(
           $tw.wiki.getTiddlerText(this.historyTiddler) || '[]',
         );
-        console.log(this.historyTiddler);
       } catch {}
       for (const conversation of history) {
         conversations.appendChild(renderConversation(conversation));
