@@ -83,6 +83,7 @@ class ChatGPTWidget extends Widget {
       user: this.getAttribute('user'),
     };
     this.systemMessage = this.getAttribute('system_message', '');
+    this.makeChildWidgets();
   }
 
   render(parent: Node, nextSibling: Node | null) {
@@ -129,7 +130,7 @@ class ChatGPTWidget extends Widget {
 
         // 会话接口
         let apiLock = false;
-        const createChat = async () => {
+        const createChat = async (event: Event) => {
           // 锁与参数解析
           if (apiLock) {
             return;
@@ -220,6 +221,24 @@ class ChatGPTWidget extends Widget {
                       },
                     );
                     conversations.appendChild(resultConversation);
+
+                    // 发送相关事件
+                    this.setVariable('output-text', answer);
+                    this.invokeAction?.(this, event as any);
+                    const theEvent = {
+                      event,
+                      type: 'chat-gpt',
+                      name: 'completion-finish',
+                      paramObject: {
+                        ...newHistory,
+                        created: new Date(newHistory.created),
+                      },
+                      widget: this,
+                      historyTiddler: this.historyTiddler,
+                    };
+                    this.dispatchEvent(theEvent);
+                    $tw.hooks.invokeHook('chat-gpt', theEvent);
+
                     ctrl.abort();
                     apiLock = false;
                     chatButton.disabled = false;
@@ -261,7 +280,7 @@ class ChatGPTWidget extends Widget {
         chatInput.addEventListener('keydown', function (event) {
           if (event.code === 'Enter' && !event.shiftKey) {
             event.preventDefault();
-            createChat();
+            createChat(event);
           }
         });
       }
@@ -300,7 +319,7 @@ class ChatGPTWidget extends Widget {
       this.refreshSelf();
       return true;
     }
-    return false;
+    return this.refreshChildren(changedTiddlers);
   }
 }
 

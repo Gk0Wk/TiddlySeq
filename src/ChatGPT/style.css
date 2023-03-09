@@ -55,6 +55,7 @@
 
 .gk0wk-chatgpt-container .chatgpt-conversation-user {
   font-weight: 750;
+  padding-top: 18px !important;
 }
 
 .gk0wk-chatgpt-container .chatgpt-conversation-message {
@@ -62,14 +63,24 @@
   position: relative;
 }
 
+.gk0wk-chatgpt-container .chatgpt-conversation-message .conversation-datetime {
+  position: absolute;
+  left: 0;
+  top: 0;
+  user-select: none;
+  opacity: 0.5;
+  font-size: 12px;
+  font-weight: 500px;
+}
+
 .gk0wk-chatgpt-container .chatgpt-conversation-message .edit-button {
   position: absolute;
   right: 0;
-  top: 10px;
+  top: 18px;
 }
 
 .gk0wk-chatgpt-container .chatgpt-conversation-message .delete-button {
   position: absolute;
   right: 25px;
-  top: 10px;
+  top: 18px;
 }

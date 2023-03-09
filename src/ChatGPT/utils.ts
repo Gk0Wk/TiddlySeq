@@ -21,7 +21,7 @@ export const isChinese = () =>
   $tw.wiki.getTiddler('$:/language')!.fields.text.includes('zh');
 
 export const renderConversation = (
-  { id, assistant, user }: ChatHistory,
+  { id, assistant, user, created }: ChatHistory,
   zh: boolean,
   editButtonText: string,
   deleteButtonText: string,
@@ -59,6 +59,10 @@ export const renderConversation = (
       $tw.utils.domMaker('div', {
         class: 'chatgpt-conversation-message chatgpt-conversation-user',
         children: [
+          $tw.utils.domMaker('div', {
+            class: 'conversation-datetime',
+            text: new Date(created * 1000).toLocaleString(),
+          }),
           $tw.utils.domMaker('p', { text: user }),
           ...(deleteButton ? [deleteButton] : []),
           ...(editButton ? [editButton] : []),
@@ -95,7 +99,13 @@ export const renderChatingConversation = (
     children: [
       $tw.utils.domMaker('div', {
         class: 'chatgpt-conversation-message chatgpt-conversation-user',
-        children: [$tw.utils.domMaker('p', { text: user })],
+        children: [
+          $tw.utils.domMaker('div', {
+            class: 'conversation-datetime',
+            text: new Date().toLocaleString(),
+          }),
+          $tw.utils.domMaker('p', { text: user }),
+        ],
       }),
       $tw.utils.domMaker('div', {
         class: 'chatgpt-conversation-message chatgpt-conversation-assistant',
@@ -142,6 +152,7 @@ export const historyManager = (tiddler: string) => ({
       new $tw.Tiddler($tw.wiki.getTiddler(tiddler) ?? {}, {
         title: tiddler,
         text: JSON.stringify(history),
+        type: 'application/json',
       }),
     );
   },
