@@ -1,56 +1,20 @@
-/* eslint-disable max-lines */
-import { HTMLTags, IParseTreeNode, IWidgetInitialiseOptions } from 'tiddlywiki';
+import {
+  HTMLTags,
+  IParseTreeNode,
+  IWidgetInitialiseOptions,
+  IChangedTiddlers,
+} from 'tiddlywiki';
 import { fetchEventSource } from '@microsoft/fetch-event-source';
+import {
+  CHAT_COMPLETION_URL,
+  ChatHistory,
+  isChinese,
+  ChatGPTOptions,
+  renderConversation,
+  renderChatingConversation,
+} from './utils';
 import { widget as Widget } from '$:/core/modules/widgets/widget.js';
 import './style.css';
-
-const CHAT_COMPLETION_URL = 'https://api.openai.com/v1/chat/completions';
-
-interface ChatHistory {
-  id: string;
-  created: number;
-  user: string;
-  assistant: string;
-}
-
-const isChinese = () =>
-  $tw.wiki.getTiddler('$:/language')!.fields.text.includes('zh');
-
-const renderConversation = ({ id, assistant, user }: ChatHistory) => {
-  const container = $tw.utils.domMaker('div', {
-    class: 'chatgpt-conversation',
-    attributes: {
-      'chatgpt-conversation': id,
-    },
-  });
-  container.appendChild(
-    $tw.utils.domMaker('div', {
-      class: 'chatgpt-conversation-message chatgpt-conversation-user',
-      children: [$tw.utils.domMaker('p', { text: user })],
-    }),
-  );
-  container.appendChild(
-    $tw.utils.domMaker('div', {
-      class: 'chatgpt-conversation-message chatgpt-conversation-assistant',
-      innerHTML: $tw.wiki.renderText(
-        'text/html',
-        'text/x-markdown' as any,
-        assistant,
-      ),
-    }),
-  );
-  return container;
-};
-
-interface ChatGPTOptions {
-  model: string;
-  temperature: number;
-  top_p: number;
-  max_tokens: number;
-  presence_penalty: number;
-  frequency_penalty: number;
-  user: string;
-}
 
 class ChatGPTWidget extends Widget {
   private containerNodeTag: HTMLTags = 'div';
@@ -118,20 +82,19 @@ class ChatGPTWidget extends Widget {
       return;
     }
     this.execute();
+    const conversations = $tw.utils.domMaker('div', {
+      class: this.scroll ? 'conversations-scroll' : 'conversations',
+    });
     const container = $tw.utils.domMaker(this.containerNodeTag, {
       class: `gk0wk-chatgpt-container ${this.containerNodeClass}`,
+      children: [conversations],
     });
+    parent.insertBefore(container, nextSibling);
     this.domNodes.push(container);
     try {
-      const conversations = $tw.utils.domMaker('div', {
-        class: this.scroll ? 'conversations-scroll' : 'conversations',
-      });
-      container.appendChild(conversations);
+      // 聊天机制
       if (!this.readonly) {
         const zh = isChinese();
-        const chatBox = $tw.utils.domMaker('div', {
-          class: 'chat-box',
-        });
         const chatInput = $tw.utils.domMaker('input', {
           class: 'chat-input',
           attributes: {
@@ -139,13 +102,21 @@ class ChatGPTWidget extends Widget {
             placeholder: zh ? '输入一个问题...' : 'Ask a question...',
           },
         });
-        chatBox.appendChild(chatInput);
         const chatButton = $tw.utils.domMaker('button', {
           class: 'chat-button',
           innerHTML: this.chatButtonText,
         });
+        container.appendChild(
+          $tw.utils.domMaker('div', {
+            class: 'chat-box',
+            children: [chatInput, chatButton],
+          }),
+        );
+
+        // 会话接口
         let apiLock = false;
         const createChat = async () => {
+          // 锁与参数解析
           if (apiLock) {
             return;
           }
@@ -160,60 +131,15 @@ class ChatGPTWidget extends Widget {
             return;
           }
           chatInput.value = '';
-
           apiLock = true;
           chatButton.disabled = true;
-          const conversation = $tw.utils.domMaker('div', {
-            class: 'chatgpt-conversation chatgpt-conversation-chating',
-          });
-          conversation.appendChild(
-            $tw.utils.domMaker('div', {
-              class: 'chatgpt-conversation-message chatgpt-conversation-user',
-              children: [$tw.utils.domMaker('p', { text: input })],
-            }),
-          );
-          const answerContainer = $tw.utils.domMaker('div', {
-            class:
-              'chatgpt-conversation-message chatgpt-conversation-assistant',
-          });
-          container.appendChild(answerContainer);
-          const answerBox = $tw.utils.domMaker('pre', {
-            text: zh ? '思考中...' : 'Thinking...',
-            style: {
-              background: 'transparent',
-              marginTop: '0',
-              marginBottom: '0',
-              padding: '0',
-            },
-          });
-          answerContainer.appendChild(
-            $tw.utils.domMaker('p', {
-              children: [answerBox],
-            }),
-          );
-          conversation.appendChild(answerContainer);
-          conversations.appendChild(conversation);
-          const printError = (err: string) => {
-            conversations.removeChild(answerBox);
-            conversations.appendChild(
-              $tw.utils.domMaker('div', {
-                class: 'chatgpt-conversation chatgpt-conversation-error',
-                children: [
-                  $tw.utils.domMaker('div', {
-                    class:
-                      'chatgpt-conversation-message chatgpt-conversation-user',
-                    children: [$tw.utils.domMaker('p', { text: input })],
-                  }),
-                  $tw.utils.domMaker('div', {
-                    class:
-                      'chatgpt-conversation-message chatgpt-conversation-assistant',
-                    text: err,
-                  }),
-                ],
-              }),
-            );
-          };
 
+          // 创建 DOM
+          const { conversation, answerBox, printError } =
+            renderChatingConversation(zh, input, conversations);
+          conversations.appendChild(conversation);
+
+          // 流式调用，需要用到魔改的EventSource
           try {
             const messages: any[] = [];
             if (this.systemMessage) {
@@ -319,6 +245,7 @@ class ChatGPTWidget extends Widget {
             printError(String(e));
           }
         };
+
         chatButton.onclick = createChat;
         chatInput.addEventListener('keydown', function (event) {
           if (event.code === 'Enter' && !event.shiftKey) {
@@ -326,11 +253,9 @@ class ChatGPTWidget extends Widget {
             createChat();
           }
         });
-        chatBox.appendChild(chatButton);
-        container.appendChild(chatBox);
       }
 
-      // History
+      // 历史对话
       let history: ChatHistory[] = [];
       try {
         history = JSON.parse(
@@ -344,12 +269,14 @@ class ChatGPTWidget extends Widget {
       console.error(e);
       container.textContent = String(e);
     }
-    parent.insertBefore(container, nextSibling);
   }
 
-  refresh() {
+  refresh(changedTiddlers: IChangedTiddlers) {
     const changedAttributes = this.computeAttributes();
     if ($tw.utils.count(changedAttributes) > 0) {
+      this.refreshSelf();
+      return true;
+    } else if (changedTiddlers[this.historyTiddler]?.deleted) {
       this.refreshSelf();
       return true;
     }
@@ -358,4 +285,3 @@ class ChatGPTWidget extends Widget {
 }
 
 exports['chat-gpt'] = ChatGPTWidget;
-/* eslint-enable max-lines */
