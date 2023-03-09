@@ -59,7 +59,7 @@ After installation, please fill in your <$text text="OpenAI" /> API Key [[here|$
 
 You will have an additional <$text text="ChatGPT" /> page in your sidebar, where you can have a conversation directly, and the history of the conversation will be saved. To clear the history, simply delete the entry pointed to by the `history` parameter.
 
-<$text text="ChatGPT" /> is actually a widget that allows you to customize the chatbot according to your needs.
+<$text text="ChatGPT" /> is actually a widget that allows you to customize the chatbot according to your needs:
 
 ```html
 <$chat-gpt />
@@ -75,6 +75,15 @@ Various optional parameters can also be added to customize the behavior.
 |readonly |If it is readonly, no dialog input box will appear, and it will be used for display only with the history parameter. |
 |system_message |System messages to customize the AI's behavior, such as "You are an experienced lawyer" |
 
+In addition, the following <$text text="ChatGPT" /> parameters are supported:
+
+* model
+* temperature
+* top_p
+* max_tokens
+* presence_penalty
+* frequency_penalty
+* user
 
 Its specific usage can check the [[official documentation|https://platform.openai.com/docs/api-reference/chat/create]], or just ask it well.
 
