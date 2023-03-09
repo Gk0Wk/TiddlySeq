@@ -15,7 +15,7 @@ caption: ChatGPT
 <$list filter="[<lang>!search[zh]]">
 
 ; <$text text="OpenAI" /> API Key
-: <$edit-text tiddler="$:/plugins/Gk0Wk/chat-gpt/openai-api-key" tag="input" default="71" />
+: <$edit-text tiddler="$:/plugins/Gk0Wk/chat-gpt/openai-api-key" tag="input" default="" />
 : You should register your <$text text="OpenAI" /> account and request an [[API Key|https://platform.openai.com/account/api-keys]].
 
 </$list>
