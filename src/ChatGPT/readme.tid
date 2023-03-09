@@ -5,7 +5,7 @@ caption: ChatGPT
 <$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
 <$list filter="[<lang>search[zh]]">
 
-在 <$text text="TiddlyWiki" /> 中使用 <$text text="<$text text="ChatGPT" />" />。
+在 <$text text="TiddlyWiki" /> 中使用 <$text text="ChatGPT" />。
 
 安装后请首先在[[这里|$:/plugins/Gk0Wk/chat-gpt/config]]填写你的 <$text text="OpenAI" /> API Key，否则无法使用该插件的功能。
 

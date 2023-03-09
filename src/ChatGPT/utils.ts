@@ -20,8 +20,37 @@ export interface ChatGPTOptions {
 export const isChinese = () =>
   $tw.wiki.getTiddler('$:/language')!.fields.text.includes('zh');
 
-export const renderConversation = ({ id, assistant, user }: ChatHistory) =>
-  $tw.utils.domMaker('div', {
+export const renderConversation = (
+  { id, assistant, user }: ChatHistory,
+  zh: boolean,
+  editButtonText: string,
+  deleteButtonText: string,
+  onEdit?: (user: string) => void,
+  onDelete?: () => void,
+) => {
+  let editButton: HTMLButtonElement | undefined;
+  if (onEdit) {
+    editButton = $tw.utils.domMaker('button', {
+      class: 'edit-button',
+      innerHTML: editButtonText,
+      attributes: {
+        title: zh ? '重新生成问题' : 'Regenerate question',
+      },
+    });
+    editButton.onclick = () => onEdit(user);
+  }
+  let deleteButton: HTMLButtonElement | undefined;
+  if (onDelete) {
+    deleteButton = $tw.utils.domMaker('button', {
+      class: 'delete-button',
+      innerHTML: deleteButtonText,
+      attributes: {
+        title: zh ? '删除问题' : 'Delete question',
+      },
+    });
+    deleteButton.onclick = () => onDelete();
+  }
+  return $tw.utils.domMaker('div', {
     class: 'chatgpt-conversation',
     attributes: {
       'chatgpt-conversation': id,
@@ -29,7 +58,11 @@ export const renderConversation = ({ id, assistant, user }: ChatHistory) =>
     children: [
       $tw.utils.domMaker('div', {
         class: 'chatgpt-conversation-message chatgpt-conversation-user',
-        children: [$tw.utils.domMaker('p', { text: user })],
+        children: [
+          $tw.utils.domMaker('p', { text: user }),
+          ...(deleteButton ? [deleteButton] : []),
+          ...(editButton ? [editButton] : []),
+        ],
       }),
       $tw.utils.domMaker('div', {
         class: 'chatgpt-conversation-message chatgpt-conversation-assistant',
@@ -41,6 +74,7 @@ export const renderConversation = ({ id, assistant, user }: ChatHistory) =>
       }),
     ],
   });
+};
 
 export const renderChatingConversation = (
   zh: boolean,
@@ -94,3 +128,21 @@ export const renderChatingConversation = (
   };
   return { conversation, answerBox, printError };
 };
+
+export const historyManager = (tiddler: string) => ({
+  getHistory: () => {
+    let history: ChatHistory[] = [];
+    try {
+      history = JSON.parse($tw.wiki.getTiddlerText(tiddler) || '[]');
+    } catch {}
+    return history;
+  },
+  setHistory: (history: ChatHistory[]) => {
+    $tw.wiki.addTiddler(
+      new $tw.Tiddler($tw.wiki.getTiddler(tiddler) ?? {}, {
+        title: tiddler,
+        text: JSON.stringify(history),
+      }),
+    );
+  },
+});

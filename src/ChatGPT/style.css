@@ -59,4 +59,17 @@
 
 .gk0wk-chatgpt-container .chatgpt-conversation-message {
   padding: 10px 20px;
+  position: relative;
+}
+
+.gk0wk-chatgpt-container .chatgpt-conversation-message .edit-button {
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+
+.gk0wk-chatgpt-container .chatgpt-conversation-message .delete-button {
+  position: absolute;
+  right: 25px;
+  top: 10px;
 }

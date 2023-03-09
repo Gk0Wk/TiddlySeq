@@ -7,7 +7,7 @@ import {
 import { fetchEventSource } from '@microsoft/fetch-event-source';
 import {
   CHAT_COMPLETION_URL,
-  ChatHistory,
+  historyManager,
   isChinese,
   ChatGPTOptions,
   renderConversation,
@@ -27,6 +27,14 @@ class ChatGPTWidget extends Widget {
 
   private chatButtonText: string = $tw.wiki.getTiddlerText(
     '$:/core/images/add-comment',
+  )!;
+
+  private editButtonText: string = $tw.wiki.getTiddlerText(
+    '$:/core/images/edit-button',
+  )!;
+
+  private deleteButtonText: string = $tw.wiki.getTiddlerText(
+    '$:/core/images/delete-button',
   )!;
 
   private scroll: boolean = false;
@@ -92,9 +100,11 @@ class ChatGPTWidget extends Widget {
     parent.insertBefore(container, nextSibling);
     this.domNodes.push(container);
     try {
+      const zh = isChinese();
+      const { getHistory, setHistory } = historyManager(this.historyTiddler);
       // 聊天机制
+      let fillChatInput: ((user: string) => void) | undefined;
       if (!this.readonly) {
-        const zh = isChinese();
         const chatInput = $tw.utils.domMaker('input', {
           class: 'chat-input',
           attributes: {
@@ -102,9 +112,13 @@ class ChatGPTWidget extends Widget {
             placeholder: zh ? '输入一个问题...' : 'Ask a question...',
           },
         });
+        fillChatInput = (user: string) => (chatInput.value = user);
         const chatButton = $tw.utils.domMaker('button', {
           class: 'chat-button',
           innerHTML: this.chatButtonText,
+          attributes: {
+            title: zh ? '进行对话' : 'Chat',
+          },
         });
         container.appendChild(
           $tw.utils.domMaker('div', {
@@ -184,31 +198,28 @@ class ChatGPTWidget extends Widget {
               onmessage: ({ data }) => {
                 try {
                   if (data === '[DONE]') {
-                    let history: ChatHistory[] = [];
-                    try {
-                      history = JSON.parse(
-                        $tw.wiki.getTiddlerText(this.historyTiddler) || '[]',
-                      );
-                    } catch {}
-                    history.push({
+                    const newHistory = {
                       id,
                       created,
                       assistant: answer,
                       user: input,
-                    });
-                    $tw.wiki.addTiddler(
-                      new $tw.Tiddler(
-                        $tw.wiki.getTiddler(this.historyTiddler) ?? {},
-                        {
-                          title: this.historyTiddler,
-                          text: JSON.stringify(history),
-                        },
-                      ),
-                    );
+                    };
+                    setHistory([...getHistory(), newHistory]);
                     conversations.removeChild(conversation);
-                    conversations.appendChild(
-                      renderConversation(history[history.length - 1]),
+                    const resultConversation = renderConversation(
+                      newHistory,
+                      zh,
+                      this.editButtonText,
+                      this.deleteButtonText,
+                      fillChatInput,
+                      () => {
+                        conversations.removeChild(resultConversation);
+                        setHistory(
+                          getHistory().filter(({ id }) => id !== newHistory.id),
+                        );
+                      },
                     );
+                    conversations.appendChild(resultConversation);
                     ctrl.abort();
                     apiLock = false;
                     chatButton.disabled = false;
@@ -256,14 +267,23 @@ class ChatGPTWidget extends Widget {
       }
 
       // 历史对话
-      let history: ChatHistory[] = [];
-      try {
-        history = JSON.parse(
-          $tw.wiki.getTiddlerText(this.historyTiddler) || '[]',
+      for (const conversation of getHistory()) {
+        const resultConversation = renderConversation(
+          conversation,
+          zh,
+          this.editButtonText,
+          this.deleteButtonText,
+          fillChatInput,
+          this.readonly
+            ? undefined
+            : () => {
+                conversations.removeChild(resultConversation);
+                setHistory(
+                  getHistory().filter(({ id }) => id !== conversation.id),
+                );
+              },
         );
-      } catch {}
-      for (const conversation of history) {
-        conversations.appendChild(renderConversation(conversation));
+        conversations.appendChild(resultConversation);
       }
     } catch (e) {
       console.error(e);
