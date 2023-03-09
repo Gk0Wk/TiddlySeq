@@ -231,7 +231,7 @@ class ChatGPTWidget extends Widget {
                       name: 'completion-finish',
                       paramObject: {
                         ...newHistory,
-                        created: new Date(newHistory.created),
+                        created: new Date(newHistory.created * 1000),
                       },
                       widget: this,
                       historyTiddler: this.historyTiddler,
