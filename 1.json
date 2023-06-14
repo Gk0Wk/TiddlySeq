@@ -1,0 +1,260 @@
+{
+  "opml": {
+    "version": "2.0",
+    "head": {
+      "title": "States",
+      "dateCreated": "Tue, 15 Mar 2005 16:35:45 GMT",
+      "flPublic": "true",
+      "urlPublic": "http://drummer.scripting.com/davewiner/states.opml",
+      "urlJson": "http://drummer.scripting.com/davewiner/states.json",
+      "ownerTwitterScreenName": "davewiner",
+      "ownerName": "Dave Winer",
+      "ownerId": "http://twitter.com/davewiner",
+      "urlUpdateSocket": "ws://drummer.scripting.com:1232/",
+      "dateModified": "Sat, 03 Jul 2021 15:19:39 GMT",
+      "expansionState": "1,4",
+      "lastCursor": "5",
+      "generator": "opmlPackage v0.5.1"
+    },
+    "body": {
+      "subs": [
+        {
+          "text": "United States",
+          "created": "Tue, 15 Mar 2005 16:35:45 GMT",
+          "subs": [
+            {
+              "text": "Far West",
+              "created": "Tue, 15 Mar 2005 16:35:45 GMT",
+              "subs": [
+                {
+                  "text": "Alaska",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "California",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Hawaii",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Nevada",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Oregon",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Washington",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                }
+              ]
+            },
+            {
+              "text": "Great Plains",
+              "created": "Tue, 15 Mar 2005 16:35:45 GMT",
+              "subs": [
+                {
+                  "text": "Kansas",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Nebraska",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "North Dakota",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Oklahoma",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "South Dakota",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                }
+              ]
+            },
+            {
+              "text": "Mid-Atlantic",
+              "created": "Tue, 15 Mar 2005 16:35:45 GMT",
+              "subs": [
+                {
+                  "text": "Delaware",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Maryland",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "New Jersey",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "New York",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Pennsylvania",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                }
+              ]
+            },
+            {
+              "text": "Midwest",
+              "created": "Tue, 15 Mar 2005 16:35:45 GMT",
+              "subs": [
+                {
+                  "text": "Illinois",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Indiana",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                { "text": "Iowa", "created": "Tue, 15 Mar 2005 16:35:45 GMT" },
+                {
+                  "text": "Kentucky",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Michigan",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Minnesota",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Missouri",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                { "text": "Ohio", "created": "Tue, 15 Mar 2005 16:35:45 GMT" },
+                {
+                  "text": "West Virginia",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Wisconsin",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                }
+              ]
+            },
+            {
+              "text": "Mountains",
+              "created": "Tue, 15 Mar 2005 16:35:45 GMT",
+              "subs": [
+                {
+                  "text": "Colorado",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                { "text": "Idaho", "created": "Tue, 15 Mar 2005 16:35:45 GMT" },
+                {
+                  "text": "Montana",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                { "text": "Utah", "created": "Tue, 15 Mar 2005 16:35:45 GMT" },
+                {
+                  "text": "Wyoming",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                }
+              ]
+            },
+            {
+              "text": "New England",
+              "created": "Tue, 15 Mar 2005 16:35:45 GMT",
+              "subs": [
+                {
+                  "text": "Connecticut",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                { "text": "Maine", "created": "Tue, 15 Mar 2005 16:35:45 GMT" },
+                {
+                  "text": "Massachusetts",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "New Hampshire",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Rhode Island",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Vermont",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                }
+              ]
+            },
+            {
+              "text": "South",
+              "created": "Tue, 15 Mar 2005 16:35:45 GMT",
+              "subs": [
+                {
+                  "text": "Alabama",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Arkansas",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Florida",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Georgia",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Louisiana",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Mississippi",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "North Carolina",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "South Carolina",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Tennessee",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "Virginia",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                }
+              ]
+            },
+            {
+              "text": "Southwest",
+              "created": "Tue, 15 Mar 2005 16:35:45 GMT",
+              "subs": [
+                {
+                  "text": "Arizona",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                {
+                  "text": "New Mexico",
+                  "created": "Tue, 15 Mar 2005 16:35:45 GMT"
+                },
+                { "text": "Texas", "created": "Tue, 15 Mar 2005 16:35:45 GMT" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

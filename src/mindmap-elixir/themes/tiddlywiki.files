@@ -1,0 +1,21 @@
+{
+  "directories": [
+    {
+      "path": "internal",
+      "filesRegExp": "\\.json$",
+      "isTiddlerFile": false,
+      "fields": {
+        "type": "application/json",
+        "tags": "$:/mindmap-elixir/themes",
+        "caption": {
+          "source": "basename"
+        },
+        "title": {
+          "source": "basename",
+          "prefix": "$:/plugins/Gk0Wk/mindmap-elixir/themes/"
+        }
+      },
+      "isEditableFile": false
+    }
+  ]
+}

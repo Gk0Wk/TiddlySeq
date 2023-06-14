@@ -1,0 +1,13 @@
+.mind-elixir-toolbar,
+.gk0wk-elixir-operations-menu-container,
+.gk0wk-elixir-theme-menu-container,
+.gk0wk-elixir-export-menu-container {
+  background: <<colour menubar-background>> !important;
+  color: <<colour foreground>> !important;
+  fill: <<colour foreground>> !important;
+}
+
+.gk0wk-mind-elixir-container .node-menu input,
+.gk0wk-mind-elixir-container .node-menu textarea {
+  color: black !important;
+}

@@ -14,7 +14,7 @@ import {
   renderChatingConversation,
 } from './utils';
 import { widget as Widget } from '$:/core/modules/widgets/widget.js';
-import './style.css';
+import './style.less';
 
 class ChatGPTWidget extends Widget {
   private containerNodeTag: HTMLTags = 'div';

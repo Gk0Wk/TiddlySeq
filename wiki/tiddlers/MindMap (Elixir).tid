@@ -1,0 +1,18 @@
+created: 20230614084352738
+map: {"data":{"nodeData":{"id":"8b909daff9826858","topic":"MindMap","root":true,"children":[{"topic":"A","id":"8b90bbf205015c07","direction":0,"tags":["Tag"]},{"topic":"B","id":"8b90bcd377b5c2e5","direction":1,"children":[{"topic":"1","id":"8b90c0af9b3436a1","children":[{"topic":"a","id":"8b90c2f94e5baf96"},{"topic":"b","id":"8b90c3548278997f"}],"style":{"fontWeight":"bold","color":"#f1c40e"}},{"topic":"2","id":"8b90c14613881e6f","style":{"color":"#ecf0f1","background":"#3298db"}},{"topic":"3","id":"8b90c17aa6a2fb7c"},{"topic":"4","id":"8b90c1baa39fee8d"}],"style":{"fontSize":"41"}},{"topic":"C","id":"8b90bd3664d3e5ac","direction":0,"icons":["🎉"]},{"topic":"D","id":"8b90bfcc4f169ab8","direction":1,"style":{"fontWeight":"bold"}}],"hyperLink":"https://gk0wk.github.io/TiddlySeq/"},"linkData":{},"direction":2,"theme":{"name":"Custom","palette":["#848FA0","#748BE9","#D2F9FE","#4145A5","#789AFA","#706CF4","#EF987F","#775DD5","#FCEECF","#DA7FBC"],"cssVar":{"--gap":"30px","--root-radius":"30px","--main-radius":"20px","--root-color":"#ffffff","--root-bgcolor":"#6467aa","--main-color":"#444446","--main-bgcolor":"#fafafa","--topic-padding":"5px","--color":"#ededed","--bgcolor":"#282828"}}},"options":{"draggable":true,"contextMenu":true,"toolBar":true,"nodeMenu":true,"keypress":true,"locale":"auto","overflowHidden":false,"allowUndo":false,"primaryLinkStyle":"1"}}
+modified: 20230614084518011
+tags: ExcludeFromEmpty MyPlugins
+title: MindMap (Elixir)
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/ThemeTweaks/
+
+{{$:/plugins/Gk0Wk/TiddlySeq||DragToInstall}}
+
+---
+
+<$elixir field="map" height="500px" />
+
+---
+
+{{$:/plugins/Gk0Wk/mindmap-elixir/readme}}

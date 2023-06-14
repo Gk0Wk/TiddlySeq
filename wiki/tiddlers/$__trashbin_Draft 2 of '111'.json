@@ -1,0 +1,14 @@
+{
+    "title": "Draft 2 of '111'",
+    "created": "20230612121325118",
+    "draft.of": "111",
+    "draft.title": "111",
+    "elixir": "{\"data\":{\"nodeData\":{\"topic\":\"a\",\"id\":0,\"children\":[{\"topic\":\"a\",\"id\":1,\"children\":[{\"topic\":\"123\",\"id\":\"8b8c1c51a589fd55\"},{\"topic\":\"aaa\",\"id\":\"8b8c1cfe2b4ab187\"}]},{\"topic\":\"213\",\"id\":2}]},\"linkData\":{},\"direction\":1,\"theme\":{\"name\":\"Custom\",\"palette\":[\"#ff0000\",\"#748BE9\",\"#D2F9FE\",\"#4145A5\",\"#789AFA\",\"#706CF4\",\"#EF987F\",\"#775DD5\",\"#FCEECF\",\"#DA7FBC\"],\"cssVar\":{\"--gap\":\"30px\",\"--root-radius\":\"30px\",\"--main-radius\":\"20px\",\"--root-color\":\"#ffffff\",\"--root-bgcolor\":\"#4c4f69\",\"--main-color\":\"#444446\",\"--main-bgcolor\":\"#ffffff\",\"--topic-padding\":\"5px\",\"--color\":\"#777777\",\"--bgcolor\":\"#f6f6f6\"}}},\"options\":{\"draggable\":true,\"contextMenu\":true,\"toolBar\":true,\"nodeMenu\":true,\"keypress\":true,\"locale\":\"auto\",\"overflowHidden\":false,\"allowUndo\":false,\"primaryLinkStyle\":\"1\"}}",
+    "icon": "",
+    "modified": "20230614080549598",
+    "tags": "",
+    "type": "text/vnd.tiddlywiki",
+    "text": "<$elixir field=\"elixir\" />",
+    "revision": "0",
+    "bag": "default"
+}

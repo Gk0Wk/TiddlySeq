@@ -1,0 +1,84 @@
+.gk0wk-chatgpt-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  padding: 10px 0;
+  flex-direction: column;
+
+  .conversations {
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  .conversations-scroll {
+    height: 0;
+    width: 100%;
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+
+  .chat-box {
+    width: 100%;
+    display: flex;
+    border: solid 1.5px #888a;
+    border-radius: 5px;
+    background: #8881;
+  }
+
+  .chat-input {
+    flex-grow: 1;
+    padding-left: 10px;
+    font-size: 16px;
+  }
+
+  .chat-button {
+    height: 45px;
+    width: 45px;
+    font-size: 20px;
+  }
+
+  .chatgpt-conversation {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .chatgpt-conversation-assistant {
+    background-image: linear-gradient(0deg, #8883, #8883);
+  }
+
+  .chatgpt-conversation-error .chatgpt-conversation-assistant {
+    color: red;
+  }
+
+  .chatgpt-conversation-user {
+    font-weight: 750;
+    padding-top: 18px !important;
+  }
+
+  .chatgpt-conversation-message {
+    padding: 10px 20px;
+    position: relative;
+
+    .conversation-datetime {
+      position: absolute;
+      left: 0;
+      top: 0;
+      user-select: none;
+      opacity: 0.5;
+      font-size: 12px;
+      font-weight: 500px;
+    }
+
+    .edit-button {
+      position: absolute;
+      right: 0;
+      top: 18px;
+    }
+
+    .delete-button {
+      position: absolute;
+      right: 25px;
+      top: 18px;
+    }
+  }
+}

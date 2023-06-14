@@ -1,0 +1,9 @@
+{
+  "title": "$:/plugins/Gk0Wk/mindmap-elixir",
+  "name": "MindMap (Elixir)",
+  "author": "Gk0Wk",
+  "description": "A MindMap plugin TiddlyWiki5, using Elixir",
+  "plugin-type": "plugin",
+  "version": "0.0.1",
+  "list": "readme config"
+}
