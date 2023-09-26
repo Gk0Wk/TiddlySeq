@@ -6,7 +6,6 @@ import {
 } from 'tiddlywiki';
 import { fetchEventSource } from '@microsoft/fetch-event-source';
 import {
-  CHAT_COMPLETION_URL,
   historyManager,
   isChinese,
   ChatGPTOptions,
@@ -87,7 +86,7 @@ class ChatGPTWidget extends Widget {
   }
 
   render(parent: Node, nextSibling: Node | null) {
-    if (!$tw.browser) {
+    if (!$tw.browser || !parent) {
       return;
     }
     this.execute();
@@ -171,7 +170,16 @@ class ChatGPTWidget extends Widget {
             let id = '';
             let created = 0;
             const ctrl = new AbortController();
-            await fetchEventSource(CHAT_COMPLETION_URL, {
+            let url = $tw.wiki
+              .getTiddlerText(
+                '$:/plugins/Gk0Wk/chat-gpt/openai-api-entrance',
+                'https://api.openai.com/v1',
+              )
+              .trim();
+            if (url.endsWith('/')) {
+              url = url.slice(0, -1);
+            }
+            await fetchEventSource(`${url}/chat/completions`, {
               method: 'POST',
               signal: ctrl.signal,
               body: JSON.stringify({

@@ -1,5 +1,3 @@
-export const CHAT_COMPLETION_URL = 'https://api.openai.com/v1/chat/completions';
-
 export interface ChatHistory {
   id: string;
   created: number;

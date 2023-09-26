@@ -4,6 +4,6 @@
   "author": "Gk0Wk",
   "description": "Detecting the tiddler you are viewing",
   "plugin-type": "plugin",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "list": "readme config"
 }

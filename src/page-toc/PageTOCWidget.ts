@@ -75,13 +75,13 @@ class PageTOCWidget extends Widget {
   }
 
   render(parent: Node, nextSibling: Node | null) {
-    this.parentDomNode = parent;
+    this.parentDomNode = parent as any;
     this.execute();
 
     // 递归检测
     if (this.parentWidget!.hasVariable('page-toc-recursion-detection', 'yes')) {
       this.domNodes.push(
-        parent.appendChild(this.document.createTextNode('[Page TOC]')),
+        parent.appendChild(this.document.createTextNode('[Page TOC]') as any),
       );
       return;
     }

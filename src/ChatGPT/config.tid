@@ -10,6 +10,10 @@ caption: ChatGPT
 : <$edit-text tiddler="$:/plugins/Gk0Wk/chat-gpt/openai-api-key" tag="input" default="" />
 : 你应当注册自己的 <$text text="OpenAI" /> 账号，并申请 [[API Key|https://platform.openai.com/account/api-keys]]。
 
+; <$text text="OpenAI" /> API 入口
+: <$edit-text tiddler="$:/plugins/Gk0Wk/chat-gpt/openai-api-entrance" tag="input" default="" />
+: 一般不用改，如果使用了第三方代理请修改。
+
 </$list>
 
 <$list filter="[<lang>!search[zh]]">
@@ -17,6 +21,10 @@ caption: ChatGPT
 ; <$text text="OpenAI" /> API Key
 : <$edit-text tiddler="$:/plugins/Gk0Wk/chat-gpt/openai-api-key" tag="input" default="" />
 : You should register your <$text text="OpenAI" /> account and request an [[API Key|https://platform.openai.com/account/api-keys]].
+
+; <$text text="OpenAI" /> API Entrance
+: <$edit-text tiddler="$:/plugins/Gk0Wk/chat-gpt/openai-api-entrance" tag="input" default="" />
+: Generally no need to change, if you use a third-party proxy please modify.
 
 </$list>
 </$list>
