@@ -1,0 +1,9 @@
+{
+  "title": "$:/plugins/Gk0Wk/drawio",
+  "name": "draw.io",
+  "author": "Gk0Wk",
+  "description": "draw.io powerful diagram editor for TiddlyWiki",
+  "plugin-type": "plugin",
+  "version": "0.0.1",
+  "list": "readme config LICENSE"
+}

@@ -1,0 +1,44 @@
+title: $:/plugins/Gk0Wk/drawio/config
+tags: $:/tags/ControlPanel/SettingsTab
+type: text/vnd.tiddlywiki
+caption: draw.io
+list-after: $:/core/ui/ControlPanel/Settings/TiddlyWiki
+
+\define theme-selector(tiddler)
+$tiddler$
+<$select tiddler="$tiddler$" default="Kennedy">
+<$list filter="[[Kennedy dark min simple atlas sketch]split[ ]unique[]]">
+<option value=<<currentTiddler>>><$text text=<<currentTiddler>>/></option>
+</$list>
+</$select>
+\end
+
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+<$list filter="[<lang>search[zh]]">
+
+!! 主题
+
+; 日间模式所使用的主题
+: <<theme-selector tiddler:"$:/plugins/Gk0Wk/drawio/config/theme-light" >>
+
+; 夜间模式所使用的主题
+: <<theme-selector tiddler:"$:/plugins/Gk0Wk/drawio/config/theme-dark" >>
+
+> 不同的主题的样式可以参考[[官网文档|https://www.drawio.com/blog/diagram-editor-theme]]。
+
+</$list>
+
+<$list filter="[<lang>!search[zh]]">
+
+!! Themes
+
+; Theme used for light mode
+: <<theme-selector tiddler:"$:/plugins/Gk0Wk/drawio/config/theme-light" >>
+
+; Theme used for dark mode
+: <<theme-selector tiddler:"$:/plugins/Gk0Wk/drawio/config/theme-dark" >>
+
+> Different themes can be found in the [[official documentation|https://www.drawio.com/blog/diagram-editor-theme]].
+
+</$list>
+</$list>

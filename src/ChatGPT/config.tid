@@ -2,6 +2,7 @@ title: $:/plugins/Gk0Wk/chat-gpt/config
 tags: $:/tags/ControlPanel/SettingsTab
 type: text/vnd.tiddlywiki
 caption: ChatGPT
+list-after: $:/core/ui/ControlPanel/Settings/TiddlyWiki
 
 <$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
 <$list filter="[<lang>search[zh]]">

@@ -1,0 +1,5 @@
+title: $:/config/EditorTypeMappings/
+
+text/x-drawio: drawio
+application/vnd.drawio: drawio
+application/x-drawio: drawio
