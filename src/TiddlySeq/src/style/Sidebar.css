@@ -79,6 +79,9 @@ opacity: 0.5;
 color: <<colour muted-foreground>>;
 fill: <<colour muted-foreground>>;
 transition: all {{$:/config/AnimationDuration}}ms;
+border-left: none !important;
+border-right: none !important;
+border-top: none !important;
 }
 
 .tc-tab-buttons.tc-sidebar-tabs-main > button:hover,

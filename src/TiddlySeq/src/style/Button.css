@@ -4,11 +4,12 @@
 .tc-editor-toolbar button,
 .tc-edit-field-add button {
   background: transparent;
+  background-color: transparent !important;
   border: none;
-  border-radius: 3px;
-  padding: 4px 8px;
-  color: <<colour foreground>>;
-  fill: <<colour foreground>>;
+  border-radius: 0px !important;
+  padding: 4px 8px !important;
+  color: <<colour foreground>> !important;
+  fill: <<colour foreground>> !important;
   transition: all {{$:/config/AnimationDuration}}ms;
 }
 
@@ -26,9 +27,10 @@
 .tc-edit-field-add button:hover,
 .tc-edit-tags button:not(.tc-remove-tag-button):hover,
 .tc-tiddler-frame .tc-tab-buttons:not(.tc-sidebar-tabs-main) button:hover {
-  background: <<colour page-background>>;
-  color: <<colour foreground>>;
-  fill: <<colour foreground>>;
+  background: <<colour page-background>> !important;
+  background-color: <<colour page-background>> !important;
+  color: <<colour foreground>> !important;
+  fill: <<colour foreground>> !important;
   filter: contrast(85%);
 }
 
@@ -36,9 +38,10 @@
 .tc-edit-tags button.tc-tab-selected,
 .tc-tiddler-body button.tc-tab-selected,
 .tc-tiddler-frame .tc-tab-buttons:not(.tc-sidebar-tabs-main) button.tc-tab-selected {
-  background: <<colour page-background>>;
-  color: <<colour foreground>>;
-  fill: <<colour foreground>>;
+  background: <<colour page-background>> !important;
+  background-color: <<colour page-background>> !important;
+  color: <<colour foreground>> !important;
+  fill: <<colour foreground>> !important;
   filter: contrast(70%);
 }
 
@@ -48,11 +51,12 @@
 }
 
 .tc-tag-label > button {
-  padding: 0 0 0 4px;
-  color: <<colour tag-foreground>>;
-  fill: <<colour tag-foreground>>;
+  padding: 0 0 0 4px !important;
+  color: <<colour tag-foreground>> !important;
+  fill: <<colour tag-foreground>> !important;
 }
 
 .tc-tag-label > button:hover {
-  background: transparent;
+  background: transparent !important;
+  background-color: transparent !important;
 }

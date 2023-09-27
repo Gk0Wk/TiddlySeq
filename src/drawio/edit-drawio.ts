@@ -133,7 +133,7 @@ class DrawIOEditor {
               action: 'configure',
               config: {
                 compressXml: true,
-                enableCssDarkMode: true,
+                enableCssDarkMode: false,
               },
             }),
             '*',
