@@ -2,6 +2,7 @@ import type { Widget } from 'tiddlywiki';
 
 const { editTextWidgetFactory } = require('$:/core/modules/editor/factory.js');
 const { SimpleEngine } = require('$:/core/modules/editor/engines/simple.js');
+const { decode } = require('$:/plugins/Gk0Wk/drawio/base64.min.js');
 
 $tw.utils.registerFileType('application/x-drawio', 'utf8', '.drawio', {
   flags: ['image'],
@@ -23,6 +24,7 @@ interface IEditorFactoryOptions {
   nextSibling: HTMLElement;
 }
 
+// 用于检测 iframe 是否被删除
 const drawioEditorInstance: Set<DrawIOEditor> = new Set();
 let drawioUnmountCheckTimer: NodeJS.Timer | undefined;
 const registerInstance = (editor: DrawIOEditor) => {
@@ -63,6 +65,7 @@ class DrawIOEditor {
     parentNode,
     nextSibling,
   }: IEditorFactoryOptions) {
+    // SSR 模式下不渲染
     if (!$tw.browser) {
       parentNode.insertBefore(
         $tw.utils.domMaker('div', {
@@ -102,6 +105,8 @@ class DrawIOEditor {
 
     this.xml = value;
     let hasInited = false;
+    // 嵌入模式 通信协议
+    // See: https://www.drawio.com/doc/faq/embed-mode
     const receive = ({ data, source }: MessageEvent<string>) => {
       if (
         this.iframeNode?.contentWindow === null ||
@@ -110,7 +115,6 @@ class DrawIOEditor {
         return;
       }
       const { event, ...payload } = JSON.parse(data);
-      // See: https://www.drawio.com/doc/faq/embed-mode
       switch (event) {
         case 'init': {
           if (hasInited) {
@@ -159,7 +163,7 @@ class DrawIOEditor {
         case 'export': {
           const { message, data } = payload;
           if (data && message.twEditor) {
-            const newXml = atob(data.split(',', 2)[1]);
+            const newXml = decode(data.split(',', 2)[1]);
             if (newXml === this.xml) {
               return;
             }
@@ -174,6 +178,7 @@ class DrawIOEditor {
       }
     };
 
+    // 主题
     const theme =
       $tw.wiki.getTiddlerText(
         checkIfDarkMode()
@@ -209,10 +214,12 @@ class DrawIOEditor {
     // this.iframeNode.setAttribute('width', )
   }
 
+  // 调整高度
   fixHeight(): void {
     this.resize();
   }
 
+  // 获得焦点
   focus(): void {
     this.iframeNode?.focus?.();
   }

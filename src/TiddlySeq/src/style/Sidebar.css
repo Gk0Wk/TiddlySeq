@@ -1,97 +1,99 @@
 .tc-sidebar-scrollable > div {
-  width: 100%;
+width: 100%;
 }
 
 .tc-sidebar-scrollable .tc-sidebar-header > .tc-reveal > .tc-reveal > .tc-sidebar-tabs > p > .tc-sidebar-tabs-main > .tc-tab-buttons {
-  background: <<colour page-background>>;
-  position: sticky;
-  top: 0px;
-  padding: 14px 10px;
-  margin: 0;
-  z-index: 1;
+background: <<colour page-background>>;
+position: sticky;
+top: 0px;
+padding: 14px 10px;
+margin: 0;
+z-index: 1;
 }
 
 <$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarTitle" text="yes">.tc-sidebar-scrollable .tc-sidebar-header .tc-site-title {
-  display: none;
+display: none;
 }</$reveal>
 
 <$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSubtitle" text="yes">.tc-sidebar-scrollable .tc-sidebar-header .tc-site-subtitle {
-  display: none;
+display: none;
 }</$reveal>
 
 <$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarPageControl" text="yes">.tc-sidebar-scrollable .tc-sidebar-header .tc-page-controls {
-  display: none;
+display: none;
 }</$reveal>
 
 <$reveal type="match" state="$:/plugins/Gk0Wk/TiddlySeq/HideSidebarSearch" text="yes">.tc-sidebar-scrollable .tc-sidebar-header .tc-sidebar-search {
-  display: none;
+display: none;
 }</$reveal>
 
 .tc-sidebar-scrollable .tc-sidebar-header > .tc-reveal > .tc-reveal > .tc-sidebar-tabs > p,
 .tc-sidebar-scrollable > div > .tc-sidebar-header > .tc-reveal > div > p {
-  margin: 0;
+margin: 0;
 }
 
 .tc-sidebar-scrollable > .tc-sidebar-header,
 .tc-sidebar-header > .tc-reveal,
 .tc-sidebar-header > .tc-reveal > .tc-reveal,
 .tc-sidebar-scrollable .tc-tab-set img {
-  width: 100%;
+width: 100%;
 }
 
 .tc-sidebar-scrollable .tc-tab-set a,
 .tc-sidebar-scrollable .tc-tab-set p {
-  white-space: normal;
+white-space: normal;
 }
 
 .tc-sidebar-scrollable .tc-sidebar-header > .tc-reveal > .tc-reveal > .tc-sidebar-tabs > p > .tc-sidebar-tabs-main > .tc-tab-content > .tc-reveal > p {
-  margin: 0;
+margin: 0;
 }
 
 @media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
-  .tc-sidebar-scrollable > div {
+.tc-sidebar-scrollable > div {
     width: calc(100% - 20px);
-  }
-  .tc-sidebar-scrollable {
+}
+.tc-sidebar-scrollable {
     top: 0;
     bottom: 0;
     right: 0;
-    padding: 0 0 {{$:/plugins/Gk0Wk/TiddlySeq/StoryBottomMargin}} 10px;
+    padding: 0 0 {{$:/plugins/Gk0Wk/TiddlySeq/StoryBottomMargin}} 10px !important;
     background: <<colour page-background>>;
     filter: contrast(90%);
     height: 100vh;
-  }
-  .tc-sidebar-scrollable .tc-sidebar-header > .tc-reveal > .tc-reveal > .tc-sidebar-tabs > p > .tc-sidebar-tabs-main > .tc-tab-buttons {
+}
+.tc-sidebar-scrollable .tc-sidebar-header > .tc-reveal > .tc-reveal > .tc-sidebar-tabs > p > .tc-sidebar-tabs-main > .tc-tab-buttons {
     padding: 6px 0;
-  }
-  .tc-sidebar-scrollable .tc-sidebar-header > .tc-reveal > .tc-reveal > .tc-sidebar-tabs > p > .tc-sidebar-tabs-main > .tc-tab-content {
+}
+.tc-sidebar-scrollable .tc-sidebar-header > .tc-reveal > .tc-reveal > .tc-sidebar-tabs > p > .tc-sidebar-tabs-main > .tc-tab-content {
     margin-top: 0;
-  }
+}
 }
 
+.tc-sidebar-lists .tc-tab-buttons button,
 .tc-tab-buttons.tc-sidebar-tabs-main > button {
-  background: transparent;
-  border: none;
-  font-size: 1.3em;
-  opacity: 0.5;
-  color: <<colour muted-foreground>>;
-  fill: <<colour muted-foreground>>;
-  transition: all {{$:/config/AnimationDuration}}ms;
+background: transparent !important;
+background-color: transparent !important;
+border: none;
+font-size: 1.3em;
+opacity: 0.5;
+color: <<colour muted-foreground>>;
+fill: <<colour muted-foreground>>;
+transition: all {{$:/config/AnimationDuration}}ms;
 }
 
 .tc-tab-buttons.tc-sidebar-tabs-main > button:hover,
 .tc-tab-buttons.tc-sidebar-tabs-main > button.tc-tab-selected {
-  font-weight: 600;
-  border: none;
-  background: transparent;
-  color: <<colour foreground>>;
-  fill: <<colour foreground>>;
+font-weight: 600;
+border: none;
+background: transparent;
+color: <<colour foreground>>;
+fill: <<colour foreground>>;
 }
 
 .tc-tab-buttons.tc-sidebar-tabs-main > button:hover {
-  opacity: 1;
+opacity: 1;
 }
 
 .tc-tab-buttons.tc-sidebar-tabs-main > button.tc-tab-selected {
-  opacity: 0.8;
+opacity: 0.8;
 }

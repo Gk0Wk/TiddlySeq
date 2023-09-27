@@ -3,7 +3,7 @@ html::-webkit-scrollbar {
 }
 
 .tc-story-river {
-  padding: 0;
+  padding: 0 !important;
   padding-bottom: 0 !important;
 }
 
