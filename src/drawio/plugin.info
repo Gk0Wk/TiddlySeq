@@ -4,6 +4,6 @@
   "author": "Gk0Wk",
   "description": "draw.io powerful diagram editor for TiddlyWiki",
   "plugin-type": "plugin",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "list": "readme config LICENSE"
 }

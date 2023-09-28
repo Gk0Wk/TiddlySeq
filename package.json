@@ -46,27 +46,27 @@
     ]
   },
   "devDependencies": {
-    "@modern-js/eslint-config": "^2.22.1",
-    "@modern-js/tsconfig": "^2.22.1",
-    "@types/node": "^20.3.1",
+    "@modern-js/eslint-config": "^2.35.1",
+    "@modern-js/tsconfig": "^2.35.1",
+    "@types/node": "^20.7.1",
     "husky": "^8.0.3",
-    "lint-staged": "^13.2.2",
-    "rimraf": "^5.0.1",
+    "lint-staged": "^14.0.1",
+    "rimraf": "^5.0.5",
     "ts-node": "^10.9.1",
-    "tw5-typed": "^0.3.1",
-    "typescript": "^5.1.3"
+    "tw5-typed": "^0.3.10",
+    "typescript": "^5.2.2"
   },
   "dependencies": {
     "@microsoft/fetch-event-source": "^2.0.1",
-    "@mind-elixir/export-html": "^2.0.0",
-    "@mind-elixir/export-xmind": "^2.0.0",
+    "@mind-elixir/export-html": "^3.0.0",
+    "@mind-elixir/export-xmind": "^2.0.1",
     "file-saver": "^2.0.5",
     "jszip": "^3.10.1",
-    "mind-elixir": "^2.0.2",
+    "mind-elixir": "^3.1.4",
     "mind-elixir-ts": "^1.1.11",
-    "npm-check-updates": "^16.10.12",
-    "opml": "^0.5.1",
-    "tiddlywiki": "^5.2.7",
-    "tiddlywiki-plugin-dev": "^0.0.37"
+    "npm-check-updates": "^16.14.4",
+    "opml": "^0.5.2",
+    "tiddlywiki": "^5.3.1",
+    "tiddlywiki-plugin-dev": "^0.0.39"
   }
 }

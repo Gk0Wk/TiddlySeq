@@ -16,6 +16,9 @@ const checkIfDarkMode = () =>
     'color-scheme'
   ] === 'dark';
 
+const isChinese = () =>
+  $tw.wiki.getTiddler('$:/language')!.fields.text.includes('zh');
+
 interface IEditorFactoryOptions {
   widget: Widget;
   value: string;
@@ -55,6 +58,10 @@ const registerInstance = (editor: DrawIOEditor) => {
 class DrawIOEditor {
   xml: string;
 
+  parentNode: HTMLElement;
+
+  nextSibling: HTMLElement;
+
   iframeNode?: HTMLIFrameElement;
 
   unmount: () => void;
@@ -65,6 +72,9 @@ class DrawIOEditor {
     parentNode,
     nextSibling,
   }: IEditorFactoryOptions) {
+    this.parentNode = parentNode;
+    this.nextSibling = nextSibling;
+
     // SSR 模式下不渲染
     if (!$tw.browser) {
       parentNode.insertBefore(
@@ -102,6 +112,29 @@ class DrawIOEditor {
       },
     });
     parentNode.insertBefore(this.iframeNode, nextSibling);
+
+    // 全屏按钮
+    const chatButton = $tw.utils.domMaker('button', {
+      class: 'full-screen-button',
+      innerHTML: $tw.wiki.renderTiddler(
+        'text/html',
+        '$:/core/images/full-screen-button',
+      ),
+      attributes: {
+        title: isChinese() ? '全屏模式' : 'Full screen mode',
+      },
+      style: {
+        position: 'absolute',
+        right: '0',
+        bottom: '-42px',
+        padding: '0 15px',
+        background: '#fff3',
+        border: '1px #fff7 solid',
+        cursor: 'pointer',
+      },
+    });
+    chatButton.onclick = () => this.setFullscreen(true);
+    parentNode.insertBefore(chatButton, nextSibling);
 
     this.xml = value;
     let hasInited = false;
@@ -252,6 +285,14 @@ class DrawIOEditor {
   // 设置内容, 一般是由代码(如子组件)通过调用来主动触发
   setText(value: string, _type: string) {
     this.loadXml(value);
+  }
+
+  setFullscreen(mode = true) {
+    if (mode) {
+      this.iframeNode?.requestFullscreen?.();
+    } else {
+      document.exitFullscreen();
+    }
   }
 }
 

@@ -17,6 +17,8 @@ draw.io 是一个强大的在线图表编辑器，可以用来绘制流程图、
 
 在编辑器中，你可以导入和导出各种类型的图表文件。图标实际上将以 SVG+嵌入式 XML 的形式保存在 <$text text="TiddlyWiki" /> 中，这样可以保证图表的可编辑性。你可以在编辑器中导出为各种格式的文件，也可以在 <$text text="TiddlyWiki" /> 中导出为 SVG、PNG 等文件。
 
+> 如果你觉得编辑器太小，在编辑器的右下角有一个 {{$:/core/images/full-screen-button}} 全屏按钮，点击即可全屏编辑器，再次按 <kbd>Esc</kbd> 即可退出全屏!
+
 你可以在这里查看 draw.io 的官方文档：https://www.drawio.com/
 
 快来试试吧！
@@ -34,6 +36,8 @@ Note: The editing mode requires networking, because draw.io is an online editor,
 You can modify the theme of the editor in the settings of the plugin in day or night mode.
 
 In the editor, you can import and export various types of chart files. The icon is actually saved in the form of SVG+embedded XML in <$text text="TiddlyWiki" />, which ensures the editability of the chart. You can export to various formats of files in the editor, or export to SVG, PNG and other files in <$text text="TiddlyWiki" />.
+
+> If you think the editor is too small, there is a {{$:/core/images/full-screen-button}} full screen button in the lower right corner of the editor, click to enter full screen editor, press <kbd>Esc</kbd> again to exit full screen!
 
 You can view the official documentation of draw.io here: https://www.drawio.com/
 
