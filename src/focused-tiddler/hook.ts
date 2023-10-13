@@ -52,7 +52,7 @@ const update = (dom: Element | null) => {
 
 export const name = 'gk0wk-focused-tiddler';
 export const platforms = ['browser'];
-export const after = ['story'];
+export const after = ['render'];
 export const synchronous = true;
 export const startup = () => {
   updateTopOffset();

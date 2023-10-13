@@ -1,4 +1,8 @@
-if ($tw.browser) {
+export const name = 'gk0wk-sidebar-resizer';
+export const platforms = ['browser'];
+export const after = ['render'];
+export const synchronous = true;
+export const startup = () => {
   let canResize = false;
   let sidebarResizerNode: HTMLElement | null = null;
   const { body } = document;
@@ -103,4 +107,4 @@ if ($tw.browser) {
       body.addEventListener('touchmove', drag, true);
     }
   });
-}
+};

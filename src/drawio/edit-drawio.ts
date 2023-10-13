@@ -2,13 +2,14 @@ import type { Widget } from 'tiddlywiki';
 
 const { editTextWidgetFactory } = require('$:/core/modules/editor/factory.js');
 const { SimpleEngine } = require('$:/core/modules/editor/engines/simple.js');
-const { decode } = require('$:/plugins/Gk0Wk/drawio/base64.min.js');
 
 $tw.utils.registerFileType('application/x-drawio', 'utf8', '.drawio', {
   flags: ['image'],
+  deserializerType: 'image/svg+xml',
 });
 $tw.utils.registerFileType('application/vnd.drawio', 'utf8', '.drawio', {
   flags: ['image'],
+  deserializerType: 'image/svg+xml',
 });
 
 const checkIfDarkMode = () =>
@@ -77,20 +78,18 @@ class DrawIOEditor {
 
     // SSR 模式下不渲染
     if (!$tw.browser) {
-      parentNode.insertBefore(
-        $tw.utils.domMaker('div', {
-          document: widget.document,
-          class: 'gk0wk-drawio-preview',
-          style: {
-            margin: '0',
-            border: 'none',
-            width: '100%',
-            height: '100%',
-          },
-          innerHTML: value,
-        }),
-        nextSibling,
-      );
+      const node = $tw.utils.domMaker('div', {
+        document: widget.document,
+        class: 'gk0wk-drawio-preview',
+        style: {
+          margin: '0',
+          border: 'none',
+          width: '100%',
+          height: '100%',
+        },
+        innerHTML: value,
+      });
+      parentNode.insertBefore(node, nextSibling);
       this.xml = '';
       this.unmount = () => null;
       return;
@@ -147,7 +146,10 @@ class DrawIOEditor {
       ) {
         return;
       }
-      const { event, ...payload } = JSON.parse(data);
+      const { event, ...payload } = $tw.utils.parseJSONSafe(
+        data,
+        () => ({}),
+      ) as any;
       switch (event) {
         case 'init': {
           if (hasInited) {
@@ -196,7 +198,9 @@ class DrawIOEditor {
         case 'export': {
           const { message, data } = payload;
           if (data && message.twEditor) {
-            const newXml = decode(data.split(',', 2)[1]);
+            const newXml = ($tw.utils as any).base64Decode(
+              data.split(',', 2)[1],
+            );
             if (newXml === this.xml) {
               return;
             }

@@ -192,112 +192,119 @@ class ElixirWidget extends Widget {
       );
     } catch {}
 
-    // Configure
-    this.draggable = dataAndOptions.options?.draggable ?? true;
-    this.contextMenu = dataAndOptions.options?.contextMenu ?? true;
-    this.toolBar = dataAndOptions.options?.toolBar ?? true;
-    this.nodeMenu = dataAndOptions.options?.nodeMenu ?? true;
-    this.keypress = dataAndOptions.options?.keypress ?? true;
-    this.locale = dataAndOptions.options?.locale ?? 'auto';
-    this.overflowHidden = dataAndOptions.options?.overflowHidden ?? false;
-    this.allowUndo = dataAndOptions.options?.allowUndo ?? false;
-    this.primaryLinkStyle = dataAndOptions.options?.primaryLinkStyle ?? '1';
-    // Style
-    this.loadTheme(dataAndOptions.data?.theme ?? {});
-    this.locale_ = this.locale === 'auto' ? this.locale_ : this.locale;
+    try {
+      // Configure
+      this.draggable = dataAndOptions.options?.draggable ?? true;
+      this.contextMenu = dataAndOptions.options?.contextMenu ?? true;
+      this.toolBar = dataAndOptions.options?.toolBar ?? true;
+      this.nodeMenu = dataAndOptions.options?.nodeMenu ?? true;
+      this.keypress = dataAndOptions.options?.keypress ?? true;
+      this.locale = dataAndOptions.options?.locale ?? 'auto';
+      this.overflowHidden = dataAndOptions.options?.overflowHidden ?? false;
+      this.allowUndo = dataAndOptions.options?.allowUndo ?? false;
+      this.primaryLinkStyle = dataAndOptions.options?.primaryLinkStyle ?? '1';
+      // Style
+      this.loadTheme(dataAndOptions.data?.theme ?? {});
+      this.locale_ = this.locale === 'auto' ? this.locale_ : this.locale;
 
-    // Data Loading
-    const data =
-      dataAndOptions.data ?? (MindElixir as any).new(i18nMap[this.locale_].new);
-    data.theme = this.genTheme();
+      // Data Loading
+      const data =
+        dataAndOptions.data ??
+        (MindElixir as any).new(i18nMap[this.locale_].new);
+      data.theme = this.genTheme();
 
-    // 渲染导图
-    const container = $tw.utils.domMaker(this.containerNodeTag, {
-      class: `gk0wk-mind-elixir-container ${this.containerNodeClass}`,
-      style: {
-        height: this.containerHeight,
-        width: this.containerWidth,
-      },
-    });
-    parent.insertBefore(container, nextSibling);
-    this.domNodes.push(container);
-    this.elixirInstance = new MindElixir({
-      el: container,
-      data: undefined as any,
-      locale: this.locale_,
-      draggable: this.draggable,
-      contextMenu: this.contextMenu,
-      toolBar: this.toolBar,
-      keypress: this.keypress,
-      allowUndo: this.allowUndo,
-      overflowHidden: this.overflowHidden,
-      primaryLinkStyle: this.primaryLinkStyle,
-      contextMenuOption: {
-        link: true,
-        focus: true,
-      },
-    } as any);
-    if (this.nodeMenu) {
-      (this.elixirInstance as any).install(nodeMenuPlugin);
-    }
-    (this.elixirInstance as any).init(data);
-
-    // 导图变更时保存
-    this.elixirInstance.bus.addListener('operation', (operation: any) => {
-      if (
-        {
-          insertSibling: true,
-          addChild: true,
-          removeNode: true,
-          moveNode: true,
-          finishEdit: true,
-          reshapeNode: true,
-        }[operation.name as string]
-      ) {
-        this.saveTiddler();
+      // 渲染导图
+      const container = $tw.utils.domMaker(this.containerNodeTag, {
+        class: `gk0wk-mind-elixir-container ${this.containerNodeClass}`,
+        style: {
+          height: this.containerHeight,
+          width: this.containerWidth,
+        },
+      });
+      parent.insertBefore(container, nextSibling);
+      this.domNodes.push(container);
+      this.elixirInstance = new MindElixir({
+        el: container,
+        data: undefined as any,
+        locale: this.locale_,
+        draggable: this.draggable,
+        contextMenu: this.contextMenu,
+        toolBar: this.toolBar,
+        keypress: this.keypress,
+        allowUndo: this.allowUndo,
+        overflowHidden: this.overflowHidden,
+        primaryLinkStyle: this.primaryLinkStyle,
+        contextMenuOption: {
+          link: true,
+          focus: true,
+        },
+      } as any);
+      if (this.nodeMenu) {
+        (this.elixirInstance as any).install(nodeMenuPlugin);
       }
-    });
-    (globalThis as any).i = this.elixirInstance;
+      (this.elixirInstance as any).init(data);
 
-    // 添加其他菜单的按钮
-    const toolbar = container.querySelector(
-      '.map-container > .mind-elixir-toolbar.rb',
-    )!;
-    toolbar.append(this.getThemeButton());
-    toolbar.append(this.getExportButton());
-    toolbar.appendChild(this.getSettingButton());
-
-    // 让节点菜单在最前
-    (
-      container.querySelector('.map-container > .node-menu') as HTMLDivElement
-    ).style.zIndex = '1000';
-    (
-      container.querySelector('.map-container > .node-menu') as HTMLDivElement
-    ).style.color = 'black';
-
-    // 有些图标自己有颜色，需要清除
-    if (initIcon === false) {
-      const clearFill = (s: Element) => {
-        s.parentElement!.querySelectorAll('symbol > path').forEach(path =>
-          path.setAttribute('fill', 'inhert'),
-        );
-        initIcon = true;
-      };
-      // 可能需要延迟检测
-      setTimeout(() => {
-        const s = document.querySelector('body > svg > symbol#icon-right');
-        if (s?.parentElement) {
-          clearFill(s);
-        } else {
-          const id = setInterval(() => {
-            const s = document.querySelector('body > svg > symbol#icon-right');
-            if (s?.parentElement) {
-              clearFill(s);
-              clearInterval(id);
-            }
-          }, 100);
+      // 导图变更时保存
+      this.elixirInstance.bus.addListener('operation', (operation: any) => {
+        if (
+          {
+            insertSibling: true,
+            addChild: true,
+            removeNode: true,
+            moveNode: true,
+            finishEdit: true,
+            reshapeNode: true,
+          }[operation.name as string]
+        ) {
+          this.saveTiddler();
         }
-      }, 0);
+      });
+      (globalThis as any).i = this.elixirInstance;
+
+      // 添加其他菜单的按钮
+      const toolbar = container.querySelector(
+        '.map-container > .mind-elixir-toolbar.rb',
+      )!;
+      toolbar.append(this.getThemeButton());
+      toolbar.append(this.getExportButton());
+      toolbar.appendChild(this.getSettingButton());
+
+      // 让节点菜单在最前
+      (
+        container.querySelector('.map-container > .node-menu') as HTMLDivElement
+      ).style.zIndex = '1000';
+      (
+        container.querySelector('.map-container > .node-menu') as HTMLDivElement
+      ).style.color = 'black';
+
+      // 有些图标自己有颜色，需要清除
+      if (initIcon === false) {
+        const clearFill = (s: Element) => {
+          s.parentElement!.querySelectorAll('symbol > path').forEach(path =>
+            path.setAttribute('fill', 'inhert'),
+          );
+          initIcon = true;
+        };
+        // 可能需要延迟检测
+        setTimeout(() => {
+          const s = document.querySelector('body > svg > symbol#icon-right');
+          if (s?.parentElement) {
+            clearFill(s);
+          } else {
+            const id = setInterval(() => {
+              const s = document.querySelector(
+                'body > svg > symbol#icon-right',
+              );
+              if (s?.parentElement) {
+                clearFill(s);
+                clearInterval(id);
+              }
+            }, 100);
+          }
+        }, 0);
+      }
+    } catch (e) {
+      console.error(e);
     }
   }
 
@@ -396,94 +403,96 @@ class ElixirWidget extends Widget {
     });
     themeIcon.innerHTML = this.themeButtonText;
     const svg = themeIcon.firstChild as SVGElement;
-    let menuContainerHidden = true;
-    svg.onclick = () => {
-      menuContainerHidden = !menuContainerHidden;
-      menuContainer.style.display = menuContainerHidden ? 'none' : 'flex';
-      if (menuContainerHidden) {
-        menuContainer.innerHTML = '';
-      } else {
-        // Export Themes
-        const btn = $tw.utils.domMaker('button', {
-          class: 'gk0wk-elixir-export-menu-item',
-          style: {
-            width: '100%',
-            cursor: 'pointer',
-            padding: '10px',
-            overflow: 'hidden',
-            whiteSpace: 'nowrap',
-            textOverflow: 'ellipsis',
-            textAlign: 'center',
-            background: '#57d674',
-            color: 'black',
-            fontWeight: '750',
-          },
-          text: i18nMap[this.locale_].exportTheme ?? 'Export Theme',
-        });
-        btn.onclick = () => {
-          const t = Math.random().toString(16).replace('0.', '');
-          // eslint-disable-next-line node/prefer-global/url
-          const url = URL.createObjectURL(
-            new Blob(
-              [
-                [
-                  `title: $:/plugins/Gk0Wk/mindmap-elixir/theme/users/${t}`,
-                  `caption: theme-${t}`,
-                  'tags: $:/mindmap-elixir/themes',
-                  'type: application/json',
-                  '',
-                  JSON.stringify(
-                    this.elixirInstance!.getData().theme,
-                    undefined,
-                    2,
-                  ),
-                ].join('\n'),
-              ],
-              { type: 'text/vnd.tiddlywiki' },
-            ),
-          );
-          const a = document.createElement('a');
-          a.href = url;
-          a.download = `elixir-theme-${t}.tid`;
-          a.click();
-          // eslint-disable-next-line node/prefer-global/url
-          URL.revokeObjectURL(url);
-        };
-        menuContainer.appendChild(btn);
-        // Themes
-        $tw.wiki
-          .getTiddlersWithTag('$:/mindmap-elixir/themes')
-          .forEach(tiddler => {
-            const btn = $tw.utils.domMaker('button', {
-              class: 'gk0wk-elixir-export-menu-item',
-              style: {
-                width: '100%',
-                cursor: 'pointer',
-                padding: '10px',
-                overflow: 'hidden',
-                whiteSpace: 'nowrap',
-                textOverflow: 'ellipsis',
-                textAlign: 'center',
-                borderTop: '1px solid #7779',
-              },
-              text: ($tw.wiki.getTiddler(tiddler)?.fields?.caption ||
-                tiddler.split('/').pop() ||
-                tiddler) as string,
-            });
-            btn.onclick = () => {
-              const data = $tw.wiki.getTiddlerData(tiddler);
-              this.loadTheme(data);
-              this.saveTiddler(true);
-            };
-            menuContainer.appendChild(btn);
+    if (svg) {
+      let menuContainerHidden = true;
+      svg.onclick = () => {
+        menuContainerHidden = !menuContainerHidden;
+        menuContainer.style.display = menuContainerHidden ? 'none' : 'flex';
+        if (menuContainerHidden) {
+          menuContainer.innerHTML = '';
+        } else {
+          // Export Themes
+          const btn = $tw.utils.domMaker('button', {
+            class: 'gk0wk-elixir-export-menu-item',
+            style: {
+              width: '100%',
+              cursor: 'pointer',
+              padding: '10px',
+              overflow: 'hidden',
+              whiteSpace: 'nowrap',
+              textOverflow: 'ellipsis',
+              textAlign: 'center',
+              background: '#57d674',
+              color: 'black',
+              fontWeight: '750',
+            },
+            text: i18nMap[this.locale_].exportTheme ?? 'Export Theme',
           });
-      }
-    };
-    svg.removeAttribute('width');
-    svg.removeAttribute('height');
-    svg.removeAttribute('class');
-    svg.classList.add('icon');
-    svg.ariaHidden = 'true';
+          btn.onclick = () => {
+            const t = Math.random().toString(16).replace('0.', '');
+            // eslint-disable-next-line node/prefer-global/url
+            const url = URL.createObjectURL(
+              new Blob(
+                [
+                  [
+                    `title: $:/plugins/Gk0Wk/mindmap-elixir/theme/users/${t}`,
+                    `caption: theme-${t}`,
+                    'tags: $:/mindmap-elixir/themes',
+                    'type: application/json',
+                    '',
+                    JSON.stringify(
+                      this.elixirInstance!.getData().theme,
+                      undefined,
+                      2,
+                    ),
+                  ].join('\n'),
+                ],
+                { type: 'text/vnd.tiddlywiki' },
+              ),
+            );
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `elixir-theme-${t}.tid`;
+            a.click();
+            // eslint-disable-next-line node/prefer-global/url
+            URL.revokeObjectURL(url);
+          };
+          menuContainer.appendChild(btn);
+          // Themes
+          $tw.wiki
+            .getTiddlersWithTag('$:/mindmap-elixir/themes')
+            .forEach(tiddler => {
+              const btn = $tw.utils.domMaker('button', {
+                class: 'gk0wk-elixir-export-menu-item',
+                style: {
+                  width: '100%',
+                  cursor: 'pointer',
+                  padding: '10px',
+                  overflow: 'hidden',
+                  whiteSpace: 'nowrap',
+                  textOverflow: 'ellipsis',
+                  textAlign: 'center',
+                  borderTop: '1px solid #7779',
+                },
+                text: ($tw.wiki.getTiddler(tiddler)?.fields?.caption ||
+                  tiddler.split('/').pop() ||
+                  tiddler) as string,
+              });
+              btn.onclick = () => {
+                const data = $tw.wiki.getTiddlerData(tiddler);
+                this.loadTheme(data);
+                this.saveTiddler(true);
+              };
+              menuContainer.appendChild(btn);
+            });
+        }
+      };
+      svg.removeAttribute('width');
+      svg.removeAttribute('height');
+      svg.removeAttribute('class');
+      svg.classList.add('icon');
+      svg.ariaHidden = 'true';
+    }
     themeIcon.appendChild(menuContainer);
     return themeIcon;
   }

@@ -62,7 +62,7 @@
     "@mind-elixir/export-xmind": "^2.0.1",
     "file-saver": "^2.0.5",
     "jszip": "^3.10.1",
-    "mind-elixir": "^3.1.4",
+    "mind-elixir": "^3.2.6",
     "mind-elixir-ts": "^1.1.11",
     "npm-check-updates": "^16.14.4",
     "opml": "^0.5.2",
