@@ -8,7 +8,7 @@
   top: {{$:/plugins/Gk0Wk/notionpage-covericon/style/top-offset/wide}};
 }
 
-.gk0wk-notionpagebg .gk0wk-notionpagebg-image {
+.gk0wk-notionpagebg .gk0wk-notionpagebg-imagebox {
   width: calc(100% - {{$:/plugins/Gk0Wk/notionpage-covericon/style/cover-left/wide}} - {{$:/plugins/Gk0Wk/notionpage-covericon/style/cover-right/wide}});
   left: {{$:/plugins/Gk0Wk/notionpage-covericon/style/cover-left/wide}};
   height: {{$:/plugins/Gk0Wk/notionpage-covericon/style/cover-height/wide}};
@@ -29,7 +29,7 @@
   .gk0wk-notionpagebg-c, .gk0wk-notionpagebg-ci {
     top: {{$:/plugins/Gk0Wk/notionpage-covericon/style/top-offset/narrow}};
   }
-  .gk0wk-notionpagebg .gk0wk-notionpagebg-image {
+  .gk0wk-notionpagebg .gk0wk-notionpagebg-imagebox {
     width: calc(100% - {{$:/plugins/Gk0Wk/notionpage-covericon/style/cover-left/narrow}} - {{$:/plugins/Gk0Wk/notionpage-covericon/style/cover-right/narrow}});
     left: {{$:/plugins/Gk0Wk/notionpage-covericon/style/cover-left/narrow}};
     height: {{$:/plugins/Gk0Wk/notionpage-covericon/style/cover-height/narrow}};
@@ -115,14 +115,6 @@
 
 .gk0wk-notionpageb-changecover:hover {
   background: <<colour background>>;
-}
-
-/* Page Cover */
-
-.gk0wk-notionpagebg .gk0wk-notionpagebg-image img {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 /* Change Page Cover */

@@ -1,4 +1,8 @@
 title: $:/plugins/Gk0Wk/notionpage-covericon/readme
+tags: $:/tags/ControlPanel/Appearance
+type: text/vnd.tiddlywiki
+caption: Notion Page
+list-after: $:/core/ui/ControlPanel/Toolbars
 
 \define lingo-base() $:/language/ThemeTweaks/
 
@@ -27,6 +31,10 @@ title: $:/plugins/Gk0Wk/notionpage-covericon/readme
 |[[封面左侧位置(宽屏模式)|$:/plugins/Gk0Wk/notionpage-covericon/style/cover-left/wide]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/cover-left/wide" placeholder="如：-42px" tag="input"/> |
 |[[封面右侧位置(紧凑模式)|$:/plugins/Gk0Wk/notionpage-covericon/style/cover-right/narrow]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/cover-right/narrow" placeholder="如：-14px" tag="input"/> |
 |[[封面右侧位置(宽屏模式)|$:/plugins/Gk0Wk/notionpage-covericon/style/cover-right/wide]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/cover-right/wide" placeholder="如：-42px" tag="input"/> |
+|[[默认封面背景模糊程度|$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-bg-blur]] | <$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-bg-blur" default="8px" placeholder="0~100px" tag="input"/> |
+|[[默认封面大小(CSS background-size)|$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-size]] | <$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-size" default="cover" placeholder="cover, contain, auto, 100% 100%, 100% auto, auto 100%"/> |
+|[[默认封面位置(CSS background-position)|$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-position]] | <$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-position" default="center" placeholder="center, top, bottom, left, right, top left, top right, bottom left, bottom right"/> |
+|[[默认封面重复(CSS background-repeat)|$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-repeat]] | <$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-repeat" default="no-repeat" placeholder="no-repeat, repeat, repeat-x, repeat-y"/> |
 
 </div>
 
@@ -60,6 +68,10 @@ Use the following fields to store the page's icon and cover information.
 |[[Left position of page cover(Widescreen mode)|$:/plugins/Gk0Wk/notionpage-covericon/style/cover-left/wide]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/cover-left/wide" placeholder="e.g. -42px" tag="input"/> |
 |[[Right position of page cover(Compact mode)|$:/plugins/Gk0Wk/notionpage-covericon/style/cover-right/narrow]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/cover-right/narrow" placeholder="e.g. -14px" tag="input"/> |
 |[[Right position of page cover(Widescreen mode)|$:/plugins/Gk0Wk/notionpage-covericon/style/cover-right/wide]] |<$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/style/cover-right/wide" placeholder="e.g. -42px" tag="input"/> |
+|[[Default cover background blur|$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-bg-blur]] | <$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-bg-blur" default="8px" placeholder="0~100px" tag="input"/> |
+|[[Default cover size(CSS background-size)|$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-size]] | <$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-size" default="cover" placeholder="cover, contain, auto, 100% 100%, 100% auto, auto 100%"/> |
+|[[Default cover position(CSS background-position)|$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-position]] | <$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-position" default="center" placeholder="center, top, bottom, left, right, top left, top right, bottom left, bottom right"/> |
+|[[Default cover repeat(CSS background-repeat)|$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-repeat]] | <$edit-text tiddler="$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-repeat" default="no-repeat" placeholder="no-repeat, repeat, repeat-x, repeat-y"/> |
 
 </div>
 

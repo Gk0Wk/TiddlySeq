@@ -1,0 +1,17 @@
+title: $:/plugins/Gk0Wk/notionpage-covericon/
+
+default-icon: 📒
+default-pagecover-url: https://source.unsplash.com/random
+style/cover-height/narrow: 300px
+style/cover-height/wide: 300px
+style/top-offset/narrow: -14px
+style/top-offset/wide: -28px
+style/cover-left/narrow: -14px
+style/cover-left/wide: -42px
+style/cover-right/narrow: -14px
+style/cover-right/wide: -42px
+style/icon-size: 65px
+config/default-cover-bg-blur: 8px
+config/default-cover-size: cover
+config/default-cover-position: center
+config/default-cover-repeat: no-repeat
