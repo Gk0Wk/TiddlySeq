@@ -1,7 +1,7 @@
 created: 20211214153552380
 creator: Sttot
 icon: 🧾
-modified: 20211215043051275
+modified: 20231013185645188
 modifier: Sttot
 page-cover: https://unsplash.com/photos/xG8IQMqMITM/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MXx8dGFibGUlMjBvZiUyMGNvbnRlbnRzfHwwfHx8fDE2Mzk0OTcxNzk&force=true&w=1920
 tags: MyPlugins ExcludeFromEmpty
@@ -26,6 +26,9 @@ type: text/vnd.tiddlywiki
 :* 为控件添加`scrollMode`参数，可以自定义标题滚动的目标位置；
 :* 为控件添加`h1`，`h2`，`h3`，`h4`，`h5`和`h6`参数，可以自定义包含哪些标题；
 :* 修复标题包括样式、控件和宏时显示不完全的问题；
+
+; v0.0.5
+:* 现在 TOC 终于可以支持 Markdown 格式，并且正确识别任意位置（包括 transclude）的标题，均可跳转
 
 </$list>
 

@@ -3,7 +3,6 @@ import {
   IParseTreeNode,
   IChangedTiddlers,
   IWidgetInitialiseOptions,
-  IWikiASTNode,
 } from 'tiddlywiki';
 import { widget as Widget } from '$:/core/modules/widgets/widget.js';
 
@@ -120,7 +119,7 @@ class PageTOCWidget extends Widget {
                     '\\"',
                   )}"]`,
                 )
-                ?.querySelectorAll?.(`.tc-tiddler-body > ${tag}`)?.[count];
+                ?.querySelectorAll?.(`.tc-tiddler-body ${tag}`)?.[count];
               if (!target) {
                 return;
               }
@@ -187,7 +186,12 @@ class PageTOCWidget extends Widget {
       return undefined;
     }
     const type = currentTiddler.fields.type || 'text/vnd.tiddlywiki';
-    if (type !== 'text/vnd.tiddlywiki' && type !== 'text/x-markdown') {
+    const deserializerType =
+      $tw.config.contentTypeInfo[type]?.deserializerType || type;
+    if (
+      deserializerType !== 'text/vnd.tiddlywiki' &&
+      deserializerType !== 'text/x-markdown'
+    ) {
       return undefined;
     }
     const headers: { tag: HeaderTag; count: number; text: string }[] = [];
@@ -199,33 +203,34 @@ class PageTOCWidget extends Widget {
       h5: 0,
       h6: 0,
     };
-    const root = $tw.wiki.parseTiddler(this.tocTitle).tree;
-    if (root.length === 0) {
-      return undefined;
-    }
-    let contents = root;
-    // Parse params
-    while (['set', 'importvariables'].includes(contents[0]?.type)) {
-      contents = (contents[0] as IWikiASTNode).children ?? [];
-    }
-    $tw.utils.each([...contents], node => {
-      if (node.type !== 'element') {
-        return;
+
+    // parse AST tree
+    const ast = $tw.wiki.parseTiddler(this.tocTitle).tree;
+    // make widget tree
+    const rootWidget = $tw.wiki.makeWidget({ tree: ast });
+    // render and get dom tree
+    const container = $tw.fakeDocument.createElement('div');
+    rootWidget.render(container, null);
+
+    // dfs find all headers
+    const stack: Element[] = [container];
+    while (stack.length > 0) {
+      const node = stack.pop()!;
+      if (/^h[1-6]$/.test(node.tagName)) {
+        console.log(node);
+        headers.push({
+          tag: node.tagName as HeaderTag,
+          count: headersCount[node.tagName as HeaderTag]++,
+          text: node.textContent || '',
+        });
       }
-      if (this.includeHeaderMap[(node as any).tag as HeaderTag] !== true) {
-        return;
+      if (Array.isArray(node.children)) {
+        for (let i = node.children.length - 1; i >= 0; i--) {
+          stack.push(node.children[i]);
+        }
       }
-      // Render contents of header
-      contents.length = 1;
-      contents[0] = node;
-      const container = $tw.fakeDocument.createElement('div');
-      $tw.wiki.makeWidget({ tree: root }).render(container, null);
-      headers.push({
-        tag: (node as any).tag,
-        count: headersCount[(node as any).tag as HeaderTag]++,
-        text: container.textContent || '',
-      });
-    });
+    }
+
     return {
       title: this.tocTitle,
       headers,
