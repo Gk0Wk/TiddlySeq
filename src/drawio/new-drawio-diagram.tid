@@ -2,7 +2,7 @@ title: $:/plugins/Gk0Wk/drawio/new-drawio-diagram
 tags: $:/tags/PageControls $:/tags/ViewToolbar
 hint: <$text text={{{ [[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]search[zh]then[新建一个draw.io图表条目]else[Create a new draw.io diagram tiddler]] }}} />
 description: <$text text={{{ [[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]search[zh]then[新建一个draw.io图表条目]else[Create a new draw.io diagram tiddler]] }}} />
-caption: {{$:/plugins/Gk0Wk/drawio/new-drawio-diagram-icon}} <$text text={{{ [[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]search[zh]then[新建图表]else[new diagram]] }}} />
+caption: {{$:/plugins/Gk0Wk/drawio/icon}} <$text text={{{ [[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]search[zh]then[新建图表]else[new diagram]] }}} />
 
 \whitespace trim
 
@@ -16,7 +16,7 @@ caption: {{$:/plugins/Gk0Wk/drawio/new-drawio-diagram-icon}} <$text text={{{ [[$
 \whitespace trim
 <$button tooltip={{{ [[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]search[zh]then[新建一个draw.io图表条目]else[Create a new draw.io diagram tiddler]] }}} aria-label={{{ [[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]search[zh]then[新建图表]else[new diagram]] }}} class=<<tv-config-toolbar-class>> actions=<<createDiagram>> >
 <$list filter="[<tv-config-toolbar-icons>match[yes]]">
-{{$:/plugins/Gk0Wk/drawio/new-drawio-diagram-icon}}
+{{$:/plugins/Gk0Wk/drawio/icon}}
 </$list>
 <$list filter="[<tv-config-toolbar-text>match[yes]]">
 <span class="tc-btn-text">

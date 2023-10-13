@@ -13,7 +13,7 @@ const updateTopOffset = () => {
 };
 const check = () => {
   const tiddlers = document.querySelectorAll(
-    '.tc-story-river > .tc-tiddler-frame',
+    '.tc-story-river .tc-tiddler-frame',
   );
   if (tiddlers.length === 0) {
     update(null);
@@ -71,7 +71,7 @@ export const startup = () => {
       return;
     }
     const tiddlers = document.querySelectorAll(
-      '.tc-story-river > .tc-tiddler-frame',
+      '.tc-story-river .tc-tiddler-frame',
     );
     for (let i = tiddlers.length - 1; i >= 0; i--) {
       if (tiddlers[i].contains(target as any)) {

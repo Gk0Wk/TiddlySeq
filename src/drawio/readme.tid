@@ -9,7 +9,7 @@ caption: draw.io
 
 draw.io 是一个强大的在线图表编辑器，可以用来绘制流程图、组织结构图、UML图、网络图、平面图、电路图、数据库图、房屋平面图、地图等等。
 
-现在我将其集成到了 <$text text="TiddlyWiki" /> 中，你可以在这里使用它。点击 {{$:/plugins/Gk0Wk/drawio/new-drawio-diagram-icon}} 按钮，就可以创建一个新的图表条目，该条目在非编辑模式下会显示其绘制的内容，而在编辑模式下则会进入 draw.io 的编辑界面。
+现在我将其集成到了 <$text text="TiddlyWiki" /> 中，你可以在这里使用它。点击 {{$:/plugins/Gk0Wk/drawio/icon}} 按钮，就可以创建一个新的图表条目，该条目在非编辑模式下会显示其绘制的内容，而在编辑模式下则会进入 draw.io 的编辑界面。
 
 注意：编辑模式需要联网才能使用，因为 draw.io 是在线编辑器，初次加载需要一定的时间，所以请耐心等待。但是预览图片不需要联网，所以你可以在离线状态下查看图表，此时它和你其他的图片没有区别。
 
@@ -29,7 +29,7 @@ draw.io 是一个强大的在线图表编辑器，可以用来绘制流程图、
 
 draw.io is a powerful online diagram editor that can be used to draw flowcharts, organizational charts, UML diagrams, network diagrams, floor plans, circuit diagrams, database diagrams, house floor plans, maps, etc.
 
-Now I have integrated it into <$text text="TiddlyWiki" />, you can use it here. Click the {{$:/plugins/Gk0Wk/drawio/new-drawio-diagram-icon}} button to create a new diagram tiddler, which will display its drawing content in non-editing mode, and will enter the draw.io editing interface in editing mode.
+Now I have integrated it into <$text text="TiddlyWiki" />, you can use it here. Click the {{$:/plugins/Gk0Wk/drawio/icon}} button to create a new diagram tiddler, which will display its drawing content in non-editing mode, and will enter the draw.io editing interface in editing mode.
 
 Note: The editing mode requires networking, because draw.io is an online editor, which takes some time to load for the first time, so please be patient. But the preview image does not require networking, so you can view the chart in offline mode, and it is no different from your other images.
 
