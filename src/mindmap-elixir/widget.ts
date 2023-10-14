@@ -65,7 +65,9 @@ if (typeof window !== 'undefined') {
   data2Xmind = require('@mind-elixir/export-xmind').data2Xmind;
   // eslint-disable-next-line prefer-destructuring
   data2Html = require('@mind-elixir/export-html').data2Html;
-  MindElixir = require('$:/plugins/Gk0Wk/mindmap-elixir/elixir.min.js');
+  // eslint-disable-next-line prefer-destructuring
+  MindElixir =
+    require('$:/plugins/Gk0Wk/mindmap-elixir/elixir.min.js').MindElixir;
   (globalThis as any).MindElixir = MindElixir;
 
   const { parse, stringify } = opml;
@@ -111,13 +113,16 @@ class ElixirWidget extends Widget {
   private locale_: LocaleType = 'en';
 
   // Other
-  private optionsButtonText: string = $tw.wiki.getTiddlerText(
+  private optionsButtonText: string = $tw.wiki.renderTiddler(
+    'text/html',
     '$:/core/images/options-button',
   )!;
-  private exportButtonText: string = $tw.wiki.getTiddlerText(
+  private exportButtonText: string = $tw.wiki.renderTiddler(
+    'text/html',
     '$:/core/images/export-button',
   )!;
-  private themeButtonText: string = $tw.wiki.getTiddlerText(
+  private themeButtonText: string = $tw.wiki.renderTiddler(
+    'text/html',
     '$:/core/images/palette',
   )!;
   private saveTiddler!: (reinit?: boolean) => void;
@@ -181,16 +186,15 @@ class ElixirWidget extends Widget {
     }
 
     // 加载/创建数据
-    let dataAndOptions = {
-      options: {} as Record<string, any>,
-    } as any;
-    try {
-      dataAndOptions = JSON.parse(
-        $tw.wiki.getTiddler(this.stateTiddler)?.fields?.[
-          this.stateTiddlerField
-        ] as any,
-      );
-    } catch {}
+    const dataAndOptions = $tw.utils.parseJSONSafe<{
+      options: Record<string, any>;
+      data?: Record<string, any>;
+    }>(
+      $tw.wiki.getTiddler(this.stateTiddler)?.fields?.[
+        this.stateTiddlerField
+      ] as any,
+      () => ({ options: {} }),
+    );
 
     try {
       // Configure
@@ -398,7 +402,7 @@ class ElixirWidget extends Widget {
 
     const themeIcon = $tw.utils.domMaker('span', {
       attributes: {
-        id: 'export',
+        id: 'theme',
       },
     });
     themeIcon.innerHTML = this.themeButtonText;
@@ -487,9 +491,13 @@ class ElixirWidget extends Widget {
             });
         }
       };
-      svg.removeAttribute('width');
-      svg.removeAttribute('height');
-      svg.removeAttribute('class');
+      try {
+        svg.removeAttribute('width');
+        svg.removeAttribute('height');
+        svg.removeAttribute('class');
+      } catch {
+        //
+      }
       svg.classList.add('icon');
       svg.ariaHidden = 'true';
     }

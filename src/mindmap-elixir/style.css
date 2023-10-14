@@ -11,3 +11,20 @@
 .gk0wk-mind-elixir-container .node-menu textarea {
   color: black !important;
 }
+
+.mind-elixir-toolbar.rb {
+  display: flex;
+  align-items: center;
+}
+
+.mind-elixir-toolbar.rb span#theme,
+.mind-elixir-toolbar.rb span#export,
+.mind-elixir-toolbar.rb span#settings {
+  height: 1em;
+}
+
+.mind-elixir-toolbar.rb span#theme > p,
+.mind-elixir-toolbar.rb span#export > p,
+.mind-elixir-toolbar.rb span#settings > p {
+  margin: 0 !important;
+}

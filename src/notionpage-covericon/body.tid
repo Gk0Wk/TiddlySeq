@@ -36,27 +36,27 @@ list-before: $:/core/ui/ViewTemplate/title
         <div>
             <span style="user-select:none;opacity:0.8;font-weight:800;">URI:&nbsp;</span>
             <$edit-text tiddler=<<state>> field="page-cover" default={{{ [<tiddler>get[page-cover]] }}} placeholder="" focus="true"/>
-            <$button setTitle=<<tiddler>> setField="page-cover" setTo={{{ [<state>get[page-cover]!is[blank]else<cover-bg-blur>] }}}>Set</$button>
+            <$button setTitle=<<tiddler>> setField="page-cover" setTo={{{ [<state>get[page-cover]!is[blank]else<cover-bg-blur>] }}} style="color:inherit !important;cursor:pointer;font-weight:800;">Set</$button>
         </div>
         <div>
             <span style="user-select:none;opacity:0.8;font-weight:800;">Blur:&nbsp;</span>
             <$edit-text tiddler=<<state>> field="page-cover#bg-blur" default=<<cover-bg-blur>> placeholder="" focus="true"/>
-            <$button setTitle=<<tiddler>> setField="page-cover#bg-blur" setTo={{{ [<state>get[page-cover#bg-blur]!is[blank]else<cover-bg-blur>] }}}>Set</$button>
+            <$button setTitle=<<tiddler>> setField="page-cover#bg-blur" setTo={{{ [<state>get[page-cover#bg-blur]!is[blank]else<cover-bg-blur>] }}} style="color:inherit !important;cursor:pointer;font-weight:800;">Set</$button>
         </div>
         <div>
             <span style="user-select:none;opacity:0.8;font-weight:800;">Size:&nbsp;</span>
             <$edit-text tiddler=<<state>> field="page-cover#size" default=<<cover-size>> placeholder="" focus="true"/>
-            <$button setTitle=<<tiddler>> setField="page-cover#size" setTo={{{ [<state>get[page-cover#size]!is[blank]else<cover-size>] }}}>Set</$button>
+            <$button setTitle=<<tiddler>> setField="page-cover#size" setTo={{{ [<state>get[page-cover#size]!is[blank]else<cover-size>] }}} style="color:inherit !important;cursor:pointer;font-weight:800;">Set</$button>
         </div>
         <div>
             <span style="user-select:none;opacity:0.8;font-weight:800;">Position:&nbsp;</span>
             <$edit-text tiddler=<<state>> field="page-cover#position" default=<<cover-position>> placeholder="" focus="true"/>
-            <$button setTitle=<<tiddler>> setField="page-cover#position" setTo={{{ [<state>get[page-cover#position]!is[blank]else<cover-position>] }}}>Set</$button>
+            <$button setTitle=<<tiddler>> setField="page-cover#position" setTo={{{ [<state>get[page-cover#position]!is[blank]else<cover-position>] }}} style="color:inherit !important;cursor:pointer;font-weight:800;">Set</$button>
         </div>
         <div>
             <span style="user-select:none;opacity:0.8;font-weight:800;">Repeat:&nbsp;</span>
             <$edit-text tiddler=<<state>> field="page-cover#repeat" default=<<cover-repeat>> placeholder="" focus="true"/>
-            <$button setTitle=<<tiddler>> setField="page-cover#repeat" setTo={{{ [<state>get[page-cover#position]!is[blank]else<cover-repeat>] }}}>Set</$button>
+            <$button setTitle=<<tiddler>> setField="page-cover#repeat" setTo={{{ [<state>get[page-cover#position]!is[blank]else<cover-repeat>] }}} style="color:inherit !important;cursor:pointer;font-weight:800;">Set</$button>
         </div>
     </div>
     </$let>

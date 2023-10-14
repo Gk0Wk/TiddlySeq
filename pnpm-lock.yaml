@@ -10,10 +10,10 @@ dependencies:
     version: 2.0.1
   '@mind-elixir/export-html':
     specifier: ^3.0.0
-    version: 3.0.0(mind-elixir@3.1.4)
+    version: 3.0.0(mind-elixir@3.2.6)
   '@mind-elixir/export-xmind':
     specifier: ^2.0.1
-    version: 2.0.1(file-saver@2.0.5)(jszip@3.10.1)(mind-elixir@3.1.4)
+    version: 2.0.1(file-saver@2.0.5)(jszip@3.10.1)(mind-elixir@3.2.6)
   file-saver:
     specifier: ^2.0.5
     version: 2.0.5
@@ -21,8 +21,8 @@ dependencies:
     specifier: ^3.10.1
     version: 3.10.1
   mind-elixir:
-    specifier: ^3.1.4
-    version: 3.1.4
+    specifier: ^3.2.6
+    version: 3.2.6
   mind-elixir-ts:
     specifier: ^1.1.11
     version: 1.1.11
@@ -62,8 +62,8 @@ devDependencies:
     specifier: ^10.9.1
     version: 10.9.1(@types/node@20.7.1)(typescript@5.2.2)
   tw5-typed:
-    specifier: ^0.3.10
-    version: 0.3.10
+    specifier: ^0.3.11
+    version: 0.3.11
   typescript:
     specifier: ^5.2.2
     version: 5.2.2
@@ -1670,16 +1670,16 @@ packages:
     resolution: {integrity: sha512-W6CLUJ2eBMw3Rec70qrsEW0jOm/3twwJv21mrmj2yORiaVmVYGS4sSS5yUwvQc1ZlDLYGPnClVWmUUMagKNsfA==}
     dev: false
 
-  /@mind-elixir/export-html@3.0.0(mind-elixir@3.1.4):
+  /@mind-elixir/export-html@3.0.0(mind-elixir@3.2.6):
     resolution: {integrity: sha512-0lKOV818LPsjZ6hLueDp7rAgJsHOWOBQapnXkpzoXk4twWi/1UXiOsC8b+zMI+UJvOyCT0Fm6LfXmGtO7le2mg==}
     peerDependencies:
       mind-elixir: ^3.0.0
     dependencies:
       file-saver: 2.0.5
-      mind-elixir: 3.1.4
+      mind-elixir: 3.2.6
     dev: false
 
-  /@mind-elixir/export-xmind@2.0.1(file-saver@2.0.5)(jszip@3.10.1)(mind-elixir@3.1.4):
+  /@mind-elixir/export-xmind@2.0.1(file-saver@2.0.5)(jszip@3.10.1)(mind-elixir@3.2.6):
     resolution: {integrity: sha512-Xv5EIGc8hTzvLVW09ugBSqeWh4ZeH1L6+AEhMrOYWCn95i1yW2dOHSnyA4wEgnNnd44LejGk17wuoTdhQqyiAQ==}
     peerDependencies:
       file-saver: ^2.0.5
@@ -1688,7 +1688,7 @@ packages:
     dependencies:
       file-saver: 2.0.5
       jszip: 3.10.1
-      mind-elixir: 3.1.4
+      mind-elixir: 3.2.6
     dev: false
 
   /@modern-js-app/eslint-config@2.35.1(typescript@5.2.2):
@@ -5001,8 +5001,8 @@ packages:
     resolution: {integrity: sha512-z7lUZbSFSvRCEiMo64fKz1pEKUtgnC3Zl7SXkq9mjALt7qufLG+j3JCSHQGnLJ6ZhLZ1o1lHLYnBjBy9yxdFKw==}
     dev: false
 
-  /mind-elixir@3.1.4:
-    resolution: {integrity: sha512-3rpfdObkQ1zdzpU23/K8rudTykJN+FzjtzxplIjTU4vyvdUWPaFxg9m97v+sQj/hEGd396wToiyoqshrEFmDKQ==}
+  /mind-elixir@3.2.6:
+    resolution: {integrity: sha512-I/3B+U5kXetstx+Z8OE2MMQHDalqxaugZsJQRGjvYK+EwGubwXHvTAXPqFXtU+XUPaZ96ClldEHffoqVkKFlMw==}
     dev: false
 
   /minimatch@3.1.2:
@@ -6787,8 +6787,8 @@ packages:
       safe-buffer: 5.2.1
     dev: false
 
-  /tw5-typed@0.3.10:
-    resolution: {integrity: sha512-c/NEOxuiGS75spVzT88BgAQORDg9l9z2g4HWCOmAoVQN27t0B910K4Db7IN5W7PF3BF88Zn4n+tjxqIwuDg2uQ==}
+  /tw5-typed@0.3.11:
+    resolution: {integrity: sha512-U9EOoWqWoT3CtCDf1CRQLyWL2Jk+br0TuJ1uuOtCdao30z4mRpllUUTT/0VQpJNvZeeWkxhC+DzUJyoSTFVAbg==}
     dependencies:
       '@types/codemirror': 5.60.8
       '@types/echarts': 4.9.18

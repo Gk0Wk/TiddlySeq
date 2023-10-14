@@ -7,6 +7,6 @@
     "types": ["node", "tw5-typed"],
     "lib": ["DOM", "ESNext"]
   },
-  "include": ["src", "src-tmp/test", "src-tmp/pdf-printer"],
+  "include": ["src", "src-tmp/test", "src-tmp/pdf-printer", "src/mindmap-elixir/mind-elixir.min.js"],
   "exclude": ["./**/*.js"]
 }

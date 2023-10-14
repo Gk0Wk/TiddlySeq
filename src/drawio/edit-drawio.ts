@@ -90,6 +90,7 @@ class DrawIOEditor {
         innerHTML: value,
       });
       parentNode.insertBefore(node, nextSibling);
+      widget.domNodes.push(node);
       this.xml = '';
       this.unmount = () => null;
       return;
@@ -111,6 +112,7 @@ class DrawIOEditor {
       },
     });
     parentNode.insertBefore(this.iframeNode, nextSibling);
+    widget.domNodes.push(this.iframeNode);
 
     // 全屏按钮
     const chatButton = $tw.utils.domMaker('button', {
@@ -134,6 +136,7 @@ class DrawIOEditor {
     });
     chatButton.onclick = () => this.setFullscreen(true);
     parentNode.insertBefore(chatButton, nextSibling);
+    widget.domNodes.push(chatButton);
 
     this.xml = value;
     let hasInited = false;
@@ -146,10 +149,10 @@ class DrawIOEditor {
       ) {
         return;
       }
-      const { event, ...payload } = $tw.utils.parseJSONSafe(
-        data,
-        () => ({}),
-      ) as any;
+      const { event, ...payload } = $tw.utils.parseJSONSafe<{
+        event?: string;
+        [payloadName: string]: unknown;
+      }>(data, () => ({}));
       switch (event) {
         case 'init': {
           if (hasInited) {
@@ -191,16 +194,17 @@ class DrawIOEditor {
           break;
         }
         case 'openLink': {
-          const { href, target } = payload;
+          const { href, target } = payload as { href: string; target: string };
           window.open(href, target);
           break;
         }
         case 'export': {
-          const { message, data } = payload;
+          const { message, data } = payload as {
+            data: string;
+            message: Record<string, unknown>;
+          };
           if (data && message.twEditor) {
-            const newXml = ($tw.utils as any).base64Decode(
-              data.split(',', 2)[1],
-            );
+            const newXml = $tw.utils.base64Decode(data.split(',', 2)[1]);
             if (newXml === this.xml) {
               return;
             }
