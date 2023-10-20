@@ -1,0 +1,41 @@
+created: 20211111190000250
+creator: Sttot
+icon: 🎉
+modified: 20231020024610545
+modifier: Sttot
+page-cover: 1111
+tags: ExcludeFromEmpty
+title: Guide
+type: text/vnd.tiddlywiki
+
+<$list filter="[[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]]" variable="lang">
+<$list filter="[<lang>search[zh]]">
+
+你可以在这里下载 ~TiddlySeq 模板:
+
+<center>
+<a style="display:flex;color:white;font-weight:700;font-size:15px;background:#0A84FF;border-radius:3px;width:180px;justify-content:space-around;align-items:center;height:50px;padding:0 10px;" href="./offline.html">下载空的模板 {{$:/core/images/save-button}}</a>
+</center>
+
+---
+
+来看看我写的插件吧，都很有趣：
+
+</$list>
+
+<$list filter="[<lang>!search[zh]]">
+
+You can download the ~TiddlySeq template here:
+
+<center>
+<a style="display:flex;color:white;font-weight:700;font-size:15px;background:#0A84FF;border-radius:3px;width:200px;justify-content:space-around;align-items:center;height:50px;padding:0 10px;" href="./offline.html">Download Empty {{$:/core/images/save-button}}</a>
+</center>
+
+---
+
+Interested in my plugins? Here are plugins used in this theme:
+
+</$list>
+</$list>
+
+<<toc "MyPlugins">>

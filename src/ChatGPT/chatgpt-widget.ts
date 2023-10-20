@@ -24,15 +24,18 @@ class ChatGPTWidget extends Widget {
 
   private historyTiddler: string = this.tmpHistoryTiddler;
 
-  private chatButtonText: string = $tw.wiki.getTiddlerText(
+  private chatButtonText: string = $tw.wiki.renderTiddler(
+    'text/html',
     '$:/core/images/add-comment',
   )!;
 
-  private editButtonText: string = $tw.wiki.getTiddlerText(
+  private editButtonText: string = $tw.wiki.renderTiddler(
+    'text/html',
     '$:/core/images/edit-button',
   )!;
 
-  private deleteButtonText: string = $tw.wiki.getTiddlerText(
+  private deleteButtonText: string = $tw.wiki.renderTiddler(
+    'text/html',
     '$:/core/images/delete-button',
   )!;
 
