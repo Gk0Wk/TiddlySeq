@@ -59,6 +59,9 @@ list-before: $:/core/ui/ViewTemplate/title
             <$edit-text tiddler=<<state>> field="page-cover#repeat" default=<<cover-repeat>> placeholder=""/>
             <$button setTitle=<<tiddler>> setField="page-cover#repeat" setTo={{{ [<state>get[page-cover#repeat]!is[blank]else<cover-repeat>] }}} style="color:inherit !important;cursor:pointer;font-weight:800;">Set</$button>
         </div>
+        <div style="flex-direction: column; filter: contrast(100%);">
+            <$button setTitle=<<tiddler>> setField="page-cover" setTo="" style="line:inherit float: center; opacity: 0.5; width: 100" tooltip="Clear Icon">{{$:/core/images/delete-button}} Clear Page Cover</$button>
+        </div>
     </div>
     </$let>
 </$reveal>
