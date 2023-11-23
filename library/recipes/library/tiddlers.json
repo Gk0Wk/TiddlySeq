@@ -74,6 +74,19 @@
     {
         "author": "Gk0Wk",
         "dependents": "",
+        "description": "powerful layout view for TiddlyWiki",
+        "list": "readme LICENSE",
+        "name": "layout",
+        "plugin-type": "plugin",
+        "title": "$:/plugins/Gk0Wk/layout",
+        "type": "application/json",
+        "version": "0.0.1-alpha1",
+        "Modern.TiddlyDev#SHA256-Hashed": "5d983d63bd27b9b3d29980c7524aa63524b1519ed816813e65b9dce1bf3c4475",
+        "requires-reload": "yes"
+    },
+    {
+        "author": "Gk0Wk",
+        "dependents": "",
         "description": "A MindMap plugin TiddlyWiki5, using Elixir",
         "list": "readme config",
         "name": "MindMap (Elixir)",
