@@ -1,0 +1,9 @@
+{
+  "title": "$:/plugins/Gk0Wk/layout",
+  "name": "layout",
+  "author": "Gk0Wk",
+  "description": "powerful layout view for TiddlyWiki",
+  "plugin-type": "plugin",
+  "version": "0.0.1-alpha1",
+  "list": "readme LICENSE"
+}

@@ -1,0 +1,232 @@
+{
+  "root": {
+    "type": "row",
+    "content": [
+      {
+        "type": "column",
+        "content": [
+          {
+            "type": "stack",
+            "content": [
+              {
+                "type": "component",
+                "size": "1fr",
+                "id": "",
+                "maximised": false,
+                "isClosable": true,
+                "reorderEnabled": true,
+                "title": "draw.io",
+                "componentType": "tiddler",
+                "componentState": {
+                  "title": "draw.io",
+                  "field": "text",
+                  "template": "$:/core/ui/ViewTemplate/body",
+                  "className": "gk0wk-gl-tiddler-container"
+                }
+              },
+              {
+                "type": "component",
+                "size": "1fr",
+                "id": "",
+                "maximised": false,
+                "isClosable": true,
+                "reorderEnabled": true,
+                "title": "www.drawio.com",
+                "componentType": "iframe",
+                "componentState": {
+                  "source": "https://www.drawio.com/"
+                }
+              }
+            ],
+            "size": "74.74747474747475%",
+            "id": "",
+            "maximised": false,
+            "isClosable": true,
+            "activeItemIndex": 1
+          },
+          {
+            "type": "row",
+            "content": [
+              {
+                "type": "stack",
+                "content": [
+                  {
+                    "type": "component",
+                    "size": "1fr",
+                    "id": "",
+                    "maximised": false,
+                    "isClosable": true,
+                    "reorderEnabled": true,
+                    "title": "Page TOC",
+                    "componentType": "tiddler",
+                    "componentState": {
+                      "title": "Page TOC",
+                      "className": "gk0wk-gl-tiddler-container",
+                      "field": "text"
+                    }
+                  }
+                ],
+                "size": "50%",
+                "id": "",
+                "maximised": false,
+                "isClosable": true,
+                "activeItemIndex": 0
+              },
+              {
+                "type": "stack",
+                "content": [
+                  {
+                    "type": "component",
+                    "size": "1fr",
+                    "id": "",
+                    "maximised": false,
+                    "isClosable": true,
+                    "reorderEnabled": true,
+                    "title": "Resizable Sidebar",
+                    "componentType": "tiddler",
+                    "componentState": {
+                      "title": "Resizable Sidebar",
+                      "className": "gk0wk-gl-tiddler-container",
+                      "field": "text"
+                    }
+                  }
+                ],
+                "size": "50%",
+                "id": "",
+                "maximised": false,
+                "isClosable": true,
+                "activeItemIndex": 0
+              }
+            ],
+            "size": "25.252525252525253%",
+            "id": "",
+            "isClosable": true
+          }
+        ],
+        "size": "72.0467444693688%",
+        "id": "",
+        "isClosable": true
+      },
+      {
+        "type": "column",
+        "content": [
+          {
+            "type": "stack",
+            "content": [
+              {
+                "type": "component",
+                "size": "1fr",
+                "id": "",
+                "maximised": false,
+                "isClosable": true,
+                "reorderEnabled": true,
+                "title": "Focus",
+                "componentType": "tiddler",
+                "componentState": {
+                  "title": "Focus",
+                  "field": "text",
+                  "template": "$:/core/ui/ViewTemplate/body",
+                  "className": "gk0wk-gl-tiddler-container"
+                }
+              }
+            ],
+            "size": "38.775510204081634%",
+            "id": "",
+            "maximised": false,
+            "isClosable": true,
+            "activeItemIndex": 0
+          },
+          {
+            "type": "stack",
+            "content": [
+              {
+                "type": "component",
+                "size": "1fr",
+                "id": "",
+                "maximised": false,
+                "isClosable": true,
+                "reorderEnabled": true,
+                "title": "MyPluginsMap",
+                "componentType": "tiddler",
+                "componentState": {
+                  "title": "MyPluginsMap",
+                  "field": "text",
+                  "template": "$:/core/ui/ViewTemplate/body",
+                  "className": "gk0wk-gl-tiddler-container"
+                }
+              }
+            ],
+            "size": "30.612244897959183%",
+            "id": "",
+            "maximised": false,
+            "isClosable": true,
+            "activeItemIndex": 0
+          },
+          {
+            "type": "stack",
+            "content": [
+              {
+                "type": "component",
+                "size": "1fr",
+                "id": "",
+                "maximised": false,
+                "isClosable": true,
+                "reorderEnabled": true,
+                "title": "1111",
+                "componentType": "tiddler",
+                "componentState": {
+                  "title": "1111",
+                  "field": "text",
+                  "template": "$:/core/ui/ViewTemplate/body",
+                  "className": "gk0wk-gl-tiddler-container"
+                }
+              }
+            ],
+            "size": "30.612244897959183%",
+            "id": "",
+            "maximised": false,
+            "isClosable": true,
+            "activeItemIndex": 0
+          }
+        ],
+        "size": "27.953255530631193%",
+        "id": "",
+        "isClosable": true
+      }
+    ],
+    "size": "1fr",
+    "id": "",
+    "isClosable": true
+  },
+  "openPopouts": [],
+  "settings": {
+    "constrainDragToContainer": true,
+    "reorderEnabled": true,
+    "popoutWholeStack": false,
+    "blockedPopoutsThrowError": true,
+    "closePopoutsOnUnload": true,
+    "responsiveMode": "none",
+    "tabOverlapAllowance": 0,
+    "reorderOnTabMenuClick": true,
+    "tabControlOffset": 10,
+    "popInOnClose": false
+  },
+  "dimensions": {
+    "borderWidth": 3,
+    "borderGrabWidth": 3,
+    "defaultMinItemHeight": "0px",
+    "defaultMinItemWidth": "10px",
+    "headerHeight": 20,
+    "dragProxyWidth": 300,
+    "dragProxyHeight": 200
+  },
+  "header": {
+    "show": "top",
+    "popout": "在新窗口打开",
+    "dock": "dock",
+    "close": "关闭",
+    "maximise": "最大化",
+    "minimise": "最小化",
+    "tabDropdown": "其他页面"
+  }
+}

@@ -17,6 +17,12 @@ dependencies:
   file-saver:
     specifier: ^2.0.5
     version: 2.0.5
+  golden-layout:
+    specifier: ^2.6.0
+    version: 2.6.0
+  jquery:
+    specifier: ^3.7.1
+    version: 3.7.1
   jszip:
     specifier: ^3.10.1
     version: 3.10.1
@@ -46,6 +52,9 @@ devDependencies:
   '@modern-js/tsconfig':
     specifier: ^2.35.1
     version: 2.35.1
+  '@types/jquery':
+    specifier: ^3.5.29
+    version: 3.5.29
   '@types/node':
     specifier: ^20.7.1
     version: 20.7.1
@@ -2000,6 +2009,12 @@ packages:
     resolution: {integrity: sha512-SZs7ekbP8CN0txVG2xVRH6EgKmEm31BOxA07vkFaETzZz1xh+cbt8BcI0slpymvwhx5dlFnQG2rTlPVQn+iRPQ==}
     dev: false
 
+  /@types/jquery@3.5.29:
+    resolution: {integrity: sha512-oXQQC9X9MOPRrMhPHHOsXqeQDnWeCDT3PelUIg/Oy8FAbzSZtFHRjc7IpbfFVmpLtJ+UOoywpRsuO5Jxjybyeg==}
+    dependencies:
+      '@types/sizzle': 2.3.8
+    dev: true
+
   /@types/json-schema@7.0.12:
     resolution: {integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==}
     dev: true
@@ -2028,6 +2043,10 @@ packages:
 
   /@types/semver@7.5.0:
     resolution: {integrity: sha512-G8hZ6XJiHnuhQKR7ZmysCeJWE08o8T0AXtk5darsCaTVsYZhhgUrq53jizaR2FvsoeCwJhlmwTjkXBY5Pn/ZHw==}
+    dev: true
+
+  /@types/sizzle@2.3.8:
+    resolution: {integrity: sha512-0vWLNK2D5MT9dg0iOo8GlKguPAU02QjmZitPEsXRuJXU/OGIOt9vT9Fc26wtYuavLxtO45v9PGleoL9Z0k1LHg==}
     dev: true
 
   /@types/stylus@0.48.38:
@@ -4062,6 +4081,10 @@ packages:
       merge2: 1.4.1
       slash: 3.0.0
 
+  /golden-layout@2.6.0:
+    resolution: {integrity: sha512-sIVQCiRWOymHbVD1Aw/T9/ijbPYAVGBlgGYd1N9MRKfcyBNSpjr87Vg9nSHm+RCT8ELrvK8IJYJV0QRJuVUkCQ==}
+    dev: false
+
   /gopd@1.0.1:
     resolution: {integrity: sha512-d65bNlIadxvpb/A2abVdlqKqV563juRnZ1Wtk6s1sIR8uNsXR70xqIzVqxVf1eTqDunwT2MkczEeaezCKTZhwA==}
     dependencies:
@@ -4610,6 +4633,10 @@ packages:
 
   /jju@1.4.0:
     resolution: {integrity: sha512-8wb9Yw966OSxApiCt0K3yNJL8pnNeIv+OEq2YMidz4FKP6nonSRoOXc80iXY4JaN2FC11B9qsNmDsm+ZOfMROA==}
+    dev: false
+
+  /jquery@3.7.1:
+    resolution: {integrity: sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==}
     dev: false
 
   /js-tokens@4.0.0:

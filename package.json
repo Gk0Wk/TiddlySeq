@@ -48,6 +48,7 @@
   "devDependencies": {
     "@modern-js/eslint-config": "^2.35.1",
     "@modern-js/tsconfig": "^2.35.1",
+    "@types/jquery": "^3.5.29",
     "@types/node": "^20.7.1",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
@@ -61,6 +62,8 @@
     "@mind-elixir/export-html": "^3.0.0",
     "@mind-elixir/export-xmind": "^2.0.1",
     "file-saver": "^2.0.5",
+    "golden-layout": "^2.6.0",
+    "jquery": "^3.7.1",
     "jszip": "^3.10.1",
     "mind-elixir": "^3.2.6",
     "mind-elixir-ts": "^1.1.11",

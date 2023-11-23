@@ -1,0 +1,50 @@
+{
+  "root": {
+    "type": "stack",
+    "content": [
+      {
+        "type": "component",
+        "content": [],
+        "title": "tiddler",
+        "componentType": "tiddler",
+        "componentState": {
+          "label": "A"
+        }
+      }
+    ]
+  },
+  "openPopouts": [],
+  "settings": {
+    "constrainDragToContainer": true,
+    "reorderEnabled": true,
+    "popoutWholeStack": false,
+    "blockedPopoutsThrowError": true,
+    "closePopoutsOnUnload": true,
+    "responsiveMode": "none",
+    "tabOverlapAllowance": 0,
+    "reorderOnTabMenuClick": true,
+    "tabControlOffset": 10,
+    "popInOnClose": false
+  },
+  "dimensions": {
+    "borderWidth": 5,
+    "borderGrabWidth": 5,
+    "defaultMinItemHeight": 0,
+    "defaultMinItemHeightUnit": "px",
+    "defaultMinItemWidth": 10,
+    "defaultMinItemWidthUnit": "px",
+    "headerHeight": 20,
+    "dragProxyWidth": 300,
+    "dragProxyHeight": 200
+  },
+  "header": {
+    "show": "top",
+    "popout": "open in new window",
+    "dock": "dock",
+    "close": "close",
+    "maximise": "maximise",
+    "minimise": "minimise",
+    "tabDropdown": "additional tabs"
+  },
+  "resolved": true
+}
