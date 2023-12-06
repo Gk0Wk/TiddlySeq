@@ -1,4 +1,4 @@
-import {
+import type {
   IParseTreeNode,
   IWidgetInitialiseOptions,
   IChangedTiddlers,
@@ -70,12 +70,12 @@ class GoldenLayoutWidget extends Widget {
       );
     }
     this.config ??= $tw.utils.parseJSONSafe(
-      $tw.wiki.getTiddlerText('$:/plugins/Gk0Wk/layout/defaultConfig.json')!,
+      $tw.wiki.getTiddlerText('$:/plugins/Gk0Wk/layouts/defaultConfig.json')!,
       () => undefined,
     );
     this.config ??= JSON.parse(
-      $tw.wiki.getTiddler('$:/plugins/Gk0Wk/layout')!.fields.text,
-    ).tiddlers['$:/plugins/Gk0Wk/layout/defaultConfig.json'];
+      $tw.wiki.getTiddler('$:/plugins/Gk0Wk/layouts')!.fields.text,
+    ).tiddlers['$:/plugins/Gk0Wk/layouts/defaultConfig.json'];
 
     this.config!.header = {
       ...(this.config!.header ?? {}),

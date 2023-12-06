@@ -23,7 +23,7 @@ export const addNewTiddlerIcon = (stack: Stack, chinese = false) => {
       'layout:template': '$:/core/ui/ViewTemplate/body',
       'layout:className': 'gk0wk-gl-tiddler-container',
     });
-    ($tw as any).modal.display('$:/plugins/Gk0Wk/layout/modals/add-tiddler', {
+    ($tw as any).modal.display('$:/plugins/Gk0Wk/layouts/modals/add-tiddler', {
       event,
     });
   });

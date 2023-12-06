@@ -1,4 +1,4 @@
-title: $:/plugins/Gk0Wk/layout/modals/add-tiddler
+title: $:/plugins/Gk0Wk/layouts/modals/add-tiddler
 type: text/vnd.tiddlywiki
 code-body: yes
 subtitle: <$text text={{{ [[$:/language]get[text]removeprefix[$:/languages/]else[en-GB]search[zh]then[添加条目]else[Add Tiddler]] }}} />

@@ -1,0 +1,9 @@
+{
+  "title": "$:/plugins/Gk0Wk/sections",
+  "name": "sections",
+  "author": "Gk0Wk",
+  "description": "Section editor for TiddlyWiki5",
+  "plugin-type": "plugin",
+  "version": "0.0.1-alpha1",
+  "list": "readme LICENSE"
+}

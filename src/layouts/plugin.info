@@ -1,6 +1,6 @@
 {
-  "title": "$:/plugins/Gk0Wk/layout",
-  "name": "layout",
+  "title": "$:/plugins/Gk0Wk/layouts",
+  "name": "layouts",
   "author": "Gk0Wk",
   "description": "powerful layout view for TiddlyWiki",
   "plugin-type": "plugin",

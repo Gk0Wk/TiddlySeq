@@ -1,0 +1,8 @@
+created: 20231205052202530
+icon: 
+modified: 20231206033621945
+tags: 
+title: TestForSectionEditor
+type: text/vnd.tiddlywiki
+
+<$section-editor tiddler="Example of Page TOC"/>

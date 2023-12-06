@@ -1,0 +1,92 @@
+.gk0wk-section-preview {
+  position: relative;
+}
+.gk0wk-section-preview[collapsed="yes"] {
+  margin: 5px 0;
+}
+
+.gk0wk-section-editor-preview-sidebar,
+.gk0wk-section-editor-editing-sidebar {
+  position: absolute;
+  max-height: calc(100% + 10px);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  transition: all {{$:/config/AnimationDuration}}ms;
+}
+.gk0wk-section-preview[collapsed="yes"] > .gk0wk-section-editor-preview-sidebar {
+  top: -5px;
+}
+.gk0wk-section-preview[collapsed="no"] > .gk0wk-section-editor-preview-sidebar {
+  top: -10px;
+}
+.gk0wk-section-preview:hover
+  > .gk0wk-section-editor-preview-sidebar {
+  opacity: 1;
+}
+.gk0wk-section-editor-preview-sidebar[side="left"] {
+  height: 50px;
+  left: -35px;
+  opacity: 0;
+}
+.gk0wk-section-editor-preview-sidebar[side="right"] {
+  height: 50px;
+  right: -35px;
+  opacity: 0;
+}
+.gk0wk-section-editor-editing-sidebar[side="right"] {
+  height: 50px;
+  right: -35px;
+  top: -10px;
+}
+
+.gk0wk-section-editor-button {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  transition: all {{$:/config/AnimationDuration}}ms;
+}
+.gk0wk-section-editor-button:hover {
+  opacity: 1;
+}
+
+.gk0wk-section-editor-section-editing-background,
+.gk0wk-section-preview[collapsed="no"] > .gk0wk-section-editor-section-background {
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: -10px;
+  right: -10px;
+  border-radius: 5px;
+  z-index: -1;
+  background: <<colour primary>>;
+}
+
+.gk0wk-section-preview[collapsed="yes"] > .gk0wk-section-editor-section-background {
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -10px;
+  right: -10px;
+  border-radius: 5px;
+  z-index: -1;
+  background: <<colour primary>>;
+}
+
+.gk0wk-section-editor-section-background {
+  background: <<colour primary>>;
+  opacity: 0;
+  transition: all {{$:/config/AnimationDuration}}ms;
+}
+
+.gk0wk-section-preview:hover
+  > .gk0wk-section-editor-section-background,
+.gk0wk-section-editor-section-editing-background {
+  opacity: 0.1;
+}
