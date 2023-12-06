@@ -1,6 +1,6 @@
-import { CancelButton } from './cancelButton';
-import { SaveButton } from './saveButton';
-import { SectionEditorWidget, ISection } from './widget';
+import { CancelButton } from '../buttons/cancelButton';
+import { SaveButton } from '../buttons/saveButton';
+import { SectionEditorWidget, ISection } from '../widget';
 
 export const EditingSidebarRight = (
   widget: SectionEditorWidget,

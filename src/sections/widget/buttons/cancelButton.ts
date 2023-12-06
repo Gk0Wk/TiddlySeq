@@ -1,4 +1,4 @@
-import { SectionEditorWidget, ISection } from './widget';
+import { SectionEditorWidget, ISection } from '../widget';
 
 let buttonContent: string | undefined;
 

@@ -1,4 +1,4 @@
-import { SectionEditorWidget, ISection } from './widget';
+import { SectionEditorWidget, ISection } from '../widget';
 
 let buttonContent: string | undefined;
 
@@ -31,9 +31,9 @@ export const SaveButton = (widget: SectionEditorWidget, section: ISection) => {
     const tiddler = $tw.wiki.getTiddler(section.tiddler)!.fields;
     const newText = `${tiddler.text
       .substring(0, section.start)
-      .trimEnd()}\n\n${text.trim()}\n\n${tiddler.text
+      .trim()}\n\n${text.trim()}\n\n${tiddler.text
       .substring(section.end)
-      .trimStart()}`.trim();
+      .trim()}`;
     $tw.wiki.addTiddler(new $tw.Tiddler(tiddler, { text: newText }));
     $tw.wiki.deleteTiddler(section.editingTiddler!);
     delete widget.editingSection;

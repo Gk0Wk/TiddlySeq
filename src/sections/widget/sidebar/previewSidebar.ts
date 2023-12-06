@@ -1,8 +1,8 @@
-import { AddButton } from './addButton';
-import { DeleteButton } from './deleteButton';
-import { EditButton } from './editButton';
-import { MenuButton } from './menuButton';
-import { SectionEditorWidget } from './widget';
+import { AddButton } from '../buttons/addButton';
+import { DeleteButton } from '../buttons/deleteButton';
+import { EditButton } from '../buttons/editButton';
+import { MenuButton } from '../buttons/menuButton';
+import { SectionEditorWidget } from '../widget';
 
 export const PreviewSidebarLeft = (
   widget: SectionEditorWidget,

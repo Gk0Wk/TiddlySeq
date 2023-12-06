@@ -1,4 +1,4 @@
-import type { SectionEditorWidget } from './widget';
+import type { SectionEditorWidget } from '../widget';
 
 let buttonContent: string | undefined;
 
@@ -37,9 +37,9 @@ export const DeleteButton = (
       const { start, end, tiddler } = section;
       const { fields } = $tw.wiki.getTiddler(tiddler)!;
       const { text } = fields;
-      const newText = `${text.substring(0, start).trimEnd()}\n\n${text
+      const newText = `${text.substring(0, start).trim()}\n\n${text
         .substring(end)
-        .trimStart()}`.trim();
+        .trim()}`;
       $tw.wiki.addTiddler(new $tw.Tiddler(fields, { text: newText }));
     }
   });

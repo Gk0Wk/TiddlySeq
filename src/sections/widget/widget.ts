@@ -5,7 +5,7 @@ import type {
 } from 'tiddlywiki';
 import { split } from './split';
 import { SectionBackground } from './sectionBackground';
-import { PreviewSidebarLeft, PreviewSidebarRight } from './previewSidebar';
+import { PreviewSidebarLeft, PreviewSidebarRight } from './sidebar/previewSidebar';
 
 import { widget as Widget } from '$:/core/modules/widgets/widget.js';
 

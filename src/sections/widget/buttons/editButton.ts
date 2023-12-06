@@ -1,5 +1,5 @@
-import { EditingSidebarRight } from './editingSidebar';
-import type { SectionEditorWidget } from './widget';
+import { EditingSidebarRight } from '../sidebar/editingSidebar';
+import type { SectionEditorWidget } from '../widget';
 
 let buttonContent: string | undefined;
 

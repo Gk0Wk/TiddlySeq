@@ -1,5 +1,5 @@
-import { EditingSidebarRight } from './editingSidebar';
-import { SectionEditorWidget, ISection } from './widget';
+import { EditingSidebarRight } from '../sidebar/editingSidebar';
+import { SectionEditorWidget, ISection } from '../widget';
 
 let buttonContent: string | undefined;
 // eslint-disable-next-line no-nested-ternary
