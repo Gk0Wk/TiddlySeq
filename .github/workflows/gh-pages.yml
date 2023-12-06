@@ -40,7 +40,11 @@ jobs:
           run_install: true
 
       - name: Build Library and static website
-        run: pnpm run publish && pnpm run publish:offline
+        run: |
+          pnpm run publish:offline
+          mv ./dist/index.html offline.html
+          pnpm run publish
+          mv offline.html ./dist/offline.html
 
 
       - name: Upload artifact
