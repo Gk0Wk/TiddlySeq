@@ -7,17 +7,22 @@ list-before: $:/core/ui/ViewTemplate/title
 \define coverbox-db(cover,tiddler:"",default:"",class-outer:"",class-blur-bg:"",class-front-bg:"",style-outer:"",style-blur-bg:"",style-front-bg:"")
 \whitespace trim
 <$let currentTiddler={{{ [<__cover__>!is[blank]then<__cover__>else<__default__>] }}}>
-<$let imguri={{{ [<currentTiddler>is[image]!has[_canonical_uri]] :then[subfilter<imagetobase64>] :else[<currentTiddler>get[_canonical_uri]else<currentTiddler>] }}}>
+<$let imguri={{{ [<currentTiddler>is[image]!has[_canonical_uri]] :then[subfilter<imagetobase64>] :else[<currentTiddler>get[_canonical_uri]else<currentTiddler>] }}}
+      cover-bg-blur={{{ [<__tiddler__>get[page-cover_bg-blur]] :else[<__tiddler__>get[page-cover#bg-blur]else{$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-bg-blur}] }}}
+      cover-size={{{ [<__tiddler__>get[page-cover_size]] :else[<__tiddler__>get[page-cover#size]else{$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-size}else[cover]] }}}
+      cover-position={{{ [<__tiddler__>get[page-cover_position]] :else[<__tiddler__>get[page-cover#position]else{$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-position}else[cover]] }}}
+      cover-repeat={{{ [<__tiddler__>get[page-cover_repeat]] :else[<__tiddler__>get[page-cover#repeat]else{$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-repeat}else[no-repeat]] }}}
+>
 <div class="$class-outer$" style="display:flex;position:relative;overflow:hidden;align-items:center;justify-content:center;$style-outer$" >
 <$let
     img-bg={{{ [[background-image:url(]] [<imguri>] [[);]] +[join[]] }}}
-    cover-bg-blur={{{ [[filter:blur(]] [<__tiddler__>get[page-cover#bg-blur]else{$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-bg-blur}] [[);]] +[join[]] }}}
-    cover-size={{{ [[background-size:]] [<__tiddler__>get[page-cover#size]else{$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-size}else[cover]] [[;]] +[join[]] }}}
-    cover-position={{{ [[background-position:]] [<__tiddler__>get[page-cover#position]else{$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-position}else[cover]] [[;]] +[join[]] }}}
-    cover-repeat={{{ [[background-repeat:]] [<__tiddler__>get[page-cover#repeat]else{$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-repeat}else[no-repeat]] [[;]] +[join[]] }}}
+    cover-bg-blur-property={{{ [[filter:blur(]] [<cover-bg-blur>] [[);]] +[join[]] }}}
+    cover-size-property={{{ [[background-size:]] [<cover-size>] [[;]] +[join[]] }}}
+    cover-position-property={{{ [[background-position:]] [<cover-position>] [[;]] +[join[]] }}}
+    cover-repeat-property={{{ [[background-repeat:]] [<cover-repeat>] [[;]] +[join[]] }}}
 >
-<div class="$class-blur-bg$" style={{{ [<img-bg>] [[background-size:cover;background-position:center;position:absolute;top:-10px;left:-10px;height:calc(100% + 20px);width:calc(100% + 20px);]] [<cover-bg-blur>] [<__style-blur-bg__>] +[join[]] }}} />
-<div class="$class-front-bg$" style={{{ [<img-bg>] [<cover-size>] [<cover-position>] [<cover-repeat>] [[position:relative;height:100%;width:100%;]] [<__style-front-bg__>] +[join[]] }}} />
+<div class="$class-blur-bg$" style={{{ [<img-bg>] [[background-size:cover;background-position:center;position:absolute;top:-10px;left:-10px;height:calc(100% + 20px);width:calc(100% + 20px);]] [<cover-bg-blur-property>] [<__style-blur-bg__>] +[join[]] }}} />
+<div class="$class-front-bg$" style={{{ [<img-bg>] [<cover-size-property>] [<cover-position-property>] [<cover-repeat-property>] [[position:relative;height:100%;width:100%;]] [<__style-front-bg__>] +[join[]] }}} />
 </$let>
 </div>
 </$let>
@@ -28,10 +33,10 @@ list-before: $:/core/ui/ViewTemplate/title
     <$let
         state=<<qualify "$:/temp/Gk0Wk/notionpage-covericon/cover-setting">>
         default-cover={{{ [<tiddler>get[page-cover]] }}}
-        cover-bg-blur={{{ [<tiddler>get[page-cover#bg-blur]else{$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-bg-blur}] }}}
-        cover-size={{{ [<tiddler>get[page-cover#size]else{$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-size}else[cover]] }}}
-        cover-position={{{ [<tiddler>get[page-cover#position]else{$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-position}else[cover]] }}}
-        cover-repeat={{{ [<tiddler>get[page-cover#repeat]else{$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-repeat}else[no-repeat]] }}}
+        cover-bg-blur={{{ [<tiddler>get[page-cover_bg-blur]] :else[<tiddler>get[page-cover#bg-blur]else{$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-bg-blur}] }}}
+        cover-size={{{ [<tiddler>get[page-cover_size]] :else[<tiddler>get[page-cover#size]else{$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-size}else[cover]] }}}
+        cover-position={{{ [<tiddler>get[page-cover_position]] :else[<tiddler>get[page-cover#position]else{$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-position}else[cover]] }}}
+        cover-repeat={{{ [<tiddler>get[page-cover_repeat]] :else[<tiddler>get[page-cover#repeat]else{$:/plugins/Gk0Wk/notionpage-covericon/config/default-cover-repeat}else[no-repeat]] }}}
     >
     <div class="gk0wk-notionpageb-changecover-box">
         <div>
@@ -41,23 +46,23 @@ list-before: $:/core/ui/ViewTemplate/title
         </div>
         <div>
             <span style="user-select:none;opacity:0.8;font-weight:800;">Blur:&nbsp;</span>
-            <$edit-text tiddler=<<state>> field="page-cover#bg-blur" default=<<cover-bg-blur>> placeholder=""/>
-            <$button setTitle=<<tiddler>> setField="page-cover#bg-blur" setTo={{{ [<state>get[page-cover#bg-blur]!is[blank]else<cover-bg-blur>] }}} style="color:inherit !important;cursor:pointer;font-weight:800;">Set</$button>
+            <$edit-text tiddler=<<state>> field="page-cover_bg-blur" default=<<cover-bg-blur>> placeholder=""/>
+            <$button setTitle=<<tiddler>> setField="page-cover_bg-blur" setTo={{{ [<state>get[page-cover_bg-blur]!is[blank]else<cover-bg-blur>] }}} style="color:inherit !important;cursor:pointer;font-weight:800;"><$action-deletefield $tiddler=<<tiddler>> $field="page-cover#bg-blur" />Set</$button>
         </div>
         <div>
             <span style="user-select:none;opacity:0.8;font-weight:800;">Size:&nbsp;</span>
-            <$edit-text tiddler=<<state>> field="page-cover#size" default=<<cover-size>> placeholder=""/>
-            <$button setTitle=<<tiddler>> setField="page-cover#size" setTo={{{ [<state>get[page-cover#size]!is[blank]else<cover-size>] }}} style="color:inherit !important;cursor:pointer;font-weight:800;">Set</$button>
+            <$edit-text tiddler=<<state>> field="page-cover_size" default=<<cover-size>> placeholder=""/>
+            <$button setTitle=<<tiddler>> setField="page-cover_size" setTo={{{ [<state>get[page-cover_size]!is[blank]else<cover-size>] }}} style="color:inherit !important;cursor:pointer;font-weight:800;"><$action-deletefield $tiddler=<<tiddler>> $field="page-cover#size" />Set</$button>
         </div>
         <div>
             <span style="user-select:none;opacity:0.8;font-weight:800;">Position:&nbsp;</span>
-            <$edit-text tiddler=<<state>> field="page-cover#position" default=<<cover-position>> placeholder=""/>
-            <$button setTitle=<<tiddler>> setField="page-cover#position" setTo={{{ [<state>get[page-cover#position]!is[blank]else<cover-position>] }}} style="color:inherit !important;cursor:pointer;font-weight:800;">Set</$button>
+            <$edit-text tiddler=<<state>> field="page-cover_position" default=<<cover-position>> placeholder=""/>
+            <$button setTitle=<<tiddler>> setField="page-cover_position" setTo={{{ [<state>get[page-cover_position]!is[blank]else<cover-position>] }}} style="color:inherit !important;cursor:pointer;font-weight:800;"><$action-deletefield $tiddler=<<tiddler>> $field="page-cover#position" />Set</$button>
         </div>
         <div>
             <span style="user-select:none;opacity:0.8;font-weight:800;">Repeat:&nbsp;</span>
-            <$edit-text tiddler=<<state>> field="page-cover#repeat" default=<<cover-repeat>> placeholder=""/>
-            <$button setTitle=<<tiddler>> setField="page-cover#repeat" setTo={{{ [<state>get[page-cover#repeat]!is[blank]else<cover-repeat>] }}} style="color:inherit !important;cursor:pointer;font-weight:800;">Set</$button>
+            <$edit-text tiddler=<<state>> field="page-cover_repeat" default=<<cover-repeat>> placeholder=""/>
+            <$button setTitle=<<tiddler>> setField="page-cover_repeat" setTo={{{ [<state>get[page-cover_repeat]!is[blank]else<cover-repeat>] }}} style="color:inherit !important;cursor:pointer;font-weight:800;"><$action-deletefield $tiddler=<<tiddler>> $field="page-cover#repeat" />Set</$button>
         </div>
     </div>
     </$let>
